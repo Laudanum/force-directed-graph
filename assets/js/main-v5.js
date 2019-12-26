@@ -40,6 +40,7 @@ class App {
       })
   }
 
+
   /*
    * Returns a promise of data.
    */
@@ -102,7 +103,6 @@ class App {
   }
 
 
-
   /*
    * Sets a bounding box - used to draw rectangles behind text labels
    * when a node is hovered over.
@@ -111,6 +111,23 @@ class App {
     selection.each(function(d){
       d.boundingBox = this.getBBox();
     })
+  }
+
+
+  /*
+   * @TODO Centre the node.
+   * @TODO Add more data.
+   */
+  nodeEventHandler(d) {
+    console.log('Node clicked.')
+  }
+
+
+  /*
+   * Opens the URL.
+   */
+  labelEventHandler(d) {
+    window.location = d.link.url;
   }
 
 
@@ -168,6 +185,7 @@ class App {
     const item = simulation.enter()
       .append('svg:g')
       .attr('class', 'node')
+      .on('click', self.nodeEventHandler)
       .merge(simulation)
       ;
 
@@ -185,10 +203,6 @@ class App {
       .attr('xlink:href', function(d) {
         return d.image.url;
       })
-      .attr('width', self.imageSize)
-      .attr('height', self.imageSize)
-      .attr('x', d => self.imageSize / -2)
-      .attr('y', d => self.imageSize / -2)
       ;
 
     // Labels
@@ -199,7 +213,7 @@ class App {
       .attr('x', self.textOffset.x)
       .attr('y', self.textOffset.x)
       .text(function(d) { return d.title; })
-      // .on( 'click', linkClickHandler)
+      .on( 'click', self.labelEventHandler)
       .call(self.getBoundingBox)
       ;
 
@@ -210,7 +224,7 @@ class App {
       .attr('height', function(d){ return d.boundingBox.height + 5 })
       .attr('x', function(d){ return d.boundingBox.x - 5})
       .attr('y', function(d){return d.boundingBox.y - 2})
-      // .on( 'click', linkClickHandler);
+      .on( 'click', self.labelEventHandler);
       ;
 
     // Behaviours
@@ -218,6 +232,7 @@ class App {
 
     simulation.exit().remove();
   }
+
 
   /*
    * Called when the data changes.
@@ -252,6 +267,7 @@ class App {
 
     simulation.exit().remove();
   }
+
 
   /*
    * Called by the simulation on every frame.

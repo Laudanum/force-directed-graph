@@ -41,6 +41,22 @@ svg .node .label-container {
   stroke: #ccc;
 }
 
+svg .node image {
+  transition: all .25s ease;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  width: 50px;
+  height: 50px;
+  x: -25px;
+  y: -25px;
+}
+
+svg .node:hover image {
+  width: 70px;
+  height: 70px;
+  x: -35px;
+  y: -35px;
+}
+
 svg .node:hover .label,
 svg .node:hover .label-container {
   display: block;

@@ -72,6 +72,23 @@ class App {
 
 
   /*
+   * Get nodes related to this node.
+   */
+  getRelatedNodes(id) {
+    const self = this;
+
+    if ( self.debug )
+      console.log(`Get nodes related to ${id}.`);
+
+    const node = self.dataSet.filter(n => n.id === id);
+
+    return self.dataSet.filter(n => {
+      return node[0].related.indexOf(n.id) !== -1;
+    });
+  }
+
+
+  /*
    * Given a set of nodes calculate their edges.
    */
   getEdges(nodes) {
@@ -119,7 +136,15 @@ class App {
    * @TODO Add more data.
    */
   nodeEventHandler(d) {
-    console.log('Node clicked.')
+    const self = this;
+
+    if ( self.debug )
+      console.log(`Node ${d.id} clicked.`);
+
+    const nodes = self.getRelatedNodes(d.id);
+
+    if ( self.debug )
+      console.log(nodes);
   }
 
 
@@ -185,7 +210,7 @@ class App {
     const item = simulation.enter()
       .append('svg:g')
       .attr('class', 'node')
-      .on('click', self.nodeEventHandler)
+      .on('click', e => self.nodeEventHandler(e))
       .merge(simulation)
       ;
 

@@ -1,6 +1,8 @@
 'use strict';
 
 class App {
+  debug = false;
+
   dataFile = '/assets/js/json/data.json';
   maxNodes = 24;
   w = 500;
@@ -9,6 +11,10 @@ class App {
   imageSize = 50;
   // linkStrength = 50;
   linkDistance = 120;
+  textOffset = {
+    x: 20,
+    y: 40,
+  };
 
 
   constructor(appName) {
@@ -41,7 +47,7 @@ class App {
       fetch(this.dataFile)
         .then(res => {
           if (!res.ok) {
-            throw new Error("HTTP error " + res.status);
+            throw new Error('HTTP error ' + res.status);
           }
           return res.json();
         })
@@ -92,6 +98,18 @@ class App {
     });
 
     return links;
+  }
+
+
+
+  /*
+   * Sets a bounding box - used to draw rectangles behind text labels
+   * when a node is hovered over.
+   */
+  getBoundingBox(selection){
+    selection.each(function(d){
+      d.boundingBox = this.getBBox();
+    })
   }
 
 
@@ -153,10 +171,12 @@ class App {
       ;
 
     // Circles
-    item
-      .append('circle')
-      .attr('r', 5)
-      ;
+    if ( self.debug ) {
+      item
+        .append('circle')
+        .attr('r', 5)
+        ;
+    }
 
     // Doodles
     item
@@ -171,7 +191,26 @@ class App {
       ;
 
     // Labels
-    // @TODO
+    item
+      .append('text')
+      .attr('class', 'label')
+      .attr('text-anchor', 'middle')
+      .attr('x', self.textOffset.x)
+      .attr('y', self.textOffset.x)
+      .text(function(d) { return d.title; })
+      // .on( 'click', linkClickHandler)
+      .call(self.getBoundingBox)
+      ;
+
+    item
+      .insert('rect', 'text')
+      .attr('class', 'label-container')
+      .attr('width', function(d){ return d.boundingBox.width + 10 })
+      .attr('height', function(d){ return d.boundingBox.height + 5 })
+      .attr('x', function(d){ return d.boundingBox.x - 5})
+      .attr('y', function(d){return d.boundingBox.y - 2})
+      // .on( 'click', linkClickHandler);
+      ;
 
     // Behaviours
     // @TODO

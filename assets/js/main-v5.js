@@ -135,6 +135,29 @@ class App {
    * Called when we want to change the data.
    */
   update() {
+    const self = this;
+
+    let u = d3.select('svg')
+      .selectAll('g.node')
+      .data(this.currentNodes);
+
+    u.enter()
+      .append('svg:g')
+      .attr('class', 'node')
+      .merge(u)
+      // .append('circle')
+      // .attr('r', 5)
+      .append('svg:image')
+      .attr('xlink:href', function(d) {
+        return d.image.url;
+      })
+      .attr('width', self.imageSize)
+      .attr('height', self.imageSize)
+      .attr('x', d => self.imageSize / -2)
+      .attr('y', d => self.imageSize / -2)
+      ;
+
+    u.exit().remove();
 
   }
 
@@ -145,66 +168,22 @@ class App {
   tick() {
     let u = d3.select('svg')
       .selectAll('g.node')
-      .data(this.currentNodes);
-
-    let edit = u.enter()
-      .append('svg:g')
-      .attr('class', 'node')
-      .merge(u)
       .attr('transform', function(d) {
         return `translate(${d.x}, ${d.y})`;
       })
-      // .attr('cx', function(d) {
-      //   return d.x
-      // })
-      // .attr('cy', function(d) {
-      //   return d.y
-      // })
       ;
 
-    u.enter().selectAll('g.node')
-      // .append('circle')
-      // .attr('r', 5)
-      .append('svg:image')
-      .attr('xlink:href', function(d) {
-        return d.image.url;
-      })
-      .attr('width', imageSize)
-      .attr('height', imageSize)
-      .attr('x', imageSize/2)
-      .attr('y', imageSize/2)
-
-    // edit.
-    //   .append('circle')
-    //   .attr('r', 5)
-    // edit.
-    //   .append('svg:image')
-    //   .attr('xlink:href', function(d) {
-    //     return d.image.url;
-    //   })
-
-
-    // edit.
-    //   .merge(u)
-    //   ;
-
-    // u.enter()
-    //   .append('circle');
-    //   .attr('r', 5)
-    //   ;
-
-
-    path = u.selectAll("path.link")
-      .data(links, function(d) { return d.target.id; });
-
-    path.enter().insert("svg:path")
-      .attr("class", "link")
-      .style("stroke", "#eee");
-
-
-  // Exit any old paths.
-  path.exit().remove();
     u.exit().remove();
+
+    // path = u.selectAll("path.link")
+    //   .data(links, function(d) { return d.target.id; });
+
+    // path.enter().insert("svg:path")
+    //   .attr("class", "link")
+    //   .style("stroke", "#eee");
+
+    // // Exit any old paths.
+    // path.exit().remove();
   }
 
 }

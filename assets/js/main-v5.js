@@ -5,8 +5,10 @@ class App {
   maxNodes = 24;
   w = 500;
   h = 500;
-  charge = -50;
+  bodyCharge = -50;
   imageSize = 50;
+  // linkStrength = 50;
+  linkDistance = 120;
 
 
   constructor(appName) {
@@ -103,7 +105,7 @@ class App {
     self.currentNodes = nodes;
 
     self.simulation = d3.forceSimulation(nodes)
-      .force('charge', d3.forceManyBody().strength(self.charge))
+      .force('charge', d3.forceManyBody().strength(self.bodyCharge))
       .force('center', d3.forceCenter(this.w / 2, this.h / 2))
 
     console.log(`Simulation initialised.`);
@@ -118,35 +120,46 @@ class App {
 
     // Calculate all the links in self.nodes.
     self.links = self.getLinks(self.currentNodes);
-    console.log(self.links);
+    console.log(`Found ${self.links.length} edges.`);
 
-    // @TODO Add the link force.
-    self.simulation.force('link', d3.forceLink().links(self.links))
+    // Add the link force.
+    self.simulation.force('link', d3.forceLink().distance(self.linkDistance).links(self.links))
 
     this.simulation.on('tick', () => {
       self.tick();
     });
 
-    self.update();
+    self.updateNodes();
+    self.updateLinks();
   }
 
 
   /*
    * Called when we want to change the data.
    */
-  update() {
+  updateNodes() {
     const self = this;
 
-    let u = d3.select('svg')
+    const simulation = d3.select('svg')
+      .select('g.nodes')
       .selectAll('g.node')
-      .data(this.currentNodes);
+      .data(this.currentNodes)
+      ;
 
-    u.enter()
+    const item = simulation.enter()
       .append('svg:g')
       .attr('class', 'node')
-      .merge(u)
-      // .append('circle')
-      // .attr('r', 5)
+      .merge(simulation)
+      ;
+
+    // Circles
+    item
+      .append('circle')
+      .attr('r', 5)
+      ;
+
+    // Doodles
+    item
       .append('svg:image')
       .attr('xlink:href', function(d) {
         return d.image.url;
@@ -157,33 +170,65 @@ class App {
       .attr('y', d => self.imageSize / -2)
       ;
 
-    u.exit().remove();
+    // Labels
+    // @TODO
 
+    // Behaviours
+    // @TODO
+
+    simulation.exit().remove();
   }
 
+  /*
+   * Called when the data changes.
+   * And by the simulation on each frame.
+   * @TODO Separate out the creation and the tick.
+   */
+  updateLinks() {
+    const self = this;
+
+    const simulation = d3.select('svg')
+      .select('g.links')
+      .selectAll('line')
+      .data(self.links)
+      ;
+
+    simulation.enter()
+      .append('line')
+      .merge(simulation)
+      .attr('x1', function(d) {
+        return d.source.x
+      })
+      .attr('y1', function(d) {
+        return d.source.y
+      })
+      .attr('x2', function(d) {
+        return d.target.x
+      })
+      .attr('y2', function(d) {
+        return d.target.y
+      })
+      ;
+
+    simulation.exit().remove();
+  }
 
   /*
    * Called by the simulation on every frame.
    */
   tick() {
-    let u = d3.select('svg')
+    const self = this;
+
+    const simulation = d3.select('svg')
       .selectAll('g.node')
       .attr('transform', function(d) {
         return `translate(${d.x}, ${d.y})`;
       })
       ;
 
-    u.exit().remove();
+    simulation.exit().remove();
 
-    // path = u.selectAll("path.link")
-    //   .data(links, function(d) { return d.target.id; });
-
-    // path.enter().insert("svg:path")
-    //   .attr("class", "link")
-    //   .style("stroke", "#eee");
-
-    // // Exit any old paths.
-    // path.exit().remove();
+    self.updateLinks();
   }
 
 }

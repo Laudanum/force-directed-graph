@@ -1,0 +1,24 @@
+{
+  "name": "onlinevenue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "browser-sync start --server './' --files './**/*' --watch --index 'index.html' --startPath '/index.html'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Laudanum/force-directed-graph.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Laudanum/force-directed-graph/issues"
+  },
+  "homepage": "https://github.com/Laudanum/force-directed-graph#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "d3": "^5.14.2"
+  }
+}

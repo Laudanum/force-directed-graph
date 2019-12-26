@@ -14,7 +14,7 @@ var w = innerWidth,
     maxNodeNum = Math.floor(10 + Math.random() * 10), // Number of nodes to render onscreen. Random between 20 - 50
     path,    // All the paths connecting nodes
     nodesArr,// Array of all nodes
-    linksArr,// Array of link data
+    // linksArr,// Array of link data
     selectedNodes = [], // Randomly selected nodes
     selectedLinks = [], // Link data for selectedNodes
     node,    // Points to current SVG DOM selection, for D3 operations
@@ -93,9 +93,13 @@ function update() {
   var links = d3.layout.tree().links(selectedNodes);
  
   
+  // When links are empty the script runs.
+  // When links are full it fails with a d3 error trying to push into nothing.
+
   // Restart the force layout.
   force.nodes(nodes)
-    .links(links)
+    // Removing links means the script runs.
+    // .links(links)
     .gravity(0.05)
     .charge(-1500)
     .linkDistance(100)
@@ -146,7 +150,7 @@ function update() {
         .attr("y", function(d) { return -25;})
         .attr("height", 50)
         .attr("width", 50);
-  
+
   // make the image grow a little on mouse over and add the text details on click
   var setEvents = images
           .on( 'mouseenter', function() {
@@ -176,11 +180,11 @@ function update() {
       .attr("x", x_browser)
       .attr("y", y_browser +15)
       .attr("fill", tcBlack)
-      .text(function(d) { return d.name; })
+      .text(function(d) { return d.title; })
       .call(getBB);
 
       // var textNode = node.filter(function(d) {return (!d.image)});
-      // 
+      //
 
   // Adding a background behind link labels
   d3.selectAll('g.node')
@@ -206,28 +210,35 @@ function update() {
       d.bbox = this.getBBox();
     })
   }
- 
- 
+
+
   // Exit any old nodes.
   node.exit().remove();
- 
- 
+
+
   // Re-select for update.
-  path = vis.selectAll("path.link");
+  // path = vis.selectAll("path.link");
   node = vis.selectAll("g.node");
 
-// Moving the node to the center  
+// Moving the node to the center
           // d3.select( this.closest('.node') )
 
   node.on('dragenter', e => {console.log(`${e.target} is dragged`)});
   // Node click handler
   node.on('click', function(d){
-    
+
     var targetX = w / 2,
         targetY = h / 2,
         divisor = 16,
         dx,
         dy;
+
+    // Get new nodes right away.
+    selectedNodes.find( node => node.id === d.id).children = getNodeChildren(d.id, true); // Adds any children elements that aren't on-stage rightnow
+    // @FIX Cull the number of nodes back down to max.
+    // @FIX Cancel currently underway simulations.
+    // Update the scene with the new nodes.
+    update();
 
     function step(timestamp){
       console.log('step called');
@@ -239,8 +250,8 @@ function update() {
       d.px = d.x;
       d.py = d.y;
       tick();
-      
-      
+
+
       if(Math.abs(dx) > 2 || Math.abs(dy) > 2)
       {
         window.requestAnimationFrame(step);
@@ -251,14 +262,13 @@ function update() {
         d.px = d.x;
         d.py = d.y;
 
-        selectedNodes.find( node => node.name === d.name).children = getNodeChildren(d.name, true); // Adds any children elements that aren't on-stage rightnow
-        
+
         debugger;
         // Build the path
         // var defs = vis.insert("svg:defs")
         //   .data(["end"]);
- 
- 
+
+
         // defs.enter().append("svg:path")
         //   .attr("d", "M0,-5L10,0L0,5");
 
@@ -267,7 +277,7 @@ function update() {
         update();
         // debugger;
       }
-      
+
     }
 
     window.requestAnimationFrame(step);
@@ -275,14 +285,14 @@ function update() {
     // node.attr("link", function(na){
 
     // })
-    // d.x = w / 2, 
+    // d.x = w / 2,
     // d.y = h / 2,
     // d.px = d.x,
     // d.py = d.y,
     // d.fixed = true;
     // tick();
 
-    // 
+    //
     // d3.select(this)
     //   .transition()
     //   .attr('x', function(d){  return ( w / 2)})
@@ -290,7 +300,7 @@ function update() {
     //   .attr('px', function(d){  return ( w / 2)})
     //   .attr('py', function(d){ return ( h / 2)})
 
-    // d.x = w / 2, 
+    // d.x = w / 2,
     // d.y = h / 2,
     // d.px = d.x,
     // d.py = d.y,
@@ -299,15 +309,15 @@ function update() {
 
     // clickedNode = d;
     //       isFocusLocked = true;
-          
-    //       // Moving the node to the center  
+
+    //       // Moving the node to the center
     //       d3.select( this.closest('.node') )
     //           // .transition()
     //           // .attr("x", function(d) {  return (- window.innerWidth / 2) + this.getBBox().width })
     //           // .attr("y", function(d) { return h / 2;})
 
   })
- 
+
 
   console.log('update is called');
 }// Update function ends
@@ -319,47 +329,47 @@ function tick() {
   // {
 
     path.attr("d", function(d) {
-        
+
       var dx = d.target.x - d.source.x,
           dy = d.target.y - d.source.y,
           dr = Math.sqrt(dx * dx + dy * dy);
 
-      var val = "M" + d.source.x + "," 
-                + d.source.y 
-                + "L" + d.target.x + "," 
+      var val = "M" + d.source.x + ","
+                + d.source.y
+                + "L" + d.target.x + ","
                 + d.target.y;
 
-      // 
+      //
       return val;
     });
 
     node.attr("transform", nodeTransform);
   // }else{
-  //   
+  //
   // }
-  
+
 }
 
- 
+
 /**
  * Gives the coordinates of the border for keeping the nodes inside a frame
  * http://bl.ocks.org/mbostock/1129492
- */ 
+ */
 function nodeTransform(d) {
   if(!d.clicked)
   {
     d.x =  Math.max(maxNodeSize, Math.min(w - (d.imgwidth/8 || 16), d.x));
     d.y =  Math.max(maxNodeSize, Math.min(h - (d.imgheight/8 || 16), d.y));
-    
+
   }else{
-    
+
   }
   return "translate(" + d.x + "," + d.y + ")";
 }
- 
+
 /**
  * Toggle children on click.
- */ 
+ */
 function click(d) {
   // if (d.children) {
   //   d._children = d.children;
@@ -368,20 +378,20 @@ function click(d) {
   //   d.children = d._children;
   //   d._children = null;
   // }
- 
+
   // update();
 }
- 
+
 // returns an array of children nodes. If addToStage, all children nodes are also added to the stage tree
 function getNodeChildren(nodeID, addToStage){
-  
+
   var relatedLinkIDs = nodesArr.find(node => node.id = nodeID).related; // IDs of nodes related to this one
       relatedLinksArr = []; // populated with the actual nodes (not just IDs), this is what we return
 
   // For every link, checking if the child/target node also exists in selectedNodes[]
   relatedLinkIDs.forEach(childID => {
     var childNode = nodesArr.filter( node => node.id === childID)[0];
-    
+
     // Pushing the relatedNode to nodesArr, if the childNode also exists in selectedNodes [] (is on-screen)
     // Checking if the current childNode already exists in selectedNodes[] (on-screen nodes to be rendered)
     if (!!selectedNodes.find( node => node.id === childNode.id)){
@@ -389,17 +399,18 @@ function getNodeChildren(nodeID, addToStage){
     }else if(addToStage){
       // node does not exist in selectedNodes[], but we'll add it there
       childNode.children = getNodeChildren(childNode.id);
+      // @FIX Shouldn't return all related nodes when adding to the stage.
       selectedNodes.push(childNode);
     }
-    
+
   })
 
   return relatedLinksArr;
 }
- 
+
 /**
- * Returns a list of all nodes under the root. 
- */ 
+ * Returns a list of all nodes under the root.
+ */
 function flatten(root) {
 
   var nodes = root,
@@ -423,18 +434,18 @@ function getActiveNodeIDs(){
 
 
 // function flatten(root) {
-//   var nodes = []; 
+//   var nodes = [];
 //   var i = 0;
- 
+
 //   function recurse(node) {
-//     if (node.children) 
+//     if (node.children)
 //       node.children.forEach(recurse);
-//     if (!node.id) 
+//     if (!node.id)
 //       node.id = ++i;
 //     nodes.push(node);
 //   }
- 
+
 //   recurse(root);
-//   
+//
 //   return nodes;
 // }

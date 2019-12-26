@@ -4,7 +4,8 @@ class App {
   debug = false;
 
   dataFile = '/assets/js/json/data.json';
-  maxNodes = 24;
+  maxNodes = 16;
+  maxEdges = 4;
   w = 500;
   h = 500;
   bodyCharge = -50;
@@ -70,9 +71,9 @@ class App {
 
 
   /*
-   * Given a set of nodes calculate their links.
+   * Given a set of nodes calculate their edges.
    */
-  getLinks(nodes) {
+  getEdges(nodes) {
     const self = this;
 
     if ( ! nodes || nodes.length === 0 ) return [];
@@ -80,7 +81,7 @@ class App {
     // Flatten the current nodes into an array of ids.
     const currentNodeIds = nodes.map(node => node.id);
 
-    const links = [];
+    const edges = [];
     // Iterate the nodes
     nodes.forEach(node => {
       // Filter related by whether it exists in nodes.
@@ -93,11 +94,11 @@ class App {
       related.forEach(related => {
         // Source and target are indexes in the array.
         const targetId = currentNodeIds.indexOf(related);
-        links.push({source: sourceId, target: targetId});
+        edges.push({source: sourceId, target: targetId});
       })
     });
 
-    return links;
+    return edges;
   }
 
 
@@ -136,19 +137,19 @@ class App {
   startSimulation() {
     const self = this;
 
-    // Calculate all the links in self.nodes.
-    self.links = self.getLinks(self.currentNodes);
-    console.log(`Found ${self.links.length} edges.`);
+    // Calculate all the edges in self.nodes.
+    self.edges = self.getEdges(self.currentNodes);
+    console.log(`Found ${self.edges.length} edges.`);
 
     // Add the link force.
-    self.simulation.force('link', d3.forceLink().distance(self.linkDistance).links(self.links))
+    self.simulation.force('link', d3.forceLink().distance(self.linkDistance).links(self.edges))
 
     this.simulation.on('tick', () => {
       self.tick();
     });
 
     self.updateNodes();
-    self.updateLinks();
+    self.updateEdges();
   }
 
 
@@ -223,13 +224,13 @@ class App {
    * And by the simulation on each frame.
    * @TODO Separate out the creation and the tick.
    */
-  updateLinks() {
+  updateEdges() {
     const self = this;
 
     const simulation = d3.select('svg')
-      .select('g.links')
+      .select('g.edges')
       .selectAll('line')
-      .data(self.links)
+      .data(self.edges)
       ;
 
     simulation.enter()
@@ -267,7 +268,7 @@ class App {
 
     simulation.exit().remove();
 
-    self.updateLinks();
+    self.updateEdges();
   }
 
 }

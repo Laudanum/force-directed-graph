@@ -132,6 +132,18 @@ class App {
 
 
   /*
+   * Given a data point return the correct HTML.
+   */
+  getHtml(data) {
+    console.log(data);
+    let html = `<strong>${data.title}</strong>`;
+    if ( data.artist )
+      html += `<br>${data.artist}`;
+    return html;
+  }
+
+
+  /*
    * @TODO Centre the node.
    * @TODO Add more data.
    */
@@ -232,24 +244,18 @@ class App {
 
     // Labels
     item
-      .append('text')
+      .append('foreignObject')
+      .attr('width', 290)
+      .attr('height', 75)
+      .attr('class', 'label-container')
+      .append('xhtml:body')
       .attr('class', 'label')
       .attr('text-anchor', 'middle')
       .attr('x', self.textOffset.x)
       .attr('y', self.textOffset.x)
-      .text(function(d) { return d.title; })
+      .html(function(d) { return self.getHtml(d); })
       .on( 'click', self.labelEventHandler)
       .call(self.getBoundingBox)
-      ;
-
-    item
-      .insert('rect', 'text')
-      .attr('class', 'label-container')
-      .attr('width', function(d){ return d.boundingBox.width + 10 })
-      .attr('height', function(d){ return d.boundingBox.height + 5 })
-      .attr('x', function(d){ return d.boundingBox.x - 5})
-      .attr('y', function(d){return d.boundingBox.y - 2})
-      .on( 'click', self.labelEventHandler);
       ;
 
     // Behaviours

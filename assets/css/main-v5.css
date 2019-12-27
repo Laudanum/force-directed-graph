@@ -1,4 +1,4 @@
-body {
+body.top {
   /*font-family: "Source Code Pro", Consolas, monaco, monospace;*/
   font-family: Arial, Helvetica, sans-serif;
   line-height: 160%;
@@ -27,9 +27,10 @@ svg .node {
 }
 
 svg .edges line {
-  stroke: #ccd;
+  stroke: rgba(192, 192, 218, 0.25);
 }
 
+/*
 svg .node .label,
 svg .node .label-container {
   opacity: 0;
@@ -40,25 +41,48 @@ svg .node .label-container {
   fill: #ffffb9;
   stroke: #ccc;
 }
+*/
+svg foreignObject.label-container {
+  z-index: 10;
+}
+
+svg foreignObject body.label {
+  opacity: 0;
+  background-color: #ffffb9;
+  border: 1px solid #ccc;
+  padding: 5px;
+  transition: opacity .25s ease-in-out;
+}
 
 svg .node image {
   transition: all .25s ease;
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-  width: 50px;
-  height: 50px;
-  x: -25px;
-  y: -25px;
+  width: 75px;
+  height: 75px;
+  x: -35px;
+  y: -35px;
+
+  /*opacity: 0.6;*/
 }
 
-svg .node:hover image {
+/*svg .node:hover image {
   width: 70px;
   height: 70px;
   x: -35px;
   y: -35px;
+  opacity: 1;
+}
+*/
+svg .node:hover .label {
+  display: block;
+  opacity: 0.6;
 }
 
-svg .node:hover .label,
-svg .node:hover .label-container {
-  display: block;
-  opacity: 0.8;
+svg .node:hover foreignObject body.label:hover {
+  opacity: 0.9;
+}
+
+svg body {
+  margin: 0;
+  padding: 0;
 }

@@ -128,10 +128,10 @@ class App {
    * Sets a bounding box - used to draw rectangles behind text labels
    * when a node is hovered over.
    */
-  getBoundingBox(selection){
-    selection.each(function(d){
-      d.boundingBox = this.getBBox();
-    })
+  getBoundingBox(selection) {
+    selection.each(function(d) {
+      // d.boundingBox = this.getBBox();
+    });
   }
 
 

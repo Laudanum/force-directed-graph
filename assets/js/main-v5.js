@@ -65,9 +65,11 @@ class App {
    * Get up to maxNodes random nodes.
    */
   getNodes(maxNodes) {
+    const self = this;
+
     if ( ! maxNodes ) maxNodes = this.maxNodes;
     // @FIX This should be random.
-    return this.dataSet.slice(0, maxNodes);
+    return self.cull(this.dataSet, maxNodes);
   }
 
 
@@ -83,6 +85,7 @@ class App {
     const node = self.dataSet.filter(n => n.id === id);
 
     return self.dataSet.filter(n => {
+      // @TODO Cull related to 90%.
       return node[0].related.indexOf(n.id) !== -1;
     });
   }
@@ -91,7 +94,7 @@ class App {
   /*
    * Given a set of nodes calculate their edges.
    */
-  getEdges(nodes) {
+  getEdges(nodes, maxEdges) {
     const self = this;
 
     if ( ! nodes || nodes.length === 0 ) return [];
@@ -99,7 +102,7 @@ class App {
     // Flatten the current nodes into an array of ids.
     const currentNodeIds = nodes.map(node => node.id);
 
-    const edges = [];
+    let edges = [];
     // Iterate the nodes
     nodes.forEach(node => {
       // Filter related by whether it exists in nodes.
@@ -115,6 +118,7 @@ class App {
         edges.push({source: sourceId, target: targetId});
       })
     });
+    console.log(`${edges.length} edges.`);
 
     return edges;
   }
@@ -144,6 +148,22 @@ class App {
 
 
   /*
+   * Accepts an array and a max number of items.
+   * Returns a number of items randomly culled.
+   */
+  cull(items, max) {
+    const self = this;
+
+    if ( self.debug )
+      console.log(`Culling to ${max}.`);
+
+    if ( max < 1 )
+      return [];
+    return _.shuffle(items).slice(0, max);
+  }
+
+
+  /*
    * @TODO Centre the node.
    * @TODO Add more data.
    */
@@ -153,10 +173,50 @@ class App {
     if ( self.debug )
       console.log(`Node ${d.id} clicked.`);
 
-    const nodes = self.getRelatedNodes(d.id);
+    // @TODO Pin the current node to the centre.
+
+    const relatedNodes = self.getRelatedNodes(d.id);
+    let currentNodes = self.simulation.nodes();
 
     if ( self.debug )
-      console.log(nodes);
+      console.log(relatedNodes);
+
+    // Cull down (randomly) to maxNodes.
+    // This should be a function as we can use it in multiple places.
+    if ( self.debug )
+      console.log(`${currentNodes.length} nodes before culling.`);
+    currentNodes = self.cull(currentNodes, self.maxNodes - relatedNodes.length);
+    if ( self.debug )
+      console.log(`${currentNodes.length} nodes after culling.`);
+
+    // Merge related nodes with culled current nodes.
+    currentNodes = currentNodes.concat(relatedNodes);
+    console.log(`${currentNodes.length} nodes after merging.`);
+
+    // @TODO Dedupe currentNodes.
+    currentNodes = _.uniqBy(currentNodes, 'id');
+    console.log(`${self.currentNodes.length} unique nodes.`);
+
+    // Cull again
+    if ( currentNodes.length > self.maxNodes )
+      currentNodes = self.cull(currentNodes, self.maxNodes);
+
+    self.currentNodes = currentNodes;
+
+    // Recalculate edges.
+    self.edges = self.getEdges(self.currentNodes);
+    // console.log(self.edges)
+    // @TODO Cull edges.
+
+    self.simulation.nodes(self.currentNodes);
+
+    // Recreate the links force.
+    self.simulation.force('link', d3.forceLink().distance(self.linkDistance).links(self.edges))
+
+    console.log(`Simulation now has ${self.simulation.nodes().length} nodes.`);
+
+    self.updateNodes();
+    self.updateEdges();
   }
 
 

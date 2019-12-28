@@ -16,6 +16,10 @@ class App {
     x: 20,
     y: 40,
   };
+  label = {
+    width: 290,
+    height: 75,
+  };
 
 
   constructor(appName) {
@@ -131,6 +135,7 @@ class App {
   getBoundingBox(selection) {
     selection.each(function(d) {
       // d.boundingBox = this.getBBox();
+      d.boundingBox = this.getBoundingClientRect();
     });
   }
 
@@ -175,7 +180,7 @@ class App {
     // @TODO Pin the current node to the centre.
 
     let relatedNodes = self.getRelatedNodes(d.id);
-    // Cull related nodes too
+    // Cull related nodes too.
     relatedNodes = self.cull(relatedNodes, Math.round(self.maxNodes * 0.8));
     let currentNodes = self.simulation.nodes();
 
@@ -318,8 +323,14 @@ class App {
     // Labels
     item
       .append('foreignObject')
-      .attr('width', 290)
-      .attr('height', 75)
+      .attr('width', self.label.width)
+      .attr('height', (d) => {
+        if ( d.boundingBox ) {
+          console.log(d.boundingBox)
+          return d.boundingBox.height;
+        }
+        return self.label.height;
+      })
       .attr('class', 'label-container')
       .append('xhtml:body')
       .attr('class', 'label')

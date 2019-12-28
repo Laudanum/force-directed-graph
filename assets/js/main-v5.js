@@ -139,7 +139,6 @@ class App {
    * Given a data point return the correct HTML.
    */
   getHtml(data) {
-    console.log(data);
     let html = `<strong>${data.title}</strong>`;
     if ( data.artist )
       html += `<br>${data.artist}`;
@@ -175,27 +174,31 @@ class App {
 
     // @TODO Pin the current node to the centre.
 
-    const relatedNodes = self.getRelatedNodes(d.id);
+    let relatedNodes = self.getRelatedNodes(d.id);
+    // Cull related nodes too
+    relatedNodes = self.cull(relatedNodes, Math.round(self.maxNodes * 0.8));
     let currentNodes = self.simulation.nodes();
 
     if ( self.debug )
       console.log(relatedNodes);
 
     // Cull down (randomly) to maxNodes.
-    // This should be a function as we can use it in multiple places.
     if ( self.debug )
       console.log(`${currentNodes.length} nodes before culling.`);
+    // @FIX Don't cull the one we clicked.
     currentNodes = self.cull(currentNodes, self.maxNodes - relatedNodes.length);
     if ( self.debug )
       console.log(`${currentNodes.length} nodes after culling.`);
 
     // Merge related nodes with culled current nodes.
     currentNodes = currentNodes.concat(relatedNodes);
-    console.log(`${currentNodes.length} nodes after merging.`);
+    if ( self.debug )
+      console.log(`${currentNodes.length} nodes after merging.`);
 
-    // @TODO Dedupe currentNodes.
+    // Dedupe currentNodes.
     currentNodes = _.uniqBy(currentNodes, 'id');
-    console.log(`${self.currentNodes.length} unique nodes.`);
+    if ( self.debug )
+      console.log(`${self.currentNodes.length} unique nodes.`);
 
     // Cull again
     if ( currentNodes.length > self.maxNodes )
@@ -211,9 +214,14 @@ class App {
     self.simulation.nodes(self.currentNodes);
 
     // Recreate the links force.
-    self.simulation.force('link', d3.forceLink().distance(self.linkDistance).links(self.edges))
+    self.simulation
+      .force('link', d3.forceLink().distance(self.linkDistance).links(self.edges))
+      // .force('charge', d3.forceManyBody().strength(self.bodyCharge))
+      // .force('center', d3.forceCenter(this.w / 2, this.h / 2))
+      ;
 
-    console.log(`Simulation now has ${self.simulation.nodes().length} nodes.`);
+    if ( self.debug )
+      console.log(`Simulation now has ${self.simulation.nodes().length} nodes.`);
 
     self.updateNodes();
     self.updateEdges();
@@ -256,9 +264,11 @@ class App {
     console.log(`Found ${self.edges.length} edges.`);
 
     // Add the link force.
-    self.simulation.force('link', d3.forceLink().distance(self.linkDistance).links(self.edges))
+    self.simulation
+      .force('link', d3.forceLink().distance(self.linkDistance).links(self.edges))
+      ;
 
-    this.simulation.on('tick', () => {
+    self.simulation.on('tick', () => {
       self.tick();
     });
 
@@ -273,10 +283,13 @@ class App {
   updateNodes() {
     const self = this;
 
+    if ( self.debug )
+      console.log(`${self.currentNodes.length} nodes`)
+
     const simulation = d3.select('svg')
       .select('g.nodes')
       .selectAll('g.node')
-      .data(this.currentNodes)
+      .data(self.currentNodes, d => d.id)
       ;
 
     const item = simulation.enter()

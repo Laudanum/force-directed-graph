@@ -61,8 +61,7 @@ svg .node image {
   height: 75px;
   x: -35px;
   y: -35px;
-
-  /*opacity: 0.6;*/
+  opacity: 0.8;
 }
 
 /*svg .node:hover image {

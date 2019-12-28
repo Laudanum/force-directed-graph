@@ -19,6 +19,8 @@
   "homepage": "https://github.com/Laudanum/force-directed-graph#readme",
   "devDependencies": {
     "browser-sync": "^2.26.7",
-    "d3": "^5.14.2"
+    "d3": "^5.14.2",
+    "d3-force": "^2.0.1",
+    "lodash": "^4.17.15"
   }
 }

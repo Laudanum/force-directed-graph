@@ -326,7 +326,6 @@ class App {
       .attr('width', self.label.width)
       .attr('height', (d) => {
         if ( d.boundingBox ) {
-          console.log(d.boundingBox)
           return d.boundingBox.height;
         }
         return self.label.height;
@@ -360,7 +359,7 @@ class App {
     const simulation = d3.select('svg')
       .select('g.edges')
       .selectAll('line')
-      .data(self.edges)
+      .data(self.edges, d => { return `${d.source.id}-${d.target.id}`; })
       ;
 
     simulation.enter()

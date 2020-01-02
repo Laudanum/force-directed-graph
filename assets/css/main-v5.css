@@ -52,6 +52,7 @@ svg foreignObject body.label {
   border: 1px solid #ccc;
   padding: 5px;
   transition: opacity .25s ease-in-out;
+  white-space: pre-line;
 }
 
 svg .node image {

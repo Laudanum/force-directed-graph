@@ -4,7 +4,9 @@
     {
       "id": 1,
       "title": "Composition as Explanation",
-      "artist": "Gertrude Stein",
+      "artist": "Gertrude Stein\nSuggested by: Pedro Barateiro",
+      "content": "The only thing that is different from one time to another is what is seen and what is seen depends upon how everybody is doing everything…",
+      "contributor": "Suggested by: Pedro Barateiro",
       "year": "1970",
       "link": {
         "url": "http://academic.evergreen.edu/curricular/fopa/theatre/texts/stein.htm",
@@ -16,10 +18,10 @@
         "text": "Blogroll"
       },
       "badge": {
-        "url": "/assets/images/badges/blogroll.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_042-84.png"
+        "url": "/assets/images/doodles/_005-pivot.png"
       },
       "related": [
         73,
@@ -43,8 +45,9 @@
     },
     {
       "id": 8,
-      "title": "A Brief History of the State of Exception",
-      "artist": "Giorgio Agamben",
+      "title": "Giorgio Agamben",
+      "artist": "We have already seen how the state of siege had its origin in France during the Revolution...",
+      "content": "We have already seen how the state of siege had its origin in France during the Revolution...",
       "year": "2005",
       "link": {
         "url": "http://www.press.uchicago.edu/Misc/Chicago/009254.html",
@@ -56,10 +59,10 @@
         "text": "Revolutionary Reader"
       },
       "badge": {
-        "url": "/assets/images/badges/reader.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_047-loop.png"
+        "url": "/assets/images/doodles/_006-cylinder.png"
       },
       "related": [
         1,
@@ -81,8 +84,9 @@
     },
     {
       "id": 9,
-      "title": "What is a Politics of the Rights of Man?",
-      "artist": "Etienne Balibar",
+      "title": "Etienne Balibar",
+      "artist": "The point of no return had perhaps been reached by the beginning of the 1980s … with the failure of what, in a superb formula Regis Debray called “the revolution in the revolution",
+      "content": "The point of no return had perhaps been reached by the beginning of the 1980s … with the failure of what, in a superb formula Regis Debray called “the revolution in the revolution",
       "year": "1994",
       "link": {
         "url": "http://www.generation-online.org/p/fpbalibar1.htm",
@@ -94,7 +98,7 @@
         "text": "Revolutionary Reader"
       },
       "badge": {
-        "url": "/assets/images/badges/reader.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
         "url": "/assets/images/doodles/_052-square.png"
@@ -119,8 +123,9 @@
     },
     {
       "id": 13,
-      "title": "Declaration of Independence of the Democratic Republic of Vietnam",
-      "artist": "Ho Chi Minh",
+      "title": "Ho Chi Minh",
+      "artist": "All men are created equal. They are endowed by their Creator with certain inalienable rights; among these are Life, Liberty, and the pursuit of Happiness.",
+      "content": "All men are created equal. They are endowed by their Creator with certain inalienable rights; among these are Life, Liberty, and the pursuit of Happiness.",
       "year": "1945",
       "link": {
         "url": "http://historymatters.gmu.edu/d/5139/",
@@ -132,18 +137,20 @@
         "text": "Revolutionary Reader"
       },
       "badge": {
-        "url": "/assets/images/badges/reader.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_041-cylinder.png"
+        "url": "/assets/images/doodles/_004-wheel.png"
       },
       "related": [],
       "tags": []
     },
     {
       "id": 15,
-      "title": "The Politics of Aesthetics",
-      "artist": "Jacques Ranciere",
+      "title": "Jacques Ranciere",
+      "artist": "Art is not political owing to the messages and feelings that it conveys on the state of social and political issues. Nor is it political owing to the way it represents social structures, conflicts or identities. It is political by virtue of the very distance that it takes with respect to those functions...\nSelected by: Liam Gillick",
+      "content": "Art is not political owing to the messages and feelings that it conveys on the state of social and political issues. Nor is it political owing to the way it represents social structures, conflicts or identities. It is political by virtue of the very distance that it takes with respect to those functions...",
+      "contributor": "Selected by: Liam Gillick",
       "year": "2004",
       "link": {
         "url": "http://www.16beavergroup.org/mtarchive/archives/001877.php",
@@ -155,10 +162,10 @@
         "text": "Revolutionary Reader"
       },
       "badge": {
-        "url": "/assets/images/badges/reader.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_028-360.png"
+        "url": "/assets/images/doodles/_041-cylinder.png"
       },
       "related": [
         16,
@@ -189,8 +196,10 @@
     },
     {
       "id": 16,
-      "title": "The Revolution Will Not Be Televised",
-      "artist": "Gil Scott-Heron",
+      "title": "Gil Scott-Heron",
+      "artist": "You will not be able to stay at home, brother. You will not be able to plug in, turn on and cop out...\nSelected by: Tony Schwensen",
+      "content": "You will not be able to stay at home, brother. You will not be able to plug in, turn on and cop out...",
+      "contributor": "Selected by: Tony Schwensen",
       "year": "1970",
       "link": {
         "url": "http://www.gilscottheron.com/lyrevol.html",
@@ -202,10 +211,10 @@
         "text": "Revolutionary Reader"
       },
       "badge": {
-        "url": "/assets/images/badges/reader.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_011-square.png"
+        "url": "/assets/images/doodles/_014-circle.png"
       },
       "related": [
         37,
@@ -260,8 +269,9 @@
     },
     {
       "id": 17,
-      "title": "The Gutai Manifesto",
-      "artist": "Jiro Yoshihara",
+      "title": "Jiro Yoshihara",
+      "artist": "With our present awareness, the arts we have known up to now appear to us in general to be fakes fitted out with a tremendous affectation. Let us take leave of these piles of counterfeit objects on the altars, in the palaces, in the salons and the antique shops...",
+      "content": "With our present awareness, the arts we have known up to now appear to us in general to be fakes fitted out with a tremendous affectation. Let us take leave of these piles of counterfeit objects on the altars, in the palaces, in the salons and the antique shops...",
       "year": "1956",
       "link": {
         "url": "http://www.ashiya-web.or.jp/museum/10us/103education/nyumon_us/manifest_us.htm",
@@ -273,10 +283,10 @@
         "text": "Revolutionary Reader"
       },
       "badge": {
-        "url": "/assets/images/badges/reader.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_041-cylinder.png"
+        "url": "/assets/images/doodles/_045-wheel.png"
       },
       "related": [
         15,
@@ -323,8 +333,9 @@
     },
     {
       "id": 18,
-      "title": "Human Rights and its Discontents",
-      "artist": "Slavoj Zizek",
+      "title": "Slavoj Zizek",
+      "artist": "It is a well known fact that the close-the-door button in most elevators is a totally dysfunctional placebo which is placed there just to give individuals the impression that they are somehow participating, contributing to the speed of the elevator journey.",
+      "content": "It is a well known fact that the close-the-door button in most elevators is a totally dysfunctional placebo which is placed there just to give individuals the impression that they are somehow participating, contributing to the speed of the elevator journey.",
       "year": "1999",
       "link": {
         "url": "http://www.egs.edu/faculty/zizek/zizek-human-rights-and-its-discontents.html",
@@ -336,10 +347,10 @@
         "text": "Revolutionary Reader"
       },
       "badge": {
-        "url": "/assets/images/badges/reader.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_005-pivot.png"
+        "url": "/assets/images/doodles/_010-square.png"
       },
       "related": [
         15,
@@ -386,8 +397,9 @@
     },
     {
       "id": 19,
-      "title": "Too Much Democracy?",
-      "artist": "Slavoj Zizek",
+      "title": "Slavoj Zizek",
+      "artist": "\"Democracy\" is not merely the \"power of, by, and for the people,\" it is not enough just to claim that, in democracy, the will and the interests (the two in no way automatically coincide) of the large majority determine the state decisions...",
+      "content": "\"Democracy\" is not merely the \"power of, by, and for the people,\" it is not enough just to claim that, in democracy, the will and the interests (the two in no way automatically coincide) of the large majority determine the state decisions...",
       "year": "2003",
       "link": {
         "url": "http://www.makeworlds.org/node/159",
@@ -399,10 +411,10 @@
         "text": "Revolutionary Reader"
       },
       "badge": {
-        "url": "/assets/images/badges/reader.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_041-cylinder.png"
+        "url": "/assets/images/doodles/_003-bosarrow.png"
       },
       "related": [
         15,
@@ -433,8 +445,9 @@
     },
     {
       "id": 35,
-      "title": "1001 nights cast",
-      "artist": "Barbara Campbell",
+      "title": "Barbara Campbell",
+      "artist": "1001 nights cast",
+      "content": "",
       "link": {
         "url": "http://www.1001.net.au",
         "target": "_top"
@@ -445,10 +458,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_043-inout.png"
+        "url": "/assets/images/doodles/_004-wheel.png"
       },
       "related": [
         41,
@@ -476,6 +489,7 @@
     {
       "id": 37,
       "title": "UBU",
+      "content": "",
       "link": {
         "url": "http://www.ubu.com/",
         "target": "_top"
@@ -489,7 +503,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_028-360.png"
+        "url": "/assets/images/doodles/_013-oval.png"
       },
       "related": [
         43,
@@ -512,6 +526,7 @@
     {
       "id": 38,
       "title": "Wikipedia",
+      "content": "",
       "link": {
         "url": "http://www.wikipedia.org/",
         "target": "_top"
@@ -525,7 +540,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_028-360.png"
+        "url": "/assets/images/doodles/_031-wheel.png"
       },
       "related": [
         47,
@@ -540,8 +555,9 @@
     },
     {
       "id": 39,
-      "title": "Cybertribe",
-      "artist": "Jenny Fraser",
+      "title": "Jenny Fraser",
+      "artist": "Cybertribe",
+      "content": "",
       "link": {
         "url": "http://www.fineartforum.org/Gallery/cybertribe/other_apt/",
         "target": "_top"
@@ -552,10 +568,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_004-wheel.png"
+        "url": "/assets/images/doodles/_016-inout.png"
       },
       "related": [
         40,
@@ -593,6 +609,7 @@
     {
       "id": 40,
       "title": "16 Beaver Group",
+      "content": "",
       "link": {
         "url": "http://www.16beavergroup.org/",
         "target": "_top"
@@ -606,7 +623,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_008-circle.png"
+        "url": "/assets/images/doodles/_029-loop.png"
       },
       "related": [
         39,
@@ -639,8 +656,9 @@
     },
     {
       "id": 41,
-      "title": "Tunnel People",
-      "artist": "Dora Garcia",
+      "title": "Dora Garcia",
+      "artist": "Tunnel People",
+      "content": "",
       "link": {
         "url": "http://www.doragarcia.net/tunnelpeople/",
         "target": "_top"
@@ -651,10 +669,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_047-loop.png"
+        "url": "/assets/images/doodles/_036-cluster.png"
       },
       "related": [
         64,
@@ -683,8 +701,9 @@
     },
     {
       "id": 43,
-      "title": "My Own Private Alexandria",
-      "artist": "National Philistine: Paul Chan",
+      "title": "National Philistine: Paul Chan",
+      "artist": "My Own Private Alexandria",
+      "content": "http://www.nationalphilistine.com/alexandria/index.html",
       "link": {
         "url": "http://www.nationalphilistine.com/alexandria/index.html",
         "target": "_top"
@@ -695,10 +714,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_051-project.png"
+        "url": "/assets/images/doodles/_018-cross.png"
       },
       "related": [
         37,
@@ -721,6 +740,7 @@
     {
       "id": 45,
       "title": "Sarai.net",
+      "content": "",
       "link": {
         "url": "http://www.sarai.net/practices/media-forms/ectropy-index/ectropy-index",
         "target": "_top"
@@ -734,7 +754,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_045-wheel.png"
+        "url": "/assets/images/doodles/_003-bosarrow.png"
       },
       "related": [
         64,
@@ -749,6 +769,7 @@
     {
       "id": 46,
       "title": "Platform Artists Group",
+      "content": "",
       "link": {
         "url": "http://www.platform.org.au/",
         "target": "_top"
@@ -762,7 +783,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_019-square.png"
+        "url": "/assets/images/doodles/_034-oval.png"
       },
       "related": [
         39,
@@ -785,6 +806,7 @@
     {
       "id": 47,
       "title": "Stalker",
+      "content": "",
       "link": {
         "url": "http://www.stalkerlab.it/",
         "target": "_top"
@@ -798,7 +820,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_011-square.png"
+        "url": "/assets/images/doodles/_032-array.png"
       },
       "related": [
         39,
@@ -826,6 +848,7 @@
     {
       "id": 48,
       "title": "Gruppo A12",
+      "content": "",
       "link": {
         "url": "http://www.gruppoa12.org/",
         "target": "_top"
@@ -839,7 +862,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_033-inout.png"
+        "url": "/assets/images/doodles/_037-cluster.png"
       },
       "related": [],
       "tags": []
@@ -847,6 +870,7 @@
     {
       "id": 49,
       "title": "Radio Arte Mobile",
+      "content": "",
       "link": {
         "url": "http://www.radioartemobile.it/",
         "target": "_top"
@@ -860,7 +884,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_032-array.png"
+        "url": "/assets/images/doodles/_006-cylinder.png"
       },
       "related": [
         16,
@@ -880,6 +904,7 @@
     {
       "id": 50,
       "title": "Rain Artists' Initiatives Network",
+      "content": "",
       "link": {
         "url": "http://www.r-a-i-n.net/",
         "target": "_top"
@@ -893,7 +918,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_024-armiture.png"
+        "url": "/assets/images/doodles/_016-inout.png"
       },
       "related": [],
       "tags": []
@@ -901,6 +926,7 @@
     {
       "id": 51,
       "title": "Ultra-Red Collective",
+      "content": "",
       "link": {
         "url": "http://www.ultrared.org/",
         "target": "_top"
@@ -914,7 +940,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_013-oval.png"
+        "url": "/assets/images/doodles/_030-30percent.png"
       },
       "related": [],
       "tags": []
@@ -922,6 +948,7 @@
     {
       "id": 52,
       "title": "Second Life Liberation Army",
+      "content": "",
       "link": {
         "url": "http://secondlla.googlepages.com/",
         "target": "_top"
@@ -935,7 +962,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_014-circle.png"
+        "url": "/assets/images/doodles/_004-wheel.png"
       },
       "related": [
         35,
@@ -981,6 +1008,7 @@
     {
       "id": 53,
       "title": "Nomads+Residents",
+      "content": "",
       "link": {
         "url": "http://www.nomadsresidents.org/",
         "target": "_top"
@@ -994,15 +1022,16 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_052-square.png"
+        "url": "/assets/images/doodles/_004-wheel.png"
       },
       "related": [],
       "tags": []
     },
     {
       "id": 64,
-      "title": "Loud Silence",
-      "artist": "Anawana Haloba",
+      "title": "Anawana Haloba",
+      "artist": "Loud Silence",
+      "content": "[flv:/wp-content/uploads/2007/08/haloba_loud_silence.flv /wp-content/uploads/2007/08/haloba-loudsilence.jpg 480 360]",
       "year": "2005 - 2007",
       "link": {
         "url": "/record/video/64",
@@ -1013,11 +1042,9 @@
         "nicename": "video",
         "text": "New Video"
       },
-      "badge": {
-        "url": "/assets/images/badges/video.png"
-      },
+      "badge": {},
       "image": {
-        "url": "/assets/images/doodles/_017-set.png"
+        "url": "/assets/images/doodles/_052-square.png"
       },
       "related": [
         41,
@@ -1062,8 +1089,9 @@
     },
     {
       "id": 67,
-      "title": "Falta-me Espaço (Lack of Space)",
-      "artist": "Pedro Barateiro",
+      "title": "Pedro Barateiro",
+      "artist": "Falta-me Espaço (Lack of Space)",
+      "content": "[flv:/wp-content/uploads/2007/08/barateiro_lack_of_space-high.flv /wp-content/uploads/2007/08/barateiro-lackofspace1.jpg 480 360]",
       "year": "2007",
       "link": {
         "url": "/record/video/67",
@@ -1074,11 +1102,9 @@
         "nicename": "video",
         "text": "New Video"
       },
-      "badge": {
-        "url": "/assets/images/badges/video.png"
-      },
+      "badge": {},
       "image": {
-        "url": "/assets/images/doodles/_031-wheel.png"
+        "url": "/assets/images/doodles/_011-square.png"
       },
       "related": [
         41,
@@ -1116,8 +1142,10 @@
     },
     {
       "id": 68,
-      "title": "History of Architecture",
-      "artist": "Francis Alÿs",
+      "title": "Francis Alÿs",
+      "artist": "\"The happiness of the circle puts an end to the all vertical happiness of the gods who take advantage of the distance they have from the earth.\"\nSelected by: Francis Alÿs",
+      "content": "\"The happiness of the circle puts an end to the all vertical happiness of the gods who take advantage of the distance they have from the earth.\"",
+      "contributor": "Selected by: Francis Alÿs",
       "year": "1986",
       "link": {
         "url": "/record/reader/68",
@@ -1128,11 +1156,9 @@
         "nicename": "reader",
         "text": "Revolutionary Reader"
       },
-      "badge": {
-        "url": "/assets/images/badges/reader.png"
-      },
+      "badge": {},
       "image": {
-        "url": "/assets/images/doodles/_013-oval.png"
+        "url": "/assets/images/doodles/_051-project.png"
       },
       "related": [
         151,
@@ -1157,8 +1183,9 @@
     },
     {
       "id": 69,
-      "title": "Empire",
-      "artist": "Michael Hardt and Antonio Negri",
+      "title": "Michael Hardt and Antonio Negri",
+      "artist": "A cycle was constructed as news of a revolt was communicated and applied in each new context, just as in an earlier era merchant ships carried the news of slave revolt from island to island around the Caribbean, igniting a stubborn string of fire that could not be quenched.",
+      "content": "A cycle was constructed as news of a revolt was communicated and applied in each new context, just as in an earlier era merchant ships carried the news of slave revolt from island to island around the Caribbean, igniting a stubborn string of fire that could not be quenched.<!--more-->For a cycle to form, the recipients of the news must be able to “translate” the events into their own language, recognize the struggles as their own, and thus add a link to the chain. […] Rather than thinking of the struggles as relating to one another like links in a chain, it might be better to conceive of them as communication like a virus that modulates its form to find in each context an adequate host. […]\r\n\r\nIt would not be hard to map the periods of extreme intensity of these cycles. A first wave might be seen as beginning after 1848 with the political agitation of the First International, continuing in the 1880s and 1890s with the formation of socialist political and trade union organizations, and then rising to a peak after the Russian revolution of 1905 and the first international cycle of anti-imperialist struggles. A second wave arose after the Soviet revolution of 1917, which was followed by an international progression of struggles that could only be contained by fascisms on the one side and reabsorbed by the New Deal and antifascist fronts on the other. And finally there was the wave of struggles that began with the Chinese revolution and proceeding through the African and Latin American liberation struggles to the explosions of the 1960s throughout the world. These international cycles of struggles were the real motor that drove the development of the institutions of capital and that drove it in a process of reform and restructuring. Proletarian, anti-colonial, and anti-imperialist internationalism, the struggle for communism, which lived in all the most powerful insurrectional events of the nineteenth and twentieth centuries, anticipated and prefigured the processes of the globalization of capital and the formation of Empire. In this way the formation of Empire is a response to proletarian internationalism. There is nothing dialectical or teleological about this anticipation and prefiguration of capitalist development by the mass struggles. On the contrary, the struggles themselves are demonstrations of the creativity of desire, utopias of lived experience, the workings of historicity as potentiality.\r\n\r\n<code>Reprinted by permission of the publisher from EMPIRE by Michael Hardt and Antonio Negri, pp.50-52, Cambridge, Mass.: Harvard University Press, Copyright © 2000 by the President and Fellows of Harvard College.</code>",
       "year": "2000",
       "link": {
         "url": "/record/reader/69",
@@ -1169,11 +1196,9 @@
         "nicename": "reader",
         "text": "Revolutionary Reader"
       },
-      "badge": {
-        "url": "/assets/images/badges/reader.png"
-      },
+      "badge": {},
       "image": {
-        "url": "/assets/images/doodles/_050-incircle.png"
+        "url": "/assets/images/doodles/_001-inbox.png"
       },
       "related": [
         16,
@@ -1220,8 +1245,10 @@
     },
     {
       "id": 70,
-      "title": "Becomings: Explorations in Time, Memory and Futures",
-      "artist": "Elizabeth A. Grosz",
+      "title": "Elizabeth A. Grosz",
+      "artist": "Instead of the language of the new, for example, the more common political concept of revolution could be substituted. \nSelected by: Amelia Douglas <br><br> \"Grosz draws from Bergson, Deleuze etc. to think about durational models as revolutionary – that is, wholistic and fragmentary at the same time – to think against the idea of clock time, of the turning of the hands of the clock around a given point which she suggests necessarily implies a sense of false unity.\"",
+      "content": "Instead of the language of the new, for example, the more common political concept of revolution could be substituted. <!--more-->Is the concept of revolution so tied to a set of weary discourses that, within their terms, it can now mean only predictable transformation, transformation that follows a predesignated path, innovation within legitimized parameters, that is, controlled and regulated progress (whether the rule of the proletariat, the equalization of relations between the sexes, or racial integration)? Or does it involve the more disconcerting idea of unpredictable transformation – mutation, metamorphosis – upheaval in directions and arenas with implications or consequences that cannot be known in advance?\r\n\r\n<code>Reprinted from Elizabeth Grosz, <em>Becomings: Explorations in Time, Memory and Futures.</em> Copyright © 1999 by Cornell University. Used by permission of the publisher, Cornell University Press.</code>",
+      "contributor": "Selected by: Amelia Douglas <br><br> \"Grosz draws from Bergson, Deleuze etc. to think about durational models as revolutionary – that is, wholistic and fragmentary at the same time – to think against the idea of clock time, of the turning of the hands of the clock around a given point which she suggests necessarily implies a sense of false unity.\"",
       "year": "1999",
       "link": {
         "url": "/record/reader/70",
@@ -1232,11 +1259,9 @@
         "nicename": "reader",
         "text": "Revolutionary Reader"
       },
-      "badge": {
-        "url": "/assets/images/badges/reader.png"
-      },
+      "badge": {},
       "image": {
-        "url": "/assets/images/doodles/_041-cylinder.png"
+        "url": "/assets/images/doodles/_046-wheel.png"
       },
       "related": [
         15,
@@ -1299,8 +1324,10 @@
     },
     {
       "id": 71,
-      "title": "Two Regimes of Madness: Texts and Interviews, 1975-1995",
-      "artist": "Gilles Deleuze",
+      "title": "Gilles Deleuze",
+      "artist": "People tend to confuse winning freedom with conversion to capitalism.\nSelected by: Thomas Hirschorn",
+      "content": "People tend to confuse winning freedom with conversion to capitalism.<!--more-->\r\nBut they do not seem to consider the state of the global capitalist market a failure, with the harsh inequality that conditions it, the populations excluded from the market, etc. Revolutionary situations and attempts are born of capitalism itself and will not soon disappear, alas. Philosophy remains tied to a revolutionary becoming that is not to be confused with the history of revolutions.\r\n\r\n<code><em>Two Regimes of Madness </em>copyright © 2006 by Semiotext(e). Used by permission of the publisher: <a href=\"http://www.semiotexte.com/\">www.semiotexte.com</a></code>",
+      "contributor": "Selected by: Thomas Hirschorn",
       "year": "2006",
       "link": {
         "url": "/record/reader/71",
@@ -1311,11 +1338,9 @@
         "nicename": "reader",
         "text": "Revolutionary Reader"
       },
-      "badge": {
-        "url": "/assets/images/badges/reader.png"
-      },
+      "badge": {},
       "image": {
-        "url": "/assets/images/doodles/_027-spiral.png"
+        "url": "/assets/images/doodles/_008-circle.png"
       },
       "related": [
         15,
@@ -1362,8 +1387,9 @@
     },
     {
       "id": 72,
-      "title": "Revolt, She Said: What's Left of 1968?",
-      "artist": "Julia Kristeva",
+      "title": "Julia Kristeva",
+      "artist": "One word on everyone's lips in May '68 was \"contestation.\" It expresses a fundamental version of freedom: not freedom to change or to succeed, but freedom to revolt, to call things into question.",
+      "content": "One word on everyone's lips in May '68 was \"contestation.\" It expresses a fundamental version of freedom: not freedom to change or to succeed, but freedom to revolt, to call things into question.<!--more-->Thirty years on, because of technology and liberalism, we're so used to identifying freedom merely with free enterprise that this other version doesn't seem to exist; it's got to the point where the very notion of liberty is fading in people's minds and absent from their actions. Remember, liberty-as-revolt isn't just an available option, it's fundamental. Without it, neither the life of the mind nor life in society is possible. I mean \"life\" here, and not just maintenance, repetition, management. The telling moment in an individual's psychic life, as in the life of societies at large, is when you call into question laws, norms and values. You can't deplore the \"death of values\" and discount the movements that question them, as some are doing. Because it's precisely by putting things into question that \"values\" stop being frozen dividends and acquire a sense of mobility, polyvalence and life. There was no nihilism in the contestation that burned up that month of May 1968; instead it was a violent desire to rake over the norms that govern the private as well as the public, the intimate as well as the social, a desire to come up with new, perpetually contestable configurations. This desire for an exhilarating and joyful \"permanent revolution\" was perhaps just part and parcel of young people abreacting their \"second Oedipus,\" i.e. their adolescence, on the back of an obsolete State and a prurient consumer society. But by all accounts, it was sexual and cultural contestation that spearheaded events, and young people were rightly mistrustful of the political \"co-opting\" the trade unions and left-wing parties tried to impose on that \"spring,\" as well as the workers' intrinsic \"consumerism.\" It's still true, though, that the general strike and the social movement that shook up the country can be interpreted, from a distance, as the symptom of something altogether new. On the one hand it was the desire of the most disadvantaged citizens - the \"humiliated\" and the \"offended\" - to claim a dignity beyond and actually in spite of the political structures that had usually served them since the industrial revolution. On the other, this also indicated the final stage of the \"proletariat\" in the sense of a homogenous class and a certain clientele of political parties. While the process of discrediting political frameworks was going on, the \"humiliated\" and \"offended\" became aware that they were subjects who shouldn't be relegated to their status as producers in the system of production. For while keeping up their legitimate claims to better salaries and working conditions, they were also carried away by the demands of subjective freedom. This led them to ask for greater democracy, less centralization and finally, greater happiness for all. And also the right to respect, besides the right to consume. What we describe as the \"advances of democracy\" of these last thirty years includes above all the self-assurance of the poorer classes, daring to claim the same pleasures - if not the same luxuries - as the others. It's a real '68 kind of claim: \"We're realists, we want the impossible.\" Does the impossible mean happiness? The impossible and more - happiness for all.\r\n\r\nWe often forget that the impulse of the French Revolution of 1789 was a new idea, happiness for the greatest number of disadvantaged people. This wasn't like the American revolution, far more legalistic and federalist in spirit, which offered better management of the contract that rather well-off freeholders were making amongst themselves. Possibly because of my foreign origins, I'm more sensitive than most to the difference that exists between these two revolutions, and to the fact that in France there is a people which hasn't forgotten it carried out the most radical of the bourgeois revolutions. The most violent, certainly, and its consequences are still problematic, but the most grounded in the miserable reality that is still the lot of our continent. It was also linked to Christian and Rousseauistic ambitions of dignity for all. The youthful contestation of May 1968 wasn’t blind to that tradition, and its rejection of the Communist or Socialist parties didn’t make it any the less attentive to the social movement - on the contrary.\r\n\r\n<code><em>Revolt, She Said </em>copyright © 2002 by Semiotext(e). Used by permission of the publisher: <a href=\"http://www.semiotexte.com\">www.semiotexte.com</a></code>",
       "year": "2002",
       "link": {
         "url": "/record/reader/72",
@@ -1374,11 +1400,9 @@
         "nicename": "reader",
         "text": "Revolutionary Reader"
       },
-      "badge": {
-        "url": "/assets/images/badges/reader.png"
-      },
+      "badge": {},
       "image": {
-        "url": "/assets/images/doodles/_019-square.png"
+        "url": "/assets/images/doodles/_009-spiral.png"
       },
       "related": [
         70,
@@ -1427,8 +1451,9 @@
     },
     {
       "id": 73,
-      "title": "Revolt, She Said: Politics and Psychoanalysis",
-      "artist": "Julia Kristeva",
+      "title": "Julia Kristeva",
+      "artist": "In contemporary society the word revolt means very schematically political revolution. People tend to think of extreme left movements linked to the Communist revolution or to its leftist developments.",
+      "content": "In contemporary society the word revolt means very schematically political revolution. People tend to think of extreme left movements linked to the Communist revolution or to its leftist developments.<!--more-->I would like to strip the word \"revolt\" of its purely political sense. In all Western traditions, revolt is a very deep movement of discontent, anxiety and anguish. In this sense, to say that revolt is only politics is a betrayal of this vast movement. People have reduced, castrated and mutilated the concept of revolt by turning it only into politics. Therefore if we still want to conquer new horizons, it is necessary to turn away from this idea and to give the word revolt a meaning that is not just political. ? try to interpret this word in a philosophical and etymological sense. The word revolt comes from a Sanskrit root that means to discover, open, but also to turn, to return. This meaning also refers to the revolution of the earth around the sun, for example. It has an astronomical meaning, the eternal return. On a more philosophical level, since Plato, through St. Augustine and until Hegel and Nietzsche, there is a meaning that ? wanted to rehabilitate and that you would find equally rehabilitated by Freud and Proust. It is the idea that being is within us and that the truth can be acquired by a retrospective return, by anamnesis, by memory. The return to oneself leads the individual to question his truth, much like what is accomplished with philosophical dialogues, for example Plato's. Something that prayer and all forms of meditation also accomplish according to St. Augustine. ? think that Freud gave a new meaning to this retrospective return by asking psychologically troubled patients to search for memories of their traumas and to tell their stories. Why is this both different from the tradition and analogue to it? It is analogue because it is always about searching for the truth through a return to the past in the sense of Plato and St. Augustine. On the other hand it is different because Freud does not think that we can stabilize our-selves in a contemplation of God or Being. Stability is provisional. It is the conflicts that are eternal because there is pleasure in conflict. The individual, in this return to him or herself, experiences division, conflict, pleasure and jouissance in this fragmentation. This is the modern vision of psychic truth. ? think that in the automated modern world the depth of psychic life, the liberation of psychic life, the search for truth in the interrogation and the questioning are all aspects that are overlooked. We are expected to be performing entities. At best, we are asked to work well and to buy as much as possible. This whole problematic of interrogation, of the return to the self, the questioning and the conflicts that are sources of human freedom have become obliterated, rejected or even destroyed parameters. The culture that arises from this situation is a culture of entertainment rather than one of interrogation and revolt. ? would say it is an essential kind of resistance in a technocratic society to rehabilitate memory along with the questioning and to allow the conflicts of the individual to take place, thus creating a culture that would satisfy these needs.[…] The question of Nothingness is essential as an aspect of freedom. But what is the meaning of nothingness: the possibility to rebel, to change and to transform. With a computer you simply store data as such. But the idea of a transformative creativity that emerges through nothingness and through questioning are parameters that are completely dismissed.\r\n\r\n[…] Anxiety, repulsion, nothingness are essential aspects of freedom. That's what revolt is. When one abolishes revolt that is linked to anxiety and rejection, there is no reason to change. You store things and keep; storing. It's a banker's idea, not an idea of a rebel, which spreads this technocratic ideology.\r\nWhat ? am trying to say is that the meaning of revolt, which could be taken as revolution, would reduce the concept to socio-political protests. This constitutes a betrayal of revolt. […]\r\nIn my practice ? try to keep social conditions in mind, so that when someone speaks about his or her financial difficulties or political questions ? am willing to listen to these questions. But it is also true that it is not the role of psychoanalysis to prepare people for union activism or to become members of political parties, whether left or right. What concerns me essentially is to provoke people's anxieties and to free their creativity.\r\n\r\n[…] What I want to rehabilitate is the idea to revolt as permanent anxiety. Heidegger speaks of annihilating [anéantir], not of negation in the logical sense of the term, as part of a process leading to repulsion of negativity and rejection. This constitutes a fundamental anxiety which is in fact the foundation of freedom.\r\n\r\n[…] What I am saying is that one shouldn’t deny the anxiety of the unemployed, the anxiety of the adolescent, the anxiety of women, which are all integral parts of existence. […] The artist’s goal is to find the representation of this state of anxiety. It’s not a question of claiming that this does not exist or to accept living in marginality, but to represent this revolt in order to survive.\r\n\r\n<code><em>Revolt, She Said </em>copyright © 2002 by Semiotext(e). Used by permission of the publisher: <a href=\"http://www.semiotexte.com\" title=\"Semiotexte\">www.semiotexte.com</a></code>",
       "year": "2002",
       "link": {
         "url": "/record/reader/73",
@@ -1439,11 +1464,9 @@
         "nicename": "reader",
         "text": "Revolutionary Reader"
       },
-      "badge": {
-        "url": "/assets/images/badges/reader.png"
-      },
+      "badge": {},
       "image": {
-        "url": "/assets/images/doodles/_029-loop.png"
+        "url": "/assets/images/doodles/_001-inbox.png"
       },
       "related": [
         70,
@@ -1496,8 +1519,10 @@
     },
     {
       "id": 78,
-      "title": "Marathon Line/Federation Parade",
-      "artist": "Shaun Gladwell",
+      "title": "Shaun Gladwell",
+      "artist": "Marathon Line/Federation Parade\nCourtesy the Artist and Sherman Galleries, Sydney",
+      "content": "[flv:/wp-content/uploads/2007/08/marathon.flv /wp-content/uploads/2007/08/gladwell-federation.jpg 480 384]",
+      "contributor": "Courtesy the Artist and Sherman Galleries, Sydney",
       "year": "2001",
       "link": {
         "url": "/record/video/78",
@@ -1508,11 +1533,9 @@
         "nicename": "video",
         "text": "New Video"
       },
-      "badge": {
-        "url": "/assets/images/badges/video.png"
-      },
+      "badge": {},
       "image": {
-        "url": "/assets/images/doodles/_017-set.png"
+        "url": "/assets/images/doodles/_000-360.png"
       },
       "related": [
         94,
@@ -1553,6 +1576,7 @@
     {
       "id": 81,
       "title": "AHA",
+      "content": "",
       "link": {
         "url": "http://www.ecn.org",
         "target": "_top"
@@ -1566,7 +1590,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_033-inout.png"
+        "url": "/assets/images/doodles/_016-inout.png"
       },
       "related": [
         52,
@@ -1584,6 +1608,7 @@
     {
       "id": 84,
       "title": "Art Fag City",
+      "content": "",
       "link": {
         "url": "http://www.artfagcity.com",
         "target": "_top"
@@ -1597,7 +1622,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_034-oval.png"
+        "url": "/assets/images/doodles/_048-turn.png"
       },
       "related": [
         39,
@@ -1648,6 +1673,7 @@
     {
       "id": 85,
       "title": "Artheat",
+      "content": "",
       "link": {
         "url": "http://artheat.blogspot.com",
         "target": "_top"
@@ -1661,7 +1687,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_044-spiral.png"
+        "url": "/assets/images/doodles/_014-circle.png"
       },
       "related": [
         37,
@@ -1706,8 +1732,9 @@
     },
     {
       "id": 86,
-      "title": "Ubermorgen",
-      "artist": "Ubermorgen.com: Lizvlx and Hans Bernhard",
+      "title": "Ubermorgen.com: Lizvlx and Hans Bernhard",
+      "artist": "Ubermorgen",
+      "content": "",
       "link": {
         "url": "http://www.ubermorgen.com",
         "target": "_top"
@@ -1718,10 +1745,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_028-360.png"
+        "url": "/assets/images/doodles/_012-60s.png"
       },
       "related": [
         39,
@@ -1743,8 +1770,9 @@
     },
     {
       "id": 87,
-      "title": "Amazon Noir",
-      "artist": "Ubermorgen.com, Paolo Cirio and Alessandro Ludovico",
+      "title": "Ubermorgen.com, Paolo Cirio and Alessandro Ludovico",
+      "artist": "Amazon Noir",
+      "content": "<span class=\"Stil6\">\r\n</span>",
       "link": {
         "url": "http://www.amazon-noir.com",
         "target": "_top"
@@ -1755,10 +1783,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_026-globe.png"
+        "url": "/assets/images/doodles/_039-360.png"
       },
       "related": [
         39,
@@ -1815,8 +1843,9 @@
     },
     {
       "id": 88,
-      "title": "SimpleTEXT",
-      "artist": "Family Filter: Jonah Brucker-Cohen, Tim Redfern and Duncan Murphy",
+      "title": "Family Filter: Jonah Brucker-Cohen, Tim Redfern and Duncan Murphy",
+      "artist": "SimpleTEXT",
+      "content": "",
       "link": {
         "url": "http://www.simpletext.info",
         "target": "_top"
@@ -1827,10 +1856,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_038-icon.png"
+        "url": "/assets/images/doodles/_014-circle.png"
       },
       "related": [
         37,
@@ -1872,6 +1901,7 @@
     {
       "id": 89,
       "title": "Bureau De Etudes",
+      "content": "",
       "link": {
         "url": "http://bureaudetudes.free.fr",
         "target": "_top"
@@ -1885,7 +1915,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_001-inbox.png"
+        "url": "/assets/images/doodles/_043-inout.png"
       },
       "related": [
         15,
@@ -1917,6 +1947,7 @@
     {
       "id": 92,
       "title": "Constant",
+      "content": "",
       "link": {
         "url": "http://www.constantvzw.com/",
         "target": "_top"
@@ -1930,15 +1961,16 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_046-wheel.png"
+        "url": "/assets/images/doodles/_010-square.png"
       },
       "related": [],
       "tags": []
     },
     {
       "id": 93,
-      "title": "www.bendierckx.com",
-      "artist": "Ben Dierckx",
+      "title": "Ben Dierckx",
+      "artist": "www.bendierckx.com",
+      "content": "",
       "link": {
         "url": "http://www.bendierckx.com",
         "target": "_top"
@@ -1949,10 +1981,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_036-cluster.png"
+        "url": "/assets/images/doodles/_010-square.png"
       },
       "related": [
         41,
@@ -1974,6 +2006,7 @@
     {
       "id": 94,
       "title": "Evolution de l'Art",
+      "content": "",
       "link": {
         "url": "http://www.evolutiondelart.org/",
         "target": "_top"
@@ -1987,7 +2020,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_004-wheel.png"
+        "url": "/assets/images/doodles/_039-360.png"
       },
       "related": [
         39,
@@ -2037,6 +2070,7 @@
     {
       "id": 95,
       "title": "icommons.org",
+      "content": "",
       "link": {
         "url": "http://icommons.org",
         "target": "_top"
@@ -2050,7 +2084,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_016-inout.png"
+        "url": "/assets/images/doodles/_006-cylinder.png"
       },
       "related": [],
       "tags": []
@@ -2058,6 +2092,7 @@
     {
       "id": 96,
       "title": "SAarts Emerging",
+      "content": "",
       "link": {
         "url": "http://saartsemerging.org/",
         "target": "_top"
@@ -2071,7 +2106,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_024-armiture.png"
+        "url": "/assets/images/doodles/_034-oval.png"
       },
       "related": [
         15,
@@ -2102,8 +2137,9 @@
     },
     {
       "id": 97,
-      "title": "the 'sham",
-      "artist": "Lucas Ihlein",
+      "title": "Lucas Ihlein",
+      "artist": "the 'sham",
+      "content": "",
       "link": {
         "url": "http://thesham.info",
         "target": "_top"
@@ -2114,10 +2150,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_013-oval.png"
+        "url": "/assets/images/doodles/_028-360.png"
       },
       "related": [
         41,
@@ -2174,8 +2210,9 @@
     },
     {
       "id": 98,
-      "title": "Bilateral Kellerberrin",
-      "artist": "Lucas Ihlein",
+      "title": "Lucas Ihlein",
+      "artist": "Bilateral Kellerberrin",
+      "content": "",
       "link": {
         "url": "http://www.kellerberrin.com",
         "target": "_top"
@@ -2186,10 +2223,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_013-oval.png"
+        "url": "/assets/images/doodles/_014-circle.png"
       },
       "related": [
         39,
@@ -2246,6 +2283,7 @@
     {
       "id": 99,
       "title": "Its About Time",
+      "content": "",
       "link": {
         "url": "http://www.itsabouttime.com",
         "target": "_top"
@@ -2259,15 +2297,16 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_013-oval.png"
+        "url": "/assets/images/doodles/_004-wheel.png"
       },
       "related": [],
       "tags": []
     },
     {
       "id": 101,
-      "title": "Inanimate Alice",
-      "artist": "Kate Pullinger & Chris Joseph",
+      "title": "Kate Pullinger & Chris Joseph",
+      "artist": "Inanimate Alice",
+      "content": "<span class=\"bodytext\"><strong>\r\n</strong></span>",
       "link": {
         "url": "http://www.inanimatealice.com",
         "target": "_top"
@@ -2278,10 +2317,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_010-square.png"
+        "url": "/assets/images/doodles/_027-spiral.png"
       },
       "related": [
         1,
@@ -2312,8 +2351,9 @@
     },
     {
       "id": 102,
-      "title": "The Human Browser",
-      "artist": "Christophe Bruno",
+      "title": "Christophe Bruno",
+      "artist": "The Human Browser",
+      "content": "",
       "link": {
         "url": "http://www.iterature.com/human-browser",
         "target": "_top"
@@ -2324,10 +2364,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_052-square.png"
+        "url": "/assets/images/doodles/_014-circle.png"
       },
       "related": [
         35,
@@ -2361,8 +2401,9 @@
     },
     {
       "id": 103,
-      "title": "Mikro Orchestra",
-      "artist": "Maria Klonowska-Prockow",
+      "title": "Maria Klonowska-Prockow",
+      "artist": "Mikro Orchestra",
+      "content": "",
       "link": {
         "url": "http://www.mikroorchestra.com",
         "target": "_top"
@@ -2373,10 +2414,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_030-30percent.png"
+        "url": "/assets/images/doodles/_046-wheel.png"
       },
       "related": [
         16,
@@ -2440,8 +2481,9 @@
     },
     {
       "id": 105,
-      "title": "Theorie M",
-      "artist": "Caroline Delieutraz & Albertine Meunier",
+      "title": "Caroline Delieutraz & Albertine Meunier",
+      "artist": "Theorie M",
+      "content": "",
       "link": {
         "url": "http://www.theoriem.net/",
         "target": "_top"
@@ -2452,10 +2494,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_036-cluster.png"
+        "url": "/assets/images/doodles/_027-spiral.png"
       },
       "related": [
         35,
@@ -2521,8 +2563,9 @@
     },
     {
       "id": 106,
-      "title": "The Analog Color Field Computer",
-      "artist": "Gregory Shakar",
+      "title": "Gregory Shakar",
+      "artist": "The Analog Color Field Computer",
+      "content": "",
       "link": {
         "url": "http://www.moodvector.com/acfc/acfcShare.htm",
         "target": "_top"
@@ -2533,10 +2576,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_014-circle.png"
+        "url": "/assets/images/doodles/_001-inbox.png"
       },
       "related": [
         16,
@@ -2588,8 +2631,9 @@
     },
     {
       "id": 107,
-      "title": "Sensity",
-      "artist": "Stanza",
+      "title": "Stanza",
+      "artist": "Sensity",
+      "content": "",
       "link": {
         "url": "http://www.stanza.co.uk/sensity/index.html",
         "target": "_top"
@@ -2600,10 +2644,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_051-project.png"
+        "url": "/assets/images/doodles/_045-wheel.png"
       },
       "related": [
         45,
@@ -2660,8 +2704,9 @@
     },
     {
       "id": 108,
-      "title": "15 x 15",
-      "artist": "Richard Vickers",
+      "title": "Richard Vickers",
+      "artist": "15 x 15",
+      "content": "",
       "link": {
         "url": "http://www.15x15.org",
         "target": "_top"
@@ -2672,10 +2717,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_038-icon.png"
+        "url": "/assets/images/doodles/_003-bosarrow.png"
       },
       "related": [
         39,
@@ -2726,8 +2771,9 @@
     },
     {
       "id": 109,
-      "title": "Surreal Scania",
-      "artist": "Robert Willim & Anders Weberg",
+      "title": "Robert Willim & Anders Weberg",
+      "artist": "Surreal Scania",
+      "content": "",
       "link": {
         "url": "http://www.surrealscania.se/",
         "target": "_top"
@@ -2738,10 +2784,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_010-square.png"
+        "url": "/assets/images/doodles/_027-spiral.png"
       },
       "related": [
         39,
@@ -2776,8 +2822,9 @@
     },
     {
       "id": 110,
-      "title": "News Ticker, 2007",
-      "artist": "Michael Rakowitz",
+      "title": "Michael Rakowitz",
+      "artist": "News Ticker, 2007",
+      "content": "",
       "link": {
         "url": "http://www.onlinevenue.com.au/2008/artists/rakowitz/ticker/",
         "target": "_top"
@@ -2788,10 +2835,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_048-turn.png"
+        "url": "/assets/images/doodles/_040-loop.png"
       },
       "related": [
         15,
@@ -2841,8 +2888,9 @@
     },
     {
       "id": 118,
-      "title": "Lamentations",
-      "artist": "Anawana Haloba",
+      "title": "Anawana Haloba",
+      "artist": "Lamentations",
+      "content": "[flv:/wp-content/uploads/2007/08/haloba_lament.flv /wp-content/uploads/2007/08/haloba-lament.jpg 480 360]",
       "year": "2006-2007",
       "link": {
         "url": "/record/video/118",
@@ -2853,9 +2901,7 @@
         "nicename": "video",
         "text": "New Video"
       },
-      "badge": {
-        "url": "/assets/images/badges/video.png"
-      },
+      "badge": {},
       "image": {
         "url": "/assets/images/doodles/_025-inbox.png"
       },
@@ -2898,8 +2944,9 @@
     },
     {
       "id": 123,
-      "title": "Tent, quartet, bows and elbows. In collaboration with T'ang Quartet",
-      "artist": "Ana Prvacki",
+      "title": "Ana Prvacki",
+      "artist": "Tent, quartet, bows and elbows. In collaboration with T'ang Quartet",
+      "content": "[flv:/wp-content/uploads/2007/09/tqbe-mpg-300k.flv /wp-content/uploads/2007/09/prvacki-ana-tqbe-still.jpg 480 360]",
       "year": "2007",
       "link": {
         "url": "/record/video/123",
@@ -2910,11 +2957,9 @@
         "nicename": "video",
         "text": "New Video"
       },
-      "badge": {
-        "url": "/assets/images/badges/video.png"
-      },
+      "badge": {},
       "image": {
-        "url": "/assets/images/doodles/_051-project.png"
+        "url": "/assets/images/doodles/_006-cylinder.png"
       },
       "related": [
         16,
@@ -2935,8 +2980,9 @@
     },
     {
       "id": 124,
-      "title": "Eyes of Laura",
-      "artist": "Janet Cardiff",
+      "title": "Janet Cardiff",
+      "artist": "Eyes of Laura",
+      "content": "",
       "link": {
         "url": "http://www.eyesoflaura.org/",
         "target": "_top"
@@ -2947,10 +2993,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_052-square.png"
+        "url": "/assets/images/doodles/_019-square.png"
       },
       "related": [
         40,
@@ -2985,8 +3031,9 @@
     },
     {
       "id": 125,
-      "title": "Urban Generation",
-      "artist": "Stanza",
+      "title": "Stanza",
+      "artist": "Urban Generation",
+      "content": "",
       "link": {
         "url": "http://www.stanza.co.uk/urban_tapestry/",
         "target": "_top"
@@ -2997,10 +3044,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_043-inout.png"
+        "url": "/assets/images/doodles/_001-inbox.png"
       },
       "related": [
         78,
@@ -3036,8 +3083,9 @@
     },
     {
       "id": 126,
-      "title": "Shockbot Corejulio",
-      "artist": "5VOLTCORE",
+      "title": "5VOLTCORE",
+      "artist": "Shockbot Corejulio",
+      "content": "",
       "link": {
         "url": "http://www.5voltcore.com/index.html?/content/roboter.html",
         "target": "_top"
@@ -3048,10 +3096,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_041-cylinder.png"
+        "url": "/assets/images/doodles/_036-cluster.png"
       },
       "related": [
         16,
@@ -3093,8 +3141,9 @@
     },
     {
       "id": 127,
-      "title": "SquatSpace",
-      "artist": "Lucas Ihlein",
+      "title": "Lucas Ihlein",
+      "artist": "SquatSpace",
+      "content": "",
       "link": {
         "url": "http://www.squatspace.com/redfern/",
         "target": "_top"
@@ -3105,10 +3154,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_017-set.png"
+        "url": "/assets/images/doodles/_048-turn.png"
       },
       "related": [
         37,
@@ -3161,8 +3210,10 @@
     },
     {
       "id": 131,
-      "title": "Normal",
-      "artist": "Tamy Ben-Tor",
+      "title": "Tamy Ben-Tor",
+      "artist": "Normal\nCourtesy of Zach Feuer Gallery, New York",
+      "content": "[flv:/wp-content/uploads/2007/09/ben-tor-tamy-300.flv /wp-content/uploads/2007/09/ben-tor-normal-still.jpg 480 360]",
+      "contributor": "Courtesy of Zach Feuer Gallery, New York",
       "year": "2006",
       "link": {
         "url": "/record/video/131",
@@ -3173,11 +3224,9 @@
         "nicename": "video",
         "text": "New Video"
       },
-      "badge": {
-        "url": "/assets/images/badges/video.png"
-      },
+      "badge": {},
       "image": {
-        "url": "/assets/images/doodles/_028-360.png"
+        "url": "/assets/images/doodles/_010-square.png"
       },
       "related": [
         35,
@@ -3214,8 +3263,9 @@
     },
     {
       "id": 147,
-      "title": "William Street",
-      "artist": "Stuart Ringholt",
+      "title": "Stuart Ringholt",
+      "artist": "William Street",
+      "content": "[flv:/wp-content/uploads/2007/10/ringholt_wiliam_street-low.flv /wp-content/uploads/2007/10/ringholt-videostill.jpg 480 384]",
       "year": "2005",
       "link": {
         "url": "/record/video/147",
@@ -3226,11 +3276,9 @@
         "nicename": "video",
         "text": "New Video"
       },
-      "badge": {
-        "url": "/assets/images/badges/video.png"
-      },
+      "badge": {},
       "image": {
-        "url": "/assets/images/doodles/_037-cluster.png"
+        "url": "/assets/images/doodles/_052-square.png"
       },
       "related": [
         78,
@@ -3272,8 +3320,10 @@
     },
     {
       "id": 151,
-      "title": "In A Station Of The Metro (online version)",
-      "artist": "Shaun Gladwell",
+      "title": "Shaun Gladwell",
+      "artist": "In A Station Of The Metro (online version)\nCourtesy the Artist & Sherman Galleries, Sydney",
+      "content": "[flv:/wp-content/uploads/2007/10/gladwell_s_metro2.flv /wp-content/uploads/2007/10/gladwell-s-metro-still.jpg 480 384]",
+      "contributor": "Courtesy the Artist & Sherman Galleries, Sydney",
       "year": "2006-07",
       "link": {
         "url": "/record/video/151",
@@ -3284,11 +3334,9 @@
         "nicename": "video",
         "text": "New Video"
       },
-      "badge": {
-        "url": "/assets/images/badges/video.png"
-      },
+      "badge": {},
       "image": {
-        "url": "/assets/images/doodles/_047-loop.png"
+        "url": "/assets/images/doodles/_013-oval.png"
       },
       "related": [
         68,
@@ -3333,6 +3381,7 @@
       "id": 158,
       "title": "ID Mind Map",
       "artist": "Lia Perjovschi",
+      "content": "",
       "year": "1999, 2005",
       "link": {
         "url": "/record/artwork-images/158",
@@ -3343,11 +3392,9 @@
         "nicename": "artwork-images",
         "text": "Artwork Image Gallery"
       },
-      "badge": {
-        "url": "/assets/images/badges/artwork-images.png"
-      },
+      "badge": {},
       "image": {
-        "url": "/assets/images/doodles/_026-globe.png"
+        "url": "/assets/images/doodles/_042-84.png"
       },
       "related": [
         70,
@@ -3391,8 +3438,9 @@
     },
     {
       "id": 167,
-      "title": "Repeating Lenin",
-      "artist": "Slavoj Zizek",
+      "title": "Slavoj Zizek",
+      "artist": "The first public reaction to the idea of re-actualizing Lenin is, of course, an outburst of sarcastic laughter: Marx is OK, even on Wall Street, there are people who love him today - Marx the poet of commodities, who provided perfect descriptions of the capitalist dynamics, Marx of the Cultural Studies, who portrayed the alienation and reification of our daily lives -, but Lenin, no, you can't be serious...",
+      "content": "The first public reaction to the idea of re-actualizing Lenin is, of course, an outburst of sarcastic laughter: Marx is OK, even on Wall Street, there are people who love him today - Marx the poet of commodities, who provided perfect descriptions of the capitalist dynamics, Marx of the Cultural Studies, who portrayed the alienation and reification of our daily lives -, but Lenin, no, you can't be serious...",
       "year": "2001",
       "link": {
         "url": "http://www.lacan.com/replenin.htm",
@@ -3404,10 +3452,10 @@
         "text": "Revolutionary Reader"
       },
       "badge": {
-        "url": "/assets/images/badges/reader.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_009-spiral.png"
+        "url": "/assets/images/doodles/_043-inout.png"
       },
       "related": [
         35,
@@ -3442,8 +3490,9 @@
     },
     {
       "id": 168,
-      "title": "Systematically Altered Photograph: The Suburbs",
-      "artist": "Ian Burn",
+      "title": "Ian Burn",
+      "artist": "\"…imagery was reintroduced in ways which deliberately exposed its problematic status. In the 'Systematically Altered Photographs', the image was photocopied, then the copy copied and so on, for about a dozen times. The altered image was then juxtaposed with the original, with the readings drawing attention arbitrarily to certain features and details. The original image was cut from a magazine. There was no sense of creating the image, only of recreating it within a new system. The source was a promotional publication put out for overseas consumption by the Australian government…The clichéd character of the images was important.\" [Talk, Melbourne, 1988]\r\n\r\n<code>Courtesy of Avril Burn, Estate of Ian Burn. <em>Ian Burn: Minimal-Conceptual Work 1965-1970</em>, exhibition catalogue, ed. Allan Watson, Art Gallery of Western Australia, 1992, p.84. </code>",
+      "content": "\"…imagery was reintroduced in ways which deliberately exposed its problematic status. In the 'Systematically Altered Photographs', the image was photocopied, then the copy copied and so on, for about a dozen times. The altered image was then juxtaposed with the original, with the readings drawing attention arbitrarily to certain features and details. The original image was cut from a magazine. There was no sense of creating the image, only of recreating it within a new system. The source was a promotional publication put out for overseas consumption by the Australian government…The clichéd character of the images was important.\" [Talk, Melbourne, 1988]\r\n\r\n<code>Courtesy of Avril Burn, Estate of Ian Burn. <em>Ian Burn: Minimal-Conceptual Work 1965-1970</em>, exhibition catalogue, ed. Allan Watson, Art Gallery of Western Australia, 1992, p.84. </code>",
       "year": "1968",
       "link": {
         "url": "/record/reader/168",
@@ -3454,11 +3503,9 @@
         "nicename": "reader",
         "text": "Revolutionary Reader"
       },
-      "badge": {
-        "url": "/assets/images/badges/reader.png"
-      },
+      "badge": {},
       "image": {
-        "url": "/assets/images/doodles/_015-n.png"
+        "url": "/assets/images/doodles/_038-icon.png"
       },
       "related": [
         70,
@@ -3494,8 +3541,9 @@
     },
     {
       "id": 169,
-      "title": "Empire",
-      "artist": "Michael Hardt and Antonio Negri",
+      "title": "Michael Hardt and Antonio Negri",
+      "artist": "It has now become common to view the succession of economic paradigms since the Middle Ages in three distinct moments, each defined by the dominant sector of the economy…",
+      "content": "It has now become common to view the succession of economic paradigms since the Middle Ages in three distinct moments, each defined by the dominant sector of the economy…",
       "year": "2000",
       "link": {
         "url": "http://www.marxists.org/reference/subject/philosophy/works/it/negri.htm",
@@ -3507,10 +3555,10 @@
         "text": "Revolutionary Reader"
       },
       "badge": {
-        "url": "/assets/images/badges/reader.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_017-set.png"
+        "url": "/assets/images/doodles/_046-wheel.png"
       },
       "related": [
         45,
@@ -3561,6 +3609,7 @@
     {
       "id": 170,
       "title": "www.marcelduchamp.net",
+      "content": "",
       "link": {
         "url": "http://www.marcelduchamp.net/",
         "target": "_top"
@@ -3574,7 +3623,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_034-oval.png"
+        "url": "/assets/images/doodles/_009-spiral.png"
       },
       "related": [
         16,
@@ -3608,6 +3657,7 @@
     {
       "id": 171,
       "title": "Project 304",
+      "content": "",
       "link": {
         "url": "http://www.project304.org/",
         "target": "_top"
@@ -3621,7 +3671,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_051-project.png"
+        "url": "/assets/images/doodles/_012-60s.png"
       },
       "related": [
         16,
@@ -3655,6 +3705,7 @@
     {
       "id": 172,
       "title": "Multiplicity",
+      "content": "",
       "link": {
         "url": "http://www.multiplicity.it/",
         "target": "_top"
@@ -3668,7 +3719,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_003-bosarrow.png"
+        "url": "/assets/images/doodles/_048-turn.png"
       },
       "related": [
         16,
@@ -3703,6 +3754,7 @@
       "id": 173,
       "title": "Saburo\tMurakami",
       "artist": "SaburoMurakami",
+      "content": "",
       "link": {
         "url": "http://www.youtube.com/watch?v=EWctXXGeJMA",
         "target": "_top"
@@ -3716,7 +3768,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_034-oval.png"
+        "url": "/assets/images/doodles/_033-inout.png"
       },
       "related": [
         70,
@@ -3766,6 +3818,7 @@
     {
       "id": 174,
       "title": "Saburo Murakami",
+      "content": "",
       "link": {
         "url": "http://www.youtube.com/watch?v=SNqexv5mRvQ",
         "target": "_top"
@@ -3779,7 +3832,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_033-inout.png"
+        "url": "/assets/images/doodles/_027-spiral.png"
       },
       "related": [
         16,
@@ -3823,6 +3876,7 @@
     {
       "id": 175,
       "title": "Nettime",
+      "content": "",
       "link": {
         "url": "http://www.nettime.org/",
         "target": "_top"
@@ -3836,7 +3890,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_018-cross.png"
+        "url": "/assets/images/doodles/_025-inbox.png"
       },
       "related": [
         16,
@@ -3870,6 +3924,7 @@
     {
       "id": 176,
       "title": "Rhizome",
+      "content": "",
       "link": {
         "url": "http://www.rhizome.org/",
         "target": "_top"
@@ -3883,7 +3938,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_016-inout.png"
+        "url": "/assets/images/doodles/_020-array.png"
       },
       "related": [
         16,
@@ -3917,6 +3972,7 @@
     {
       "id": 177,
       "title": "The Artists Village",
+      "content": "",
       "link": {
         "url": "http://tav.org.sg/",
         "target": "_top"
@@ -3930,7 +3986,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_031-wheel.png"
+        "url": "/assets/images/doodles/_039-360.png"
       },
       "related": [
         16,
@@ -3964,6 +4020,7 @@
     {
       "id": 178,
       "title": "The Meatrix",
+      "content": "",
       "link": {
         "url": "http://www.themeatrix.com/inside/",
         "target": "_top"
@@ -3977,7 +4034,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_009-spiral.png"
+        "url": "/assets/images/doodles/_016-inout.png"
       },
       "related": [
         16,
@@ -4011,6 +4068,7 @@
     {
       "id": 179,
       "title": "www.googlewhack.com",
+      "content": "",
       "link": {
         "url": "http://www.googlewhack.com",
         "target": "_top"
@@ -4024,7 +4082,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_051-project.png"
+        "url": "/assets/images/doodles/_005-pivot.png"
       },
       "related": [
         16,
@@ -4058,6 +4116,7 @@
     {
       "id": 180,
       "title": "www.neural.it",
+      "content": "",
       "link": {
         "url": "http://www.neural.it/",
         "target": "_top"
@@ -4071,7 +4130,7 @@
         "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_011-square.png"
+        "url": "/assets/images/doodles/_003-bosarrow.png"
       },
       "related": [
         16,
@@ -4104,8 +4163,9 @@
     },
     {
       "id": 181,
-      "title": "Scheme 23A, 2007",
-      "artist": "Michael Rakowitz",
+      "title": "Michael Rakowitz",
+      "artist": "Scheme 23A, 2007",
+      "content": "",
       "link": {
         "url": "http://www.onlinevenue.com.au/2008/artists/rakowitz/audio/scheme23a.html",
         "target": "_top"
@@ -4116,10 +4176,10 @@
         "text": "Artwork External"
       },
       "badge": {
-        "url": "/assets/images/badges/artwork-ext.png"
+        "url": "/assets/images/badges/link.png"
       },
       "image": {
-        "url": "/assets/images/doodles/_001-inbox.png"
+        "url": "/assets/images/doodles/_006-cylinder.png"
       },
       "related": [
         16,
@@ -4175,8 +4235,9 @@
     },
     {
       "id": 187,
-      "title": "About 20 minutes (intermission)",
-      "artist": "Steve Van den Bosch",
+      "title": "Steve Van den Bosch",
+      "artist": "About 20 minutes (intermission)",
+      "content": "[flv:/wp-content/uploads/2007/10/vandenbosch-low.flv /wp-content/uploads/2007/10/van-den-bosch-still.png 480 360]",
       "year": "2004",
       "link": {
         "url": "/record/video/187",
@@ -4187,19 +4248,18 @@
         "nicename": "video",
         "text": "New Video"
       },
-      "badge": {
-        "url": "/assets/images/badges/video.png"
-      },
+      "badge": {},
       "image": {
-        "url": "/assets/images/doodles/_015-n.png"
+        "url": "/assets/images/doodles/_033-inout.png"
       },
       "related": [],
       "tags": []
     },
     {
       "id": 189,
-      "title": "Old Man Going up and Down a Staircase",
-      "artist": "Vibeke Tandberg",
+      "title": "Vibeke Tandberg",
+      "artist": "Old Man Going up and Down a Staircase",
+      "content": "[flv:/wp-content/uploads/2007/10/oldmanwalking.flv /wp-content/uploads/2007/10/tandberg-oldmanstill.png 480 360]",
       "year": "2003",
       "link": {
         "url": "/record/video/189",
@@ -4210,11 +4270,9 @@
         "nicename": "video",
         "text": "New Video"
       },
-      "badge": {
-        "url": "/assets/images/badges/video.png"
-      },
+      "badge": {},
       "image": {
-        "url": "/assets/images/doodles/_015-n.png"
+        "url": "/assets/images/doodles/_031-wheel.png"
       },
       "related": [
         181,
@@ -4241,7 +4299,9 @@
     {
       "id": 191,
       "title": "Drawings",
-      "artist": "Dan Perjovschi",
+      "artist": "Dan Perjovschi\nCourtesy the artist and Gregor Podnar Gallery Berlin, Lombard Freid Projects New York & Galeria Helga de Alvear Madrid.",
+      "content": "",
+      "contributor": "Courtesy the artist and Gregor Podnar Gallery Berlin, Lombard Freid Projects New York & Galeria Helga de Alvear Madrid.",
       "year": "2003-2007",
       "link": {
         "url": "/record/artwork-images/191",
@@ -4252,11 +4312,9 @@
         "nicename": "artwork-images",
         "text": "Artwork Image Gallery"
       },
-      "badge": {
-        "url": "/assets/images/badges/artwork-images.png"
-      },
+      "badge": {},
       "image": {
-        "url": "/assets/images/doodles/_008-circle.png"
+        "url": "/assets/images/doodles/_030-30percent.png"
       },
       "related": [
         68,

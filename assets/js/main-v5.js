@@ -90,7 +90,6 @@ class App {
     const node = self.dataSet.filter(n => n.id === id);
 
     return self.dataSet.filter(n => {
-      // @TODO Cull related to 90%.
       return node[0].related.indexOf(n.id) !== -1;
     });
   }
@@ -187,6 +186,14 @@ class App {
 
     if ( self.debug )
       console.log(relatedNodes);
+
+    // Set each node to the centre of the simulation.
+    relatedNodes.forEach(node => {
+      if ( node.x === undefined ) {
+        node.x = self.w/2;
+        node.y = self.h/2;
+      }
+    })
 
     // Cull down (randomly) to maxNodes.
     if ( self.debug )

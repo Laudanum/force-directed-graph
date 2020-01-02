@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "browser-sync start --server './' --files './**/*' --watch --index 'index.html' --startPath '/index.html'",
+    "serve": "browser-sync start --server './' --files './**/*' --watch --index 'index-v5.html' --startPath '/index.html'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

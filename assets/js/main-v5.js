@@ -6,6 +6,7 @@ class App {
   dataFile = '/assets/js/json/data.json';
   maxNodes = 16;
   maxEdges = 4;
+  relatedNodesRatio =  0.6;
   w = 500;
   h = 500;
   bodyCharge = -50;
@@ -181,7 +182,7 @@ class App {
 
     let relatedNodes = self.getRelatedNodes(d.id);
     // Cull related nodes too.
-    relatedNodes = self.cull(relatedNodes, Math.round(self.maxNodes * 0.8));
+    relatedNodes = self.cull(relatedNodes, Math.round(self.maxNodes * self.relatedNodesRatio));
     let currentNodes = self.simulation.nodes();
 
     if ( self.debug )
@@ -230,6 +231,18 @@ class App {
 
     self.updateNodes();
     self.updateEdges();
+
+    // If alpha was zero restart as well.
+    if ( self.simulation.alpha() > self.simulation.alphaTarget() ) {
+      self.simulation.alpha(0.5);
+      // self.simulation.alphaTarget(0.01);
+      self.simulation.restart();
+    }
+    // Update alpha which will restart tick() https://github.com/d3/d3-force/issues/97
+    // self.simulation.alpha(self.simulation.alpha() * 1.5);
+    // self.simulation.alpha(1);
+    // else
+      // self.simulation.alphaTarget(0.2);
   }
 
 
@@ -301,7 +314,6 @@ class App {
       .append('svg:g')
       .attr('class', 'node')
       .on('click', e => self.nodeEventHandler(e))
-      .merge(simulation)
       ;
 
     // Circles
@@ -341,8 +353,8 @@ class App {
       .call(self.getBoundingBox)
       ;
 
-    // Behaviours
-    // @TODO
+    // Join to the simulation.
+    item.merge(simulation)
 
     simulation.exit().remove();
   }
@@ -388,10 +400,12 @@ class App {
    */
   tick() {
     const self = this;
+    if ( self.debug )
+      console.log(self.simulation.alpha())
 
     const simulation = d3.select('svg')
       .selectAll('g.node')
-      .attr('transform', function(d) {
+      .attr('transform', d => {
         return `translate(${d.x}, ${d.y})`;
       })
       ;

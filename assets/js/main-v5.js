@@ -74,7 +74,7 @@ class App {
     const self = this;
 
     if ( ! maxNodes ) maxNodes = this.maxNodes;
-    // @FIX This should be random.
+
     return self.cull(this.dataSet, maxNodes);
   }
 
@@ -210,6 +210,7 @@ class App {
         if ( self.debug ) {
           console.log(`Centring of ${node.id} has stopped.`);
         }
+        self.tick();
         return false;
       }
       // Animating the node towards the center
@@ -228,16 +229,18 @@ class App {
       if ( Math.abs(dx) > alphaTarget || Math.abs(dy) > alphaTarget ) {
         window.requestAnimationFrame(stepCentreNode);
       } else {
-        // This causes the jump
         // Animation complete
         node.x = targetX;
         node.y = targetY;
         node.px = node.x;
         node.py = node.y;
 
+        self.pinned = null;
+
         if ( self.debug )
           console.log(`Centre of ${node.id} has been achieved.`)
       }
+      self.tick();
     }
 
     window.requestAnimationFrame(stepCentreNode);
@@ -452,7 +455,6 @@ class App {
   /*
    * Called when the data changes.
    * And by the simulation on each frame.
-   * @TODO Separate out the creation and the tick.
    */
   updateEdges() {
     const self = this;

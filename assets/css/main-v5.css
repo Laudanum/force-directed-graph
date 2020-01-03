@@ -64,9 +64,17 @@ svg .node image {
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
   width: 75px;
   height: 75px;
-  x: -35px;
-  y: -35px;
-  opacity: 0.8;
+  x: -38px;
+  y: -38px;
+  opacity: 0.6;
+}
+
+svg .node-pinned image {
+  opacity: 0.9;
+  width: 100px;
+  height: 100px;
+  x: -50px;
+  y: -50px;
 }
 
 /*svg .node:hover image {
@@ -77,6 +85,7 @@ svg .node image {
   opacity: 1;
 }
 */
+svg .node-pinned foreignObject body.label,
 svg .node:hover .label {
   display: block;
   opacity: 0.6;

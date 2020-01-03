@@ -160,17 +160,34 @@ class App {
 
   /*
    * Accepts an array and a max number of items.
+   * Optionally it also accepts a item to preserve.
    * Returns a number of items randomly culled.
    */
-  cull(items, max) {
+  cull(items, max, preserve) {
     const self = this;
+    let preserved;
 
     if ( self.debug )
       console.log(`Culling to ${max}.`);
 
-    if ( max < 1 )
+    if ( preserve ) {
+      preserved = _.find(items, item => item.id === preserve.id);
+      items = _.filter(items, item => item.id !== preserve.id);
+    }
+
+    if ( max < 1 ) {
+      if ( preserved )
+        return [preserved];
       return [];
-    return _.shuffle(items).slice(0, max);
+    }
+
+    items = _.shuffle(items).slice(0, max);
+
+    if ( preserved )
+      items.push(preserved);
+
+    return items;
+
   }
 
 
@@ -283,7 +300,7 @@ class App {
     if ( self.debug )
       console.log(`${currentNodes.length} nodes before culling.`);
     // @FIX Don't cull the one we clicked.
-    currentNodes = self.cull(currentNodes, self.maxNodes - relatedNodes.length);
+    currentNodes = self.cull(currentNodes, self.maxNodes - relatedNodes.length, d);
     if ( self.debug )
       console.log(`${currentNodes.length} nodes after culling.`);
 
@@ -299,7 +316,7 @@ class App {
 
     // Cull again
     if ( currentNodes.length > self.maxNodes )
-      currentNodes = self.cull(currentNodes, self.maxNodes);
+      currentNodes = self.cull(currentNodes, self.maxNodes, d);
 
     self.currentNodes = currentNodes;
 

@@ -16,6 +16,10 @@ svg {
 }
 
 svg circle {
+  fill: #00f;
+}
+
+svg .node-pinned circle {
   fill: #f00;
 }
 

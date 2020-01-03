@@ -175,8 +175,80 @@ class App {
 
 
   /*
-   * @TODO Centre the node.
-   * @TODO Add more data.
+   * Move this node to the centre of the simulation.
+   */
+  centreNodeImmediately(node) {
+    const self = this;
+
+    node.fx = self.w/2;
+    node.fy = self.h/2;
+
+    return;
+  }
+
+
+  /*
+   * Animate this node to the centre of the simulation.
+   */
+  centreNode(node) {
+    const self = this;
+
+    // Animating the node to the center
+    const targetX = self.w / 2,
+        targetY = self.h / 2,
+        alpha = 16,
+        alphaTarget = 0.1
+        ;
+    let
+        dx,
+        dy;
+
+    // RequestAnimationFrame event-handler
+    function stepCentreNode(timestamp) {
+      // Cancel the centring if our pinned node has changed.
+      if ( self.pinned !== node.id ) {
+        if ( self.debug ) {
+          console.log(`Centring of ${node.id} has stopped.`);
+        }
+        return false;
+      }
+      // Animating the node towards the center
+      dx = targetX - node.x,
+      dy = targetY - node.y;
+      // @FIX Use the simulations alpha
+      node.x += dx / alpha;
+      node.y += dy / alpha;
+      node.px = node.x;
+      node.py = node.y;
+
+      // Only animate until the distance from target is greater than
+      // the alpha target.
+      // @FIX Use the simulations alpha target
+      const alphaTarget = 0.1;
+      if ( Math.abs(dx) > alphaTarget || Math.abs(dy) > alphaTarget ) {
+        window.requestAnimationFrame(stepCentreNode);
+      } else {
+        // This causes the jump
+        // Animation complete
+        node.x = targetX;
+        node.y = targetY;
+        node.px = node.x;
+        node.py = node.y;
+
+        if ( self.debug )
+          console.log(`Centre of ${node.id} has been achieved.`)
+      }
+    }
+
+    window.requestAnimationFrame(stepCentreNode);
+  }
+
+
+  /*
+   * Pin the clicked node to the center of the simulation.
+   * Get more nodes related to the clicked node.
+   * Recalculate edges.
+   * Update the simulation.
    */
   nodeEventHandler(d) {
     const self = this;
@@ -184,7 +256,9 @@ class App {
     if ( self.debug )
       console.log(`Node ${d.id} clicked.`);
 
-    // @TODO Pin the current node to the centre.
+    // Pin the current node to the centre.
+    self.pinned = d.id;
+    self.centreNode(d);
 
     let relatedNodes = self.getRelatedNodes(d.id);
     // Cull related nodes too.
@@ -317,7 +391,7 @@ class App {
     const self = this;
 
     if ( self.debug )
-      console.log(`${self.currentNodes.length} nodes`)
+      console.log(`${self.currentNodes.length} nodes.`);
 
     const simulation = d3.select('svg')
       .select('g.nodes')
@@ -328,7 +402,7 @@ class App {
     const item = simulation.enter()
       .append('svg:g')
       .attr('class', 'node')
-      .on('click', e => self.nodeEventHandler(e))
+      .on('click', d => self.nodeEventHandler(d))
       ;
 
     // Circles
@@ -415,11 +489,16 @@ class App {
    */
   tick() {
     const self = this;
-    if ( self.debug )
-      console.log(self.simulation.alpha())
 
     const simulation = d3.select('svg')
       .selectAll('g.node')
+      .attr('class', d => {
+        // @FIX Why can't we do this once, elsewhere?
+        if ( d.id === self.pinned ) {
+          return 'node node-pinned';
+        }
+        return 'node';
+      })
       .attr('transform', d => {
         return `translate(${d.x}, ${d.y})`;
       })

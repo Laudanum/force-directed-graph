@@ -4,8 +4,9 @@ class App {
   debug = false;
 
   dataFile = '/assets/js/json/data.json';
-  maxNodes = 16;
-  maxEdges = 4;
+  maxNodes = 12;
+  maxEdgesPerNode = 3;
+  maxEdges = this.maxEdgesPerNode * this.maxNodes;
   relatedNodesRatio =  0.6;
   w = 500;
   h = 500;
@@ -98,7 +99,7 @@ class App {
   /*
    * Given a set of nodes calculate their edges.
    */
-  getEdges(nodes, maxEdges) {
+  getEdges(nodes, maxEdgesPerNode) {
     const self = this;
 
     if ( ! nodes || nodes.length === 0 ) return [];
@@ -110,9 +111,14 @@ class App {
     // Iterate the nodes
     nodes.forEach(node => {
       // Filter related by whether it exists in nodes.
-      const related = node.related.filter(r => {
+      let related = node.related.filter(r => {
         return currentNodeIds.indexOf(r) > -1;
       })
+
+      // Reduce the number of edges for any given node.
+      // Note this is the only place where a `get` does a `cull` but I can't
+      // think of a better place to do this.
+      related = self.cull(related, maxEdgesPerNode);
 
       // Iterate each related.
       const sourceId = currentNodeIds.indexOf(node.id);
@@ -122,7 +128,8 @@ class App {
         edges.push({source: sourceId, target: targetId});
       })
     });
-    console.log(`${edges.length} edges.`);
+    if ( self.debug )
+      console.log(`${edges.length} edges.`);
 
     return edges;
   }
@@ -220,9 +227,8 @@ class App {
     self.currentNodes = currentNodes;
 
     // Recalculate edges.
-    self.edges = self.getEdges(self.currentNodes);
-    // console.log(self.edges)
-    // @TODO Cull edges.
+    self.edges = self.getEdges(self.currentNodes, self.maxEdgesPerNode);
+    self.edges = self.cull(self.edges, self.maxEdges);
 
     self.simulation.nodes(self.currentNodes);
 
@@ -285,8 +291,10 @@ class App {
     const self = this;
 
     // Calculate all the edges in self.nodes.
-    self.edges = self.getEdges(self.currentNodes);
-    console.log(`Found ${self.edges.length} edges.`);
+    self.edges = self.getEdges(self.currentNodes, self.maxEdgesPerNode);
+    self.edges = self.cull(self.edges, self.maxEdges);
+    if ( self.debug )
+      console.log(`Found ${self.edges.length} edges.`);
 
     // Add the link force.
     self.simulation

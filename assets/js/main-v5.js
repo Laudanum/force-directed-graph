@@ -6,7 +6,7 @@ class App {
   dataFile = '/assets/js/json/data.json';
   maxNodes = 12;
   maxEdgesPerNode = 3;
-  maxEdges = this.maxEdgesPerNode * this.maxNodes;
+  maxEdges = Math.round(this.maxEdgesPerNode * this.maxNodes * 0.8);
   relatedNodesRatio =  0.6;
   w = 500;
   h = 500;
@@ -253,11 +253,11 @@ class App {
         node.py = node.y;
 
         self.pinned = null;
+        self.tick();
 
         if ( self.debug )
           console.log(`Centre of ${node.id} has been achieved.`)
       }
-      self.tick();
     }
 
     window.requestAnimationFrame(stepCentreNode);

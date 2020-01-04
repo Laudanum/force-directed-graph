@@ -1,5 +1,26 @@
 'use strict';
 
+/*
+ * @TODO
+ * - [ ] Resize with the window
+ * - [ ] Mobile version
+ *      - [ ] Test touches
+ *      - [ ] Remove hovers
+ *      - [ ] Show some labels
+ * - [ ] Fix settings for each force
+ * - [ ] Enable collision detection
+ * - [ ] Integrate static pages
+ * - [ ] Add menu
+ * - [ ] Fix label sizes so they don't grab focus
+ * - [ ] Fix label hovers
+ * - [ ] Fix z-indexes
+ * - [ ] Compare with Flash version
+ * - [ ] Add badges
+ * - [ ] Add night-mode
+ * - [v] Convert CSS to SASS
+ */
+
+
 class App {
   debug = false;
 

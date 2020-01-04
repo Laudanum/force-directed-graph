@@ -10,10 +10,11 @@
  * - [ ] Fix settings for each force
  * - [ ] Enable collision detection
  * - [ ] Integrate static pages
+ * - [ ] Repair video player
  * - [ ] Add menu
- * - [ ] Fix label sizes so they don't grab focus
- * - [ ] Fix label hovers
- * - [ ] Fix z-indexes
+ * - [v] Fix label sizes so they don't grab focus
+ * - [x] Fix label hovers
+ * - [x] Fix z-indexes
  * - [ ] Compare with Flash version
  * - [ ] Add badges
  * - [ ] Add night-mode
@@ -51,7 +52,7 @@ class App {
     this.dataSet = null;
 
     // Measure the window.
-    this.updateStageSize()
+    this.updateStageSize();
 
     this.loadData()
       .then(dataSet => {
@@ -429,7 +430,16 @@ class App {
           self.simulation.alpha(0.5);
           self.simulation.restart();
         }
-      });
+      })
+      .on("keyup", () => {
+        // d is for debug.
+        if ( d3.event.keyCode === 68 ) {
+          self.debug = ! self.debug;
+          d3.selectAll("svg").classed("debug", self.debug);
+        }
+
+      })
+      ;
 
     console.log(`Simulation initialised.`);
   }
@@ -501,13 +511,6 @@ class App {
     // Labels
     item
       .append('foreignObject')
-      .attr('width', self.label.width)
-      .attr('height', (d) => {
-        if ( d.boundingBox ) {
-          return d.boundingBox.height;
-        }
-        return self.label.height;
-      })
       .attr('class', 'label-container')
       .append('xhtml:body')
       .attr('class', 'label')

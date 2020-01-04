@@ -1,6 +1,15 @@
 // Variables
 $node-size: 75px;
-$node-size-pinned: $node-size * 4/3;
+$node-size-pinned: $node-size * 4 / 3;
+$label-width: 270px;
+
+@mixin debug($colour) {
+  outline: 1px dashed $colour;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 body.top {
   font-family: Arial, Helvetica, sans-serif;
@@ -49,12 +58,19 @@ svg {
   }
   */
   foreignObject {
-    .label-container {
+    &.label-container {
       z-index: 10;
+      pointer-events: none;
+      position: absolute;
+      width: $label-width;
+      height: $label-width * 2;
     }
 
     body.label {
+      pointer-events: auto;
+      position: absolute;
       opacity: 0;
+      display: none;
       background-color: #ffffb9;
       border: 1px solid #ccc;
       padding: 5px;
@@ -64,22 +80,26 @@ svg {
   }
 
   .node {
+    width: $node-size;
+    height: $node-size;
+
     image {
       transition: all .25s ease;
       transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
       width: $node-size;
       height: $node-size;
-      x: -$node-size/2;
-      y: -$node-size/2
+      x: -$node-size / 2;
+      y: -$node-size / 2;
       opacity: 0.6;
+      position: absolute;
     }
 
     &.node-pinned image {
       opacity: 0.9;
       width: $node-size-pinned;
       height: $node-size-pinned;
-      x: -$node-size-pinned/2;
-      y: -$node-size-pinned/2;
+      x: -$node-size-pinned / 2;
+      y: -$node-size-pinned / 2;
     }
 
     &.node-pinned foreignObject body.label,
@@ -96,5 +116,29 @@ svg {
   body {
     margin: 0;
     padding: 0;
+  }
+
+  &.debug {
+    @include debug(red);
+
+    .node {
+      @include debug(orange);
+
+      image {
+        @include debug(green);
+      }
+
+      foreignObject {
+        @include debug(purple);
+
+        .label-container {
+          @include debug(violet);
+
+          .label {
+            @include debug(pink);
+          }
+        }
+      }
+    }
   }
 }

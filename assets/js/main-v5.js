@@ -2,7 +2,7 @@
 
 /*
  * @TODO
- * - [ ] Resize with the window
+ * - [v] Resize with the window
  * - [ ] Mobile version
  *      - [ ] Test touches
  *      - [ ] Remove hovers
@@ -18,6 +18,8 @@
  * - [ ] Add badges
  * - [ ] Add night-mode
  * - [v] Convert CSS to SASS
+ * - [ ] Add self.log() fn
+ * - [ ] Support other browsers
  */
 
 
@@ -49,8 +51,7 @@ class App {
     this.dataSet = null;
 
     // Measure the window.
-    this.w = document.getElementsByTagName('svg')[0].clientWidth;
-    this.h = document.getElementsByTagName('svg')[0].clientHeight;
+    this.updateStageSize()
 
     this.loadData()
       .then(dataSet => {
@@ -65,6 +66,7 @@ class App {
         this.initialiseSimulation(nodes);
         this.startSimulation();
       })
+      ;
   }
 
 
@@ -232,8 +234,7 @@ class App {
     const self = this;
 
     // Animating the node to the center
-    const targetX = self.w / 2,
-        targetY = self.h / 2,
+    const
         alpha = 16,
         alphaTarget = 0.1
         ;
@@ -243,6 +244,9 @@ class App {
 
     // RequestAnimationFrame event-handler
     function stepCentreNode(timestamp) {
+      const targetX = self.w / 2,
+        targetY = self.h / 2;
+
       // Cancel the centring if our pinned node has changed.
       if ( self.pinned !== node.id ) {
         if ( self.debug ) {
@@ -282,6 +286,21 @@ class App {
     }
 
     window.requestAnimationFrame(stepCentreNode);
+  }
+
+
+  /*
+   * Set the w and h variables.
+   */
+  updateStageSize() {
+    const self = this;
+
+    const simulation = d3.select('#simulation > svg');
+
+    self.w = simulation.node().getBoundingClientRect().width;
+    self.h = simulation.node().getBoundingClientRect().height;
+    simulation.attr("width", self.w);
+    simulation.attr("height", self.h);
   }
 
 
@@ -351,7 +370,7 @@ class App {
     self.simulation
       .force('link', d3.forceLink().distance(self.linkDistance).links(self.edges))
       // .force('charge', d3.forceManyBody().strength(self.bodyCharge))
-      // .force('center', d3.forceCenter(this.w / 2, this.h / 2))
+      .force('center', d3.forceCenter(this.w / 2, this.h / 2))
       ;
 
     if ( self.debug )
@@ -394,6 +413,23 @@ class App {
     self.simulation = d3.forceSimulation(nodes)
       .force('charge', d3.forceManyBody().strength(self.bodyCharge))
       .force('center', d3.forceCenter(this.w / 2, this.h / 2))
+
+
+    d3.select(window)
+      .on("resize", () => {
+        self.updateStageSize();
+
+        // Recentre
+        self.simulation
+          .force('center', d3.forceCenter(this.w / 2, this.h / 2))
+          ;
+
+        // If the simulation has stopped; reheat.
+        if ( self.simulation.alpha() > self.simulation.alphaTarget() ) {
+          self.simulation.alpha(0.5);
+          self.simulation.restart();
+        }
+      });
 
     console.log(`Simulation initialised.`);
   }

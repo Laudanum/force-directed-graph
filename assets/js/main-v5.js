@@ -3,24 +3,27 @@
 /*
  * @TODO
  * - [v] Resize with the window
+ * - [ ] Use fx for pinning https://stackoverflow.com/questions/10392505/fix-node-position-in-d3-force-directed-layout/44644069
  * - [ ] Mobile version
  *      - [ ] Test touches
- *      - [ ] Remove hovers
- *      - [ ] Show some labels
+ *      - [v] Remove hovers
+ *      - [v] Show some labels
  * - [ ] Fix settings for each force
  * - [ ] Enable collision detection
  * - [ ] Integrate static pages
  * - [ ] Repair video player
  * - [ ] Add menu
  * - [v] Fix label sizes so they don't grab focus
- * - [x] Fix label hovers
- * - [x] Fix z-indexes
+ * - [-] Fix label hovers
+ * - [-] Fix z-indexes
  * - [ ] Compare with Flash version
  * - [ ] Add badges
  * - [ ] Add night-mode
  * - [v] Convert CSS to SASS
+ * - [ ] Roll up JS
  * - [ ] Add self.log() fn
  * - [ ] Support other browsers
+ * - [ ] Autoplay (randomly pick a node every time and again).
  */
 
 
@@ -291,6 +294,22 @@ class App {
 
 
   /*
+   * Find the node closes to the centre and mark it pinned (even if it isn't).
+   * Could use voronoi but I don't understand the performance cost.
+   */
+  setCentreNode() {
+    const self = this;
+
+    const centreNode = self.simulation.find(self.w/2, self.h/2, 100);
+    if ( centreNode ) {
+      if ( self.debug )
+        console.log(`Find found node ${centreNode.id}`);
+      self.centre = centreNode.id;
+    }
+  }
+
+
+  /*
    * Set the w and h variables.
    */
   updateStageSize() {
@@ -302,6 +321,16 @@ class App {
     self.h = simulation.node().getBoundingClientRect().height;
     simulation.attr("width", self.w);
     simulation.attr("height", self.h);
+  }
+
+
+  /*
+   * Detect a touchscreen.
+   */
+  isTouchEnabled() {
+    return ( 'ontouchstart' in window ) ||
+      ( navigator.maxTouchPoints > 0 ) ||
+      ( navigator.msMaxTouchPoints > 0 );
   }
 
 
@@ -415,6 +444,12 @@ class App {
       .force('charge', d3.forceManyBody().strength(self.bodyCharge))
       .force('center', d3.forceCenter(this.w / 2, this.h / 2))
 
+    self.touchEnabled = self.isTouchEnabled();
+    d3.selectAll("#simulation")
+      .classed("touch", self.touchEnabled)
+      .classed("not-touch", !self.touchEnabled)
+      .classed("debug", self.debug)
+      ;
 
     d3.select(window)
       .on("resize", () => {
@@ -435,8 +470,21 @@ class App {
         // d is for debug.
         if ( d3.event.keyCode === 68 ) {
           self.debug = ! self.debug;
-          d3.selectAll("svg").classed("debug", self.debug);
+          d3.selectAll("#simulation").classed("debug", self.debug);
         }
+        // c is for centre.
+        else if ( d3.event.keyCode === 67 ) {
+          self.setCentreNode()
+        }
+        // t is for touch.
+        else if ( d3.event.keyCode === 84 ) {
+          self.touchEnabled = ! self.touchEnabled;
+          d3.selectAll("#simulation")
+            .classed("touch", self.touchEnabled)
+            .classed("not-touch", !self.touchEnabled);
+        }
+        else
+          console.log(d3.event.keyCode);
 
       })
       ;
@@ -465,6 +513,9 @@ class App {
     self.simulation.on('tick', () => {
       self.tick();
     });
+
+    // Choose a centre node.
+    self.setCentreNode();
 
     self.updateNodes();
     self.updateEdges();
@@ -573,7 +624,13 @@ class App {
       .selectAll('g.node')
       .attr('class', d => {
         // @FIX Why can't we do this once, elsewhere?
-        if ( d.id === self.pinned ) {
+        if ( d.id === self.pinned &&  d.id === self.centre ) {
+          return 'node node-pinned node-centre';
+        }
+        else if ( d.id === self.centre ) {
+          return 'node node-centre';
+        }
+        else if ( d.id === self.pinned ) {
           return 'node node-pinned';
         }
         return 'node';
@@ -585,6 +642,7 @@ class App {
 
     simulation.exit().remove();
 
+    self.setCentreNode();
     self.updateEdges();
   }
 

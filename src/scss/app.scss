@@ -1,10 +1,26 @@
 // Variables
 $node-size: 75px;
 $node-size-pinned: $node-size * 4 / 3;
-$label-width: 270px;
+$label-width: 40vw;
 
 @mixin debug($colour) {
   outline: 1px dashed $colour;
+}
+
+%highlighted {
+  image {
+    opacity: 0.9;
+    width: $node-size-pinned;
+    height: $node-size-pinned;
+    x: -$node-size-pinned / 2;
+    y: -$node-size-pinned / 2;
+  }
+
+  .label,
+  foreignObject body.label {
+    display: block;
+    opacity: 0.6;
+  }
 }
 
 * {
@@ -28,6 +44,10 @@ svg {
 
   circle {
     fill: #00f;
+  }
+
+  .node-centre circle {
+    fill: #0f0;
   }
 
   .node-pinned circle {
@@ -76,6 +96,7 @@ svg {
       padding: 5px;
       transition: opacity .25s ease-in-out;
       white-space: pre-line;
+      min-width: $label-width / 2;
     }
   }
 
@@ -94,49 +115,57 @@ svg {
       position: absolute;
     }
 
-    &.node-pinned image {
-      opacity: 0.9;
-      width: $node-size-pinned;
-      height: $node-size-pinned;
-      x: -$node-size-pinned / 2;
-      y: -$node-size-pinned / 2;
+    &.node-pinned {
+      @extend %highlighted;
     }
 
-    &.node-pinned foreignObject body.label,
-    &:hover .label {
-      display: block;
-      opacity: 0.6;
+    // Touchscreens show centre others use hover
+    &.node-centre {
+      .touch & {
+        @extend %highlighted;
+      }
+    }
 
-      &:hover {
-        opacity: 0.9;
+    // Node hover
+    &:hover {
+      .not-touch & {
+        @extend %highlighted;
+
+        .label,
+        foreignObject body.label {
+          &:hover {
+            opacity: 0.9;
+          }
+        }
       }
     }
   }
 
+  // foreignObject body
   body {
     margin: 0;
     padding: 0;
   }
+}
 
-  &.debug {
-    @include debug(red);
+.debug svg {
+  @include debug(red);
 
-    .node {
-      @include debug(orange);
+  .node {
+    @include debug(orange);
 
-      image {
-        @include debug(green);
-      }
+    image {
+      @include debug(green);
+    }
 
-      foreignObject {
-        @include debug(purple);
+    foreignObject {
+      @include debug(purple);
 
-        .label-container {
-          @include debug(violet);
+      .label-container {
+        @include debug(violet);
 
-          .label {
-            @include debug(pink);
-          }
+        .label {
+          @include debug(pink);
         }
       }
     }

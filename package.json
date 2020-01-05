@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build-task:scss-compile": "node-sass --source-map true src/scss/ -o dist/assets/css",
+    "build-task:template-compile": "mkdir -p dist/record && node utils/template-compile assets/data/data.json src/templates dist/record",
     "build-all": "mkdir -p dist/assets && npm-run-all --parallel build-task:*",
-
-    "serve": "browser-sync start --server './' --files './**/*' --watch --index 'index-v5.html' --startPath '/index.html'",
+    "serve": "browser-sync start --server './' --files './**/*' --watch --ignore 'dist' --index 'index.html' --startPath '/index-v5.html'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "npm-watch build-all"
   },
@@ -38,6 +38,8 @@
     "browser-sync": "^2.26.7",
     "d3": "^5.14.2",
     "d3-force": "^2.0.1",
+    "handlebars": "^4.5.3",
+    "handlebars-helpers": "^0.10.0",
     "lodash": "^4.17.15",
     "node-sass": "^4.13.0",
     "npm-run-all": "^4.1.5",

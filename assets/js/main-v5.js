@@ -30,7 +30,7 @@
 class App {
   debug = false;
 
-  dataFile = '/assets/js/json/data.json';
+  dataFile = '/assets/data/data.json';
   maxNodes = 12;
   maxEdgesPerNode = 3;
   maxEdges = Math.round(this.maxEdgesPerNode * this.maxNodes * 0.8);

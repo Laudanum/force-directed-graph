@@ -1,27 +1,32 @@
 <!-- partials/main -->
 
-{{>topbar-contextual}}
 
 {{#if (eq record.category.nicename "artwork-ext")}}
-{{>main-default}}
+  {{>topbar-default}}
+  {{>main-default}}
 {{/if}}
 
 {{#if (eq record.category.nicename "artwork-images")}}
-{{>main-artwork-images}}
+  {{>topbar-artwork-images}}
+  {{>main-artwork-images}}
 {{/if}}
 
 {{#if (eq record.category.nicename "blogroll")}}
-{{>main-default}}
+  {{>topbar-default}}
+  {{>main-default}}
 {{/if}}
 
 {{#if (eq record.category.nicename "link")}}
-{{>main-default}}
+  {{>topbar-default}}
+  {{>main-default}}
 {{/if}}
 
 {{#if (eq record.category.nicename "reader")}}
-{{>main-default}}
+  {{>topbar-default}}
+  {{>main-default}}
 {{/if}}
 
 {{#if (eq record.category.nicename "video")}}
-{{>main-video}}
+  {{>topbar-video}}
+  {{>main-video}}
 {{/if}}

@@ -1,5 +1,9 @@
 'use strict';
 
+// Imports
+const _ = require('lodash');
+const d3 = Object.assign({}, require('d3-force'), require('d3-selection'), );
+
 /*
  * @TODO
  * - [v] Resize with the window
@@ -27,7 +31,7 @@
  */
 
 
-class App {
+export default class App {
   debug = false;
 
   dataFile = '/assets/data/data.json';

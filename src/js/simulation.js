@@ -63,6 +63,10 @@ export default class App {
       return false;
     }
 
+    // Check for an id.
+    if ( location.hash ) {
+      this.pinned = parseInt(location.hash.replace('#', ''));
+    }
 
     // Measure the window.
     this.updateStageSize();
@@ -70,12 +74,15 @@ export default class App {
     this.loadData()
       .then(dataSet => {
         this.dataSet = dataSet;
-        console.log(`Data loaded ${this.dataSet.length} nodes found.`);
-
+        if ( this.debug )
+          console.log(`Data loaded ${this.dataSet.length} nodes found.`);
+        if ( this.pinned )
+          return this.getRelatedNodes(this.pinned);
         return this.getNodes();
       })
       .then(nodes => {
-        console.log(`Received ${nodes.length} random nodes.`);
+        if ( this.debug )
+          console.log(`Received ${nodes.length} random nodes.`);
 
         this.initialiseSimulation(nodes);
         this.startSimulation();
@@ -359,6 +366,7 @@ export default class App {
     // Pin the current node to the centre.
     self.pinned = d.id;
     self.centreNode(d);
+    location.hash = d.id;
 
     let relatedNodes = self.getRelatedNodes(d.id);
     // Cull related nodes too.

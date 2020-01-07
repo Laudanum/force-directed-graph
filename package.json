@@ -7,11 +7,10 @@
     "build-task:scss-compile": "node-sass --source-map true src/scss/ -o dist/assets/css",
     "build-task:copy": "cp -a src/public/* dist/ && cp -a src/assets/ dist/assets",
     "build-task:js-compile": "WEBPACK_ENV=dev webpack",
-    "build-all": "mkdir -p dist/assets && npm-run-all --parallel build-task:*",
-    "build-records": "mkdir -p dist/record && node utils/template-compile assets/data/data.json src/templates dist/record",
+    "build-all": "mkdir -p dist/assets && npm-run-all --parallel build-task:* && npm run build-records",
+    "build-records": "mkdir -p dist/record && node utils/template-compile src/assets/data/data.json src/templates dist/record",
     "serve": "browser-sync start --server './dist' --files './dist/**/*' --watch --index 'index.html' --startPath '/index.html'",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npm-watch build-all",
     "watch": "npm-watch build-all"
   },
   "watch": {
@@ -19,7 +18,7 @@
       "patterns": [
         "src"
       ],
-      "extensions": "scss,js",
+      "extensions": "scss,js,hbs",
       "ignore": "*.min.js",
       "quiet": false,
       "legacyWatch": true,

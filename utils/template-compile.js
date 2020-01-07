@@ -28,11 +28,18 @@ function compile(args) {
   // Iterate the data.
   data.record.forEach(record => {
     const filename = `index.${ext}`;
-    const outpath = path.join(destination_dir, record.id+"");
+    const catpath = path.join(destination_dir, record.category.nicename);
+    const outpath = path.join(catpath, record.id+"");
     const outfile = path.join(outpath, filename);
 
     console.log(`Rendering "${record.title}" to ${outfile}.`);
     const result = render(infile, {default: default_data, record: record});
+
+    try {
+      fs.mkdirSync(catpath);
+    } catch(err) {
+      // Fail silently.
+    }
 
     try {
       fs.mkdirSync(outpath);

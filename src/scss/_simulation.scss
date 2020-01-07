@@ -28,9 +28,7 @@ $label-width: 40vw;
 }
 
 body.top {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 160%;
-  font-size: 12px;
+  font-family: $font-family;
   color: #666;
   margin: 0;
   background-image: url(/assets/images/background_004.png);
@@ -87,6 +85,8 @@ svg {
     }
 
     body.label {
+      font-size: 12px;
+      line-height: 120%;
       pointer-events: auto;
       position: absolute;
       opacity: 0;

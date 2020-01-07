@@ -1,0 +1,13 @@
+<!-- partials/sidebar -->
+
+<div class="sidebar">
+  <a title='Related to "{{record.title}}"' href='/?id={{record.id}}'>
+    <h3>{{record.artist}}</h3>
+    <h2>{{record.title}}, {{record.year}}</h2>
+  </a>
+
+  {{#if record.contributor}}
+    <br>
+    <h4>{{record.contributor}}</h4>
+  {{/if}}
+</div>

@@ -1,1 +1,27 @@
-_main.hbs
+<!-- partials/main -->
+
+{{>topbar-contextual}}
+
+{{#if (eq record.category.nicename "artwork-ext")}}
+{{>main-default}}
+{{/if}}
+
+{{#if (eq record.category.nicename "artwork-images")}}
+{{>main-artwork-images}}
+{{/if}}
+
+{{#if (eq record.category.nicename "blogroll")}}
+{{>main-default}}
+{{/if}}
+
+{{#if (eq record.category.nicename "link")}}
+{{>main-default}}
+{{/if}}
+
+{{#if (eq record.category.nicename "reader")}}
+{{>main-default}}
+{{/if}}
+
+{{#if (eq record.category.nicename "video")}}
+{{>main-video}}
+{{/if}}

@@ -1,0 +1,173 @@
+// Variables
+$node-size: 75px;
+$node-size-pinned: $node-size * 4 / 3;
+$label-width: 40vw;
+
+@mixin debug($colour) {
+  outline: 1px dashed $colour;
+}
+
+%highlighted {
+  image {
+    opacity: 0.9;
+    width: $node-size-pinned;
+    height: $node-size-pinned;
+    x: -$node-size-pinned / 2;
+    y: -$node-size-pinned / 2;
+  }
+
+  .label,
+  foreignObject body.label {
+    display: block;
+    opacity: 0.6;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body.top {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 160%;
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+  background-image: url(/assets/images/background_004.png);
+  background-size: cover;
+}
+
+svg {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  circle {
+    fill: #00f;
+  }
+
+  .node-centre circle {
+    fill: #0f0;
+  }
+
+  .node-pinned circle {
+    fill: #f00;
+  }
+
+  .node {
+    width: 10px;
+    height: 10px;
+    display: block;
+    position: absolute;
+  }
+
+  .edges line {
+    stroke: rgba(192, 192, 218, 0.25);
+  }
+
+  /*
+  svg .node .label,
+  svg .node .label-container {
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+  }
+
+  svg .node .label-container {
+    fill: #ffffb9;
+    stroke: #ccc;
+  }
+  */
+  foreignObject {
+    &.label-container {
+      z-index: 10;
+      pointer-events: none;
+      position: absolute;
+      width: $label-width;
+      height: $label-width * 2;
+    }
+
+    body.label {
+      pointer-events: auto;
+      position: absolute;
+      opacity: 0;
+      display: none;
+      background-color: #ffffb9;
+      border: 1px solid #ccc;
+      padding: 5px;
+      transition: opacity .25s ease-in-out;
+      white-space: pre-line;
+      min-width: $label-width / 2;
+    }
+  }
+
+  .node {
+    width: $node-size;
+    height: $node-size;
+
+    image {
+      transition: all .25s ease;
+      transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+      width: $node-size;
+      height: $node-size;
+      x: -$node-size / 2;
+      y: -$node-size / 2;
+      opacity: 0.6;
+      position: absolute;
+    }
+
+    &.node-pinned {
+      @extend %highlighted;
+    }
+
+    // Touchscreens show centre others use hover
+    &.node-centre {
+      .touch & {
+        @extend %highlighted;
+      }
+    }
+
+    // Node hover
+    &:hover {
+      .not-touch & {
+        @extend %highlighted;
+
+        .label,
+        foreignObject body.label {
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+  }
+
+  // foreignObject body
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.debug svg {
+  @include debug(red);
+
+  .node {
+    @include debug(orange);
+
+    image {
+      @include debug(green);
+    }
+
+    foreignObject {
+      @include debug(purple);
+
+      .label-container {
+        @include debug(violet);
+
+        .label {
+          @include debug(pink);
+        }
+      }
+    }
+  }
+}

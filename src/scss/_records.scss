@@ -1,0 +1,281 @@
+// records.scss
+@import "menu";
+@import "topbar";
+
+html, body {
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+body {
+  background-color: $background-colour;
+  color: $text-colour;
+  font-family: $font-family;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+
+  &.night-mode {
+    background-color: invert($background-colour);
+    color: invert($text-colour);
+  }
+
+  &.video {
+    text-align: center;
+  }
+
+  &.artwork-ext {
+    overflow: hidden;
+
+    #container {
+      margin: 0px;
+      height: 100%;
+    }
+
+    iframe {
+      width: 100%;
+      max-height: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    #topbar {
+      position: inherit;
+      height: 30px;
+    }
+
+    #menuleft {
+      position: inherit;
+    }
+  }
+}
+
+#container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 120px;
+  min-width: 760px;
+  text-align: center;
+}
+
+iframe {
+  width: 100%;
+  border: none;
+}
+
+img#onlinevenue {
+  background-image: url(/assets/images/onlinevenue.gif);
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+img#return {
+  background-image: url(/assets/images/next.gif);
+}
+
+.sidebar {
+  color: #4472AE;
+  text-align: left;
+  padding: 20px 10px 10px 20px;
+  width: 20%;
+  min-height: 360px;
+  float: left;
+  font-family: Garamond, 'Times New Roman', Serif;
+  color: #7f7f7f;
+}
+
+/* artists name */
+.sidebar h3 {
+  display: block;
+  font-size: 0.95em;
+  color: #2252AE;
+  line-height: auto;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* title and date */
+.sidebar h2 {
+  display: block;
+  font-size: 1.0em;
+  font-style: italic;
+  font-weight: normal;
+  line-height: auto;
+  padding: 0;
+  margin: 0;
+}
+
+/* notes */
+.sidebar h4 {
+  display: block;
+  font-size: 0.9em;
+  font-weight: normal;
+  line-height: auto;
+  padding: 0;
+  margin: 0;
+}
+
+/* code is repurposed for footnotes */
+code {
+  font-size: 0.8em;
+  font-family: Arial, Helvetica, Verdana, sans-serif;
+  line-height: 1.4em;
+}
+
+#nav {
+  position: absolute;
+  top: 430px;
+  width: 20%;
+  min-width: 150px;
+  max-width: 250px;
+  font-size: 0.8em;
+}
+
+.tag {
+  font-size: 0.9em;
+}
+
+a,
+a:visited,
+a:hover {
+  color: $brand-colour;
+  text-decoration: none;
+}
+
+a img, a:hover img {
+  border: none !important;
+}
+
+acronym, abbr {
+  border-bottom: 1px dashed #333;
+}
+
+acronym, abbr, span.caps {
+  font-size: 90%;
+  letter-spacing: .07em;
+}
+
+acronym, abbr {
+  cursor: help;
+}
+
+blockquote {
+  border-left: 5px solid #ccc;
+  margin-left: 1.5em;
+  padding-left: 5px;
+}
+
+cite {
+  font-size: 90%;
+  font-style: normal;
+}
+
+ol#comments li p {
+  font-size: 100%;
+}
+
+p, li, .feedback {
+  letter-spacing: 0;
+  font-size: 90%;
+  line-height: 175%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* classes used by the_meta() */
+ul.post-meta {
+  list-style: none;
+}
+
+ul.post-meta span.post-meta-key {
+  font-weight: bold;
+}
+
+.credit a:link, .credit a:hover {
+  color: #fff;
+}
+
+.feedback {
+  color: #ccc;
+  text-align: right;
+  clear: both;
+}
+
+.meta {
+  font-size: .75em;
+}
+
+.meta li, ul.post-meta li {
+  display: inline;
+}
+
+.meta ul {
+  display: inline;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.meta, .meta a {
+  color: #808080;
+  font-weight: normal;
+  letter-spacing: 0;
+}
+
+.storytitle {
+  margin: 0;
+}
+
+.storytitle a {
+  text-decoration: none;
+}
+
+#commentform #author, #commentform #email, #commentform #url, #commentform textarea {
+  background: #fff;
+  border: 1px solid #333;
+  padding: .2em;
+}
+
+#commentform textarea {
+  width: 100%;
+}
+
+#commentlist li ul {
+  border-left: 1px solid #ddd;
+  font-size: 110%;
+  list-style-type: none;
+}
+
+.content {
+  margin-left: 20%;
+  text-align: left;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  width: 50%;
+  min-height: 360px;
+  float: left;
+  position: relative;
+  line-height: 2.2em;
+  color: #333333;
+}
+
+#header {
+  background: #90a090;
+  border-bottom: double 3px #aba;
+  border-left: solid 1px #9a9;
+  border-right: solid 1px #565;
+  border-top: solid 1px #9a9;
+  font: italic normal 230% 'Times New Roman', Times, serif;
+  letter-spacing: 0.2em;
+  margin: 0;
+  padding: 15px 10px 15px 60px;
+}
+
+#header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#header a:hover {}

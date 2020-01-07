@@ -58,6 +58,12 @@ export default class App {
   constructor(appName) {
     this.dataSet = null;
 
+    const simulation = d3.select('#simulation > svg');
+    if ( simulation.empty() ) {
+      return false;
+    }
+
+
     // Measure the window.
     this.updateStageSize();
 

@@ -35,9 +35,10 @@ export default class App {
   debug = false;
 
   dataFile = '/assets/data/data.json';
-  maxNodes = 12;
+  maxNodes = 18;
+  maxRelatedNodes = 6;
   maxEdgesPerNode = 3;
-  maxEdges = Math.round(this.maxEdgesPerNode * this.maxNodes * 0.8);
+  maxEdges = Math.round(this.maxEdgesPerNode * this.maxNodes * 0.6);
   relatedNodesRatio =  0.6;
   w = 500;
   h = 500;
@@ -76,13 +77,20 @@ export default class App {
         this.dataSet = dataSet;
         if ( this.debug )
           console.log(`Data loaded ${this.dataSet.length} nodes found.`);
-        if ( this.pinned )
-          return this.getRelatedNodes(this.pinned);
+        if ( this.pinned ) {
+          // This node and it's related nodes culled and preserved.
+          const node = this.dataSet.filter(n => n.id === this.pinned);
+          let nodes = this.getRelatedNodes(this.pinned).concat(node);
+          return this.cull(nodes, this.maxNodes, this.pinned);
+        }
         return this.getNodes();
       })
       .then(nodes => {
         if ( this.debug )
-          console.log(`Received ${nodes.length} random nodes.`);
+          if ( this.pinned )
+            console.log(`Received ${nodes.length} nodes related to ${this.pinned}.`);
+          else
+            console.log(`Received ${nodes.length} random nodes.`);
 
         this.initialiseSimulation(nodes);
         this.startSimulation();
@@ -231,7 +239,6 @@ export default class App {
       items.push(preserved);
 
     return items;
-
   }
 
 

@@ -205,7 +205,7 @@ export default class App {
   getHtml(data) {
     let html = `<strong>${data.title}</strong>`;
     if ( data.artist )
-      html += `<br>${data.artist}`;
+      html += `<p>${data.artist}</p>`;
     return html;
   }
 

@@ -1,7 +1,5 @@
 // Variables
-$node-size: 75px;
-$node-size-pinned: $node-size * 4 / 3;
-$label-width: 40vw;
+$node-size-pinned: $node-width * 4 / 3;
 
 @mixin debug($colour) {
   outline: 1px dashed $colour;
@@ -86,7 +84,7 @@ svg {
 
     body.label {
       font-size: 12px;
-      line-height: 120%;
+      line-height: 1.1em;
       pointer-events: auto;
       position: absolute;
       opacity: 0;
@@ -97,6 +95,10 @@ svg {
       transition: opacity .25s ease-in-out;
       white-space: pre-line;
       min-width: $label-min-width / 2;
+
+      p {
+        margin: 0.6em 0 0 0;
+      }
     }
   }
 

@@ -8,7 +8,7 @@ html, body {
 
 body {
   background-color: $background-colour;
-  color: $text-colour;
+  color: $font-colour;
   font-family: $font-family;
   font-size: 16px;
   margin: 0;
@@ -16,7 +16,7 @@ body {
 
   &.night-mode {
     background-color: invert($background-colour);
-    color: invert($text-colour);
+    color: invert($font-colour);
   }
 
   &.video {

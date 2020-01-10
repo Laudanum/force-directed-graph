@@ -29,7 +29,7 @@ $label-width: 40vw;
 
 body.top {
   font-family: $font-family;
-  color: #666;
+  color: $font-colour;
   margin: 0;
   background-image: url(/assets/images/background_004.png);
   background-size: cover;
@@ -60,7 +60,7 @@ svg {
   }
 
   .edges line {
-    stroke: rgba(192, 192, 218, 0.25);
+    stroke: rgba($line-colour, $line-opacity);
   }
 
   /*
@@ -80,8 +80,8 @@ svg {
       z-index: 10;
       pointer-events: none;
       position: absolute;
-      width: $label-width;
-      height: $label-width * 2;
+      width: $label-max-width;
+      height: $label-max-width * 2;
     }
 
     body.label {
@@ -91,26 +91,26 @@ svg {
       position: absolute;
       opacity: 0;
       display: none;
-      background-color: #ffffb9;
-      border: 1px solid #ccc;
+      background-color: $label-background-colour;
+      border: $label-border-weight solid $label-border-colour;
       padding: 5px;
       transition: opacity .25s ease-in-out;
       white-space: pre-line;
-      min-width: $label-width / 2;
+      min-width: $label-min-width / 2;
     }
   }
 
   .node {
-    width: $node-size;
-    height: $node-size;
+    width: $node-width;
+    height: $node-height;
 
     image {
       transition: all .25s ease;
       transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-      width: $node-size;
-      height: $node-size;
-      x: -$node-size / 2;
-      y: -$node-size / 2;
+      width: $node-width;
+      height: $node-height;
+      x: -$node-width / 2;
+      y: -$node-height / 2;
       opacity: 0.6;
       position: absolute;
     }

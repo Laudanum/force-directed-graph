@@ -80,8 +80,10 @@ export default class App {
         if ( this.pinned ) {
           // This node and it's related nodes culled and preserved.
           const node = this.dataSet.filter(n => n.id === this.pinned);
-          let nodes = this.getRelatedNodes(this.pinned).concat(node);
-          return this.cull(nodes, this.maxNodes, this.pinned);
+          let nodes = this.getRelatedNodes(this.pinned)
+          nodes = this.cull(nodes, this.maxNodes, node);
+          nodes = nodes.concat(node);
+          return nodes;
         }
         return this.getNodes();
       })
@@ -94,6 +96,13 @@ export default class App {
 
         this.initialiseSimulation(nodes);
         this.startSimulation();
+
+        if ( this.pinned ) {
+          const node = this.dataSet.filter(n => n.id === this.pinned).pop();
+          this.centreNode(node);
+          if ( this.debug )
+            console.log(`Centring pinned node "${node.title}".`);
+        }
       })
       ;
   }

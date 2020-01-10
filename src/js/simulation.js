@@ -2,7 +2,7 @@
 
 // Imports
 const _ = require('lodash');
-const d3 = Object.assign({}, require('d3-force'), require('d3-selection'), );
+const d3 = require('./d3-custom');
 
 /*
  * @TODO

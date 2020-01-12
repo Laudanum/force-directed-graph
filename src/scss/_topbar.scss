@@ -1,4 +1,12 @@
 #topbar {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 30px;
+  border-bottom: 1px solid rgba($line-colour, $line-opacity);
+  background-color: rgba(white, 0.8);
+
   ul {
     list-style: none;
     margin: 0;

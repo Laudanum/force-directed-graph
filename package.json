@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build-task:scss-compile": "node-sass --source-map true src/scss/ -o dist/assets/css",
-    "build-task:copy": "cp -a src/public/* dist/ && cp -a src/assets/ dist/assets",
+    "build-task:copy": "cp -a src/assets/ dist/assets",
     "build-task:js-compile": "WEBPACK_ENV=dev webpack",
     "build-all": "mkdir -p dist/assets && npm-run-all --parallel build-task:*",
     "build-records": "mkdir -p dist/record && node utils/template-compile src/assets/data/data.json src/templates dist/record",

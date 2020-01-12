@@ -1,2 +1,14 @@
 <!-- partials/main-default -->
+{{#if record.link.url}}
 <iframe src="{{record.link.url}}" height="100%"></iframe>
+{{else}}
+<div class="content">
+  <div class="post post{{record.category.nicename}}" id="post-{{record.id}}">
+    <div class="storycontent">
+      {{{record.content}}}
+    </div>
+  </div>
+</div>
+
+{{>sidebar}}
+{{/if}}

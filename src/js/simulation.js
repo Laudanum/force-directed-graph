@@ -33,6 +33,8 @@ const d3 = require('./d3-custom');
 
 export default class App {
   debug = false;
+  nightMode = false;
+  nightModeFrequency = 0.1;
 
   dataFile = '/assets/data/data.json';
   maxNodes = 18;
@@ -67,6 +69,15 @@ export default class App {
     // Check for an id.
     if ( location.hash ) {
       this.pinned = parseInt(location.hash.replace('#', ''));
+    }
+
+    // Randomly set night mode.
+    if ( Math.random() > 1 - this.nightModeFrequency ) {
+      if ( this.debug )
+        console.log('Night mode is on.');
+      this.nightMode = true;
+      d3.selectAll("body.top")
+        .classed("night-mode", this.nightMode);
     }
 
     // Measure the window.
@@ -509,6 +520,12 @@ export default class App {
         // c is for centre.
         else if ( d3.event.keyCode === 67 ) {
           self.setCentreNode()
+        }
+        // n is for night.
+        else if ( d3.event.keyCode === 78 ) {
+          self.nightMode = ! self.nightMode;
+          d3.selectAll("body.top")
+            .classed("night-mode", self.nightMode);
         }
         // t is for touch.
         else if ( d3.event.keyCode === 84 ) {

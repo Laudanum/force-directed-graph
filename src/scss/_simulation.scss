@@ -26,17 +26,18 @@ $node-size-pinned: $node-width * 4 / 3;
 }
 
 body.top {
-  font-family: $font-family;
-  color: $font-colour;
   margin: 0;
-  background-image: url(/assets/images/background_004.png);
-  background-size: cover;
 }
 
 svg {
   width: 100%;
   height: 100vh;
   position: relative;
+  transition: filter 1s;
+
+  .night-mode & {
+    filter: invert(1);
+  }
 
   circle {
     fill: #00f;

@@ -5,7 +5,7 @@ html, body.record, body.top {
   padding: 0;
 }
 
-body {
+body.record, body.top {
   background: white url("/assets/images/backgrounds/background_004.png");
   background-size: cover;
   transition: background 2s;

@@ -62,18 +62,6 @@ svg {
     stroke: rgba($line-colour, $line-opacity);
   }
 
-  /*
-  svg .node .label,
-  svg .node .label-container {
-    opacity: 0;
-    transition: opacity .25s ease-in-out;
-  }
-
-  svg .node .label-container {
-    fill: #ffffb9;
-    stroke: #ccc;
-  }
-  */
   foreignObject {
     &.label-container {
       z-index: 10;

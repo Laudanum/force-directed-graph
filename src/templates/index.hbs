@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {{>head}}
+    {{>styles}}
+  </head>
+
+  <body class="top built">
+    <header>{{>header}}</header>
+    <main id="container">
+      <section id="simulation">
+        <svg>
+          <g class="edges"></g>
+          <g class="nodes"></g>
+        </svg>
+      </section>
+    </main>
+  </body>
+  {{>scripts}}
+</html>

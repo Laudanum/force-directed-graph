@@ -20,11 +20,11 @@ const d3 = require('./d3-custom');
  * - [v] Fix label sizes so they don't grab focus
  * - [-] Fix label hovers
  * - [-] Fix z-indexes
- * - [ ] Compare with Flash version
+ * - [v] Compare with Flash version
  * - [ ] Add badges
- * - [ ] Add night-mode
+ * - [v] Add night-mode
  * - [v] Convert CSS to SASS
- * - [ ] Roll up JS
+ * - [v] Roll up JS
  * - [ ] Add self.log() fn
  * - [ ] Support other browsers
  * - [ ] Autoplay (randomly pick a node every time and again).
@@ -536,7 +536,7 @@ export default class App {
             .classed("touch", self.touchEnabled)
             .classed("not-touch", !self.touchEnabled);
         }
-        else
+        else if ( self.debug )
           console.log(d3.event.keyCode);
 
       })

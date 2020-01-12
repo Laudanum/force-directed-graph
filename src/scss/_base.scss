@@ -1,0 +1,10 @@
+body {
+  background: white url("/assets/images/backgrounds/background_004.png");
+  background-size: cover;
+  transition: background 2s;
+
+  &.night-mode {
+    background: black url("/assets/images/backgrounds/inverted/background_004.png");
+    background-size: cover;
+  }
+}

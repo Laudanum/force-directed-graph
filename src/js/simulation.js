@@ -474,7 +474,7 @@ export default class App {
    * Opens the URL.
    */
   labelEventHandler(d) {
-    window.location = d.link.url;
+    window.location = `/record/${d.category.nicename}/${d.id}`;
   }
 
 

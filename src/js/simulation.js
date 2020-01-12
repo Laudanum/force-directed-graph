@@ -91,8 +91,10 @@ export default class App {
         if ( this.pinned ) {
           // This node and it's related nodes culled and preserved.
           const node = this.dataSet.filter(n => n.id === this.pinned);
-          let nodes = this.getRelatedNodes(this.pinned)
-          nodes = this.cull(nodes, this.maxNodes, node);
+          let nodes = this.getRelatedNodes(this.pinned);
+          if ( nodes.length < 2 )
+            return this.getNodes(this.maxNodes - 1).concat(node);
+          nodes = this.cull(nodes, this.maxNodes);
           nodes = nodes.concat(node);
           return nodes;
         }

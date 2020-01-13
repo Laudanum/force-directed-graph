@@ -4,13 +4,20 @@
   top: 0;
   z-index: 1000;
   float: left;
-}
 
-#menuleftcontainer {
-  float: left;
-  display: none;
-  border-bottom: 1px solid #cccccc;
-  border-right: 1px solid #cccccc;
+  #menuleftcontainer {
+    float: left;
+    display: none;
+    height: $topbar-height;
+    border-bottom: 1px solid rgba($line-colour, $line-opacity);
+    border-right: 1px solid rgba($line-colour, $line-opacity);
+  }
+
+  &.active {
+    #menuleftcontainer {
+      display: block;
+    }
+  }
 }
 
 #menuleftcontrol {

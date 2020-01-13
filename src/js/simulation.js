@@ -14,20 +14,21 @@ const d3 = require('./d3-custom');
  *      - [v] Show some labels
  * - [ ] Fix settings for each force
  * - [ ] Enable collision detection
- * - [ ] Integrate static pages
+ * - [v] Integrate static pages
  * - [ ] Repair video player
- * - [ ] Add menu
+ * - [v] Add menu
  * - [v] Fix label sizes so they don't grab focus
  * - [-] Fix label hovers
  * - [-] Fix z-indexes
  * - [v] Compare with Flash version
- * - [ ] Add badges
+ * - [v] Add badges
  * - [v] Add night-mode
  * - [v] Convert CSS to SASS
  * - [v] Roll up JS
  * - [ ] Add self.log() fn
  * - [ ] Support other browsers
  * - [ ] Autoplay (randomly pick a node every time and again).
+ * - [ ] Add static pages.
  */
 
 

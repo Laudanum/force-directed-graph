@@ -1,6 +1,6 @@
 {{!-- _head-default.hbs --}}
 
-<title>{{record.title}} &verbar; {{default.title}}</title>
+<title>{{#if record.title}}{{record.title}} &verbar; {{/if}}{{default.title}}</title>
 <link rel="icon" href="/assets/favicon.ico">
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">

@@ -24,13 +24,16 @@ function compile(args) {
   registerPartials();
 
   // Index
-  let infile = path.join(source_dir, 'index.hbs');
-  const result = render(infile, {default: default_data});
-  const outfile = path.join(destination_dir, '..', 'index.html');
-  fs.writeFileSync(outfile, result);
+  ['index', 'about', 'help'].forEach(file => {
+    data.type = file;
+    const  infile = path.join(source_dir, file + '.hbs');
+    const result = render(infile, {default: default_data});
+    const outfile = path.join(destination_dir, '..', file + '.html');
+    fs.writeFileSync(outfile, result);
+  });
 
   // Records
-  infile = path.join(source_dir, 'record.hbs');
+  const infile = path.join(source_dir, 'record.hbs');
 
   // Iterate the data.
   data.record.forEach(record => {

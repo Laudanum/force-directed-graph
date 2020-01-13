@@ -11,7 +11,7 @@ body.record {
     text-align: center;
   }
 
-  &.artwork-ext {
+  &.artwork-ext, &.link {
     overflow: hidden;
 
     #container {
@@ -21,7 +21,6 @@ body.record {
 
     iframe {
       width: 100%;
-      max-height: 100%;
       height: 100%;
       border: none;
     }
@@ -39,7 +38,6 @@ body.record {
   #container {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 120px;
     min-width: 760px;
     text-align: center;
   }

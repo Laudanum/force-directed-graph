@@ -228,6 +228,8 @@ export default class App {
     let html = `<strong>${data.title}</strong>`;
     if ( data.artist )
       html += `<p>${data.artist}</p>`;
+    if ( data.badge.url )
+      html += `<img class='badge' alt=${data.category.name} src=${data.badge.url}>`;
     return html;
   }
 

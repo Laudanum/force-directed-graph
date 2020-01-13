@@ -28,7 +28,8 @@ const d3 = require('./d3-custom');
  * - [ ] Add self.log() fn
  * - [ ] Support other browsers
  * - [ ] Autoplay (randomly pick a node every time and again).
- * - [ ] Add static pages.
+ * - [ ] Load one node at a time.
+ * - [v] Add static pages.
  */
 
 

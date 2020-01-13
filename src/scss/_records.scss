@@ -9,6 +9,14 @@ html, body {
 body.record {
   &.video {
     text-align: center;
+
+    video {
+      margin-top: 120px;
+      background-color: black;
+      width: 720px;
+      height: 720px / 16 * 9;
+      color: white;
+    }
   }
 
   &.artwork-ext, &.link {
@@ -54,6 +62,7 @@ iframe {
   padding: 20px 10px 10px 20px;
   width: 20%;
   min-height: 360px;
+  margin-top: 120px;
   float: left;
   font-family: Garamond, 'Times New Roman', Serif;
   color: #7f7f7f;

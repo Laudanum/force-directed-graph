@@ -12,6 +12,7 @@ const d3 = require('./d3-custom');
  *      - [ ] Test touches
  *      - [v] Remove hovers
  *      - [v] Show some labels
+ *      - [v] Hide online venue
  * - [ ] Fix settings for each force
  * - [ ] Enable collision detection
  * - [v] Integrate static pages
@@ -30,6 +31,10 @@ const d3 = require('./d3-custom');
  * - [ ] Autoplay (randomly pick a node every time and again).
  * - [ ] Load one node at a time.
  * - [v] Add static pages.
+ * - [ ] Youtube won't be framed http://localhost:3000/record/link/173/
+ * - [ ] Progress or loading indicator at start
+ * - [ ] Progress or loading indicator on depart
+ * - [ ] Double density images.
  */
 
 

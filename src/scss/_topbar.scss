@@ -81,6 +81,12 @@ img {
     background-position: top center;
   }
 
+  @media (max-width: 576px) {
+    &#onlinevenue {
+      display: none;
+    }
+  }
+
   &#return {
     background-image: url(/assets/images/next.gif);
   }

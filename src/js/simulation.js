@@ -550,8 +550,8 @@ export default class App {
 
       })
       ;
-
-    console.log(`Simulation initialised.`);
+    if ( self.debug )
+      console.log(`Simulation initialised.`);
   }
 
 

@@ -1,6 +1,6 @@
 <!-- partials/topbar-default -->
-<div id="topbar_centre" style="left : auto; right : 50px; text-align : right;">
-  <a title="{{record.artist}}, {{record.title}}" style="font-size : 0.8em;" href="{{record.link.url}}">
+<div id="topbar_centre">
+  <a class="title" title="{{record.artist}}, {{record.title}}" style="font-size : 0.8em;" href="{{record.link.url}}">
     {{#if record.artist}}
       {{record.artist}},
     {{/if}}
@@ -9,7 +9,7 @@
       <img border=0 align="absmiddle" alt="Exit site" src={{record.badge.url}}>
     {{/if}}
   </a>
-  <a style="margin-left : 30px; margin-right : 15px;" title="Return to the Online Venue"href="/#{{record.id}}">
-    <img border=0 align="absmiddle" alt="Return to the Online Venue" src="/assets/images/related.gif">
+  <a class="related" title="Related to \"{{record.title}}\"" href="/#{{record.id}}">
+    <img id="related" src="/assets/images/related.gif">
   </a>
 </div>

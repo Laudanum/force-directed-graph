@@ -234,9 +234,11 @@ export default class App {
   getHtml(data) {
     let html = `<strong>${data.title}</strong>`;
     if ( data.artist )
-      html += `<p>${data.artist}</p>`;
+      html += `<p>${data.artist}`;
     if ( data.badge.url )
       html += `<img class='badge' alt=${data.category.name} src=${data.badge.url}>`;
+    if ( data.artist )
+      html += `</p>`;
     return html;
   }
 

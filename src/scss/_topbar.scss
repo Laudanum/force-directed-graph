@@ -7,6 +7,10 @@
   background-color: rgba($background-colour, 0.8);
   transition: background-color $transition-duration;
 
+  .record & {
+    border-bottom: solid $line-weight rgba($line-colour, $line-opacity);
+  }
+
   .night-mode & {
     background-color: rgba(invert($background-colour), 0.8);
   }

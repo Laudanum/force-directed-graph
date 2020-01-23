@@ -10,6 +10,7 @@ import {
 import {
   forceLink,
   forceCenter,
+  forceCollide,
   forceSimulation,
   forceManyBody
 } from 'd3-force';
@@ -21,6 +22,7 @@ export {
   event,
   forceLink,
   forceCenter,
+  forceCollide,
   forceSimulation,
   forceManyBody
 };

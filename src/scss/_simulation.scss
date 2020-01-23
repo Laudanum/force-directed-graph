@@ -81,7 +81,7 @@ svg {
       background-color: $label-background-colour;
       border: $label-border-weight solid $label-border-colour;
       padding: 5px;
-      transition: opacity .25s ease-in-out;
+      transition: opacity 0.25s ease;
       white-space: pre-line;
       min-width: $label-min-width;
 
@@ -150,6 +150,7 @@ svg {
   }
 }
 
+/*
 .debug svg {
   @include debug(red);
 
@@ -173,3 +174,4 @@ svg {
     }
   }
 }
+*/

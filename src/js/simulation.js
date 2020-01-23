@@ -47,7 +47,7 @@ export default class App {
   maxNodes = 18;
   maxRelatedNodes = 6;
   maxEdgesPerNode = 3;
-  maxEdges = Math.round(this.maxEdgesPerNode * this.maxNodes * 0.6);
+  maxEdges = Math.round(this.maxEdgesPerNode * this.maxNodes * 0.5);
   relatedNodesRatio =  0.6;
   w = 500;
   h = 500;
@@ -63,6 +63,11 @@ export default class App {
     width: 290,
     height: 75,
   };
+
+  // alphaDecay = 0.0228; default
+  alphaDecay = 0.00912;
+  // velocityDecay = 0.4; default
+  velocityDecay = 0.3;
 
 
   constructor(appName) {
@@ -459,6 +464,9 @@ export default class App {
       .force('link', d3.forceLink().distance(self.linkDistance).links(self.edges))
       // .force('charge', d3.forceManyBody().strength(self.bodyCharge))
       .force('center', d3.forceCenter(this.w / 2, this.h / 2))
+      .force('collide', d3.forceCollide())
+      .alphaDecay(self.alphaDecay)
+      .velocityDecay(self.velocityDecay)
       ;
 
     if ( self.debug )
@@ -501,6 +509,9 @@ export default class App {
     self.simulation = d3.forceSimulation(nodes)
       .force('charge', d3.forceManyBody().strength(self.bodyCharge))
       .force('center', d3.forceCenter(this.w / 2, this.h / 2))
+      .force('collide', d3.forceCollide())
+      .alphaDecay(self.alphaDecay)
+      .velocityDecay(self.velocityDecay)
 
     self.touchEnabled = self.isTouchEnabled();
     d3.selectAll("#simulation")

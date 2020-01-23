@@ -17,7 +17,7 @@ $node-size-pinned: $node-width * 1.1;
   .label,
   foreignObject body.label {
     display: block;
-    opacity: 0.6;
+    opacity: 0.9;
   }
 }
 
@@ -86,7 +86,7 @@ svg {
       min-width: $label-min-width;
 
       p {
-        margin: 0.6em 0 0 0;
+        margin: 0;
       }
 
       img.badge {
@@ -128,8 +128,15 @@ svg {
 
         .label,
         foreignObject body.label {
+          strong, p {
+            opacity: 0.6;
+            transition: opacity .25s ease;
+          }
+
           &:hover {
-            opacity: 0.9;
+            strong, p {
+              opacity: 1;
+            }
           }
         }
       }

@@ -21,8 +21,14 @@ body.record, body.top {
   }
 }
 
-body.static {
-  #container {
-    margin-top: 120px;
+#container {
+  .record & {
+    margin-top: $topbar-height;
+    padding-bottom: $topbar-height;
+  }
+
+  .reader &, .static & {
+    margin-top: $sidebar-margin-top;
+    padding-bottom: $sidebar-margin-top;
   }
 }

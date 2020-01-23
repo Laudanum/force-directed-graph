@@ -62,7 +62,12 @@ iframe {
   padding: 20px 10px 10px 20px;
   width: 20%;
   min-height: 360px;
-  margin-top: 120px;
+  margin-top: $sidebar-margin-top;
+
+  .reader & {
+    margin-top: 0;
+  }
+
   float: left;
   font-family: Garamond, 'Times New Roman', Serif;
   color: #7f7f7f;

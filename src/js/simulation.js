@@ -46,14 +46,14 @@ export default class App {
   dataFile = '/assets/data/data.json';
   maxNodes = 18;
   maxRelatedNodes = 6;
-  maxEdgesPerNode = 3;
+  maxEdgesPerNode = 3; // Note that source and target nodes each have nodes and will cull differently.
   maxEdges = Math.round(this.maxEdgesPerNode * this.maxNodes * 0.5);
   relatedNodesRatio =  0.6;
   w = 500;
   h = 500;
   bodyCharge = -50;
   imageSize = 50;
-  // linkStrength = 50;
+  linkStrength = .1;
   linkDistance = 120;
   textOffset = {
     x: 20,
@@ -68,6 +68,7 @@ export default class App {
   alphaDecay = 0.00912;
   // velocityDecay = 0.4; default
   velocityDecay = 0.3;
+  alphaReheat = 0.075;
 
 
   constructor(appName) {
@@ -214,6 +215,16 @@ export default class App {
         edges.push({source: sourceId, target: targetId});
       })
     });
+
+    // Dedupe edges; return a combo of the ids.
+    edges = _.uniqBy(edges, item => {
+      // sort target and source id.
+      if ( item.source > item.target )
+        return item.source + '-' + item.target;
+      else
+        return item.target + '-' + item.source;
+    });
+
     if ( self.debug )
       console.log(`${edges.length} edges.`);
 
@@ -461,10 +472,10 @@ export default class App {
 
     // Recreate the links force.
     self.simulation
-      .force('link', d3.forceLink().distance(self.linkDistance).links(self.edges))
-      // .force('charge', d3.forceManyBody().strength(self.bodyCharge))
+      .force('charge', d3.forceManyBody().strength(self.bodyCharge))
       .force('center', d3.forceCenter(this.w / 2, this.h / 2))
       .force('collide', d3.forceCollide())
+      .force('link', d3.forceLink().distance(self.linkDistance).strength(self.linkStrength).links(self.edges))
       .alphaDecay(self.alphaDecay)
       .velocityDecay(self.velocityDecay)
       ;
@@ -477,7 +488,7 @@ export default class App {
 
     // If alpha was zero restart as well.
     if ( self.simulation.alpha() > self.simulation.alphaTarget() ) {
-      self.simulation.alpha(0.5);
+      self.simulation.alpha(self.alphaReheat);
       // self.simulation.alphaTarget(0.01);
       self.simulation.restart();
     }
@@ -531,7 +542,7 @@ export default class App {
 
         // If the simulation has stopped; reheat.
         if ( self.simulation.alpha() > self.simulation.alphaTarget() ) {
-          self.simulation.alpha(0.5);
+          self.simulation.alpha(self.alphaReheat);
           self.simulation.restart();
         }
       })
@@ -582,7 +593,7 @@ export default class App {
 
     // Add the link force.
     self.simulation
-      .force('link', d3.forceLink().distance(self.linkDistance).links(self.edges))
+      .force('link', d3.forceLink().distance(self.linkDistance).strength(self.linkStrength).links(self.edges))
       ;
 
     self.simulation.on('tick', () => {

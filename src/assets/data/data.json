@@ -1031,7 +1031,7 @@
       "id": 64,
       "title": "Loud Silence",
       "artist": "Anawana Haloba",
-      "content": "<p>[flv:/wp-content/uploads/2007/08/haloba_loud_silence.flv /wp-content/uploads/2007/08/haloba-loudsilence.jpg 480 360]</p>",
+      "content-original": "<p>[flv:/wp-content/uploads/2007/08/haloba_loud_silence.flv /wp-content/uploads/2007/08/haloba-loudsilence.jpg 480 360]</p>",
       "year": "2005 - 2007",
       "category": {
         "id": 4,
@@ -1044,8 +1044,9 @@
       },
       "files": {
         "video": {
-          "src": "//vjs.zencdn.net/v/oceans.mp4",
-          "poster": "//vjs.zencdn.net/v/oceans.png"
+          "src": "/uploads/haloba_loud_silence/playlist.m3u8",
+          "type": "application/x-mpegURL",
+          "poster": "/uploads/haloba-loudsilence.jpg"
         }
       },
       "related": [
@@ -1093,7 +1094,7 @@
       "id": 67,
       "title": "Falta-me Espaço (Lack of Space)",
       "artist": "Pedro Barateiro",
-      "content": "<p>[flv:/wp-content/uploads/2007/08/barateiro_lack_of_space-high.flv /wp-content/uploads/2007/08/barateiro-lackofspace1.jpg 480 360]</p>",
+      "content-original": "<p>[flv:/wp-content/uploads/2007/08/barateiro_lack_of_space-high.flv /wp-content/uploads/2007/08/barateiro-lackofspace1.jpg 480 360]</p>",
       "year": "2007",
       "category": {
         "id": 4,
@@ -1103,6 +1104,13 @@
       "badge": {},
       "image": {
         "url": "/assets/images/doodles/_000-360.png"
+      },
+      "files": {
+        "video": {
+          "src": "/uploads/barateiro_lack_of_space-high/playlist.m3u8",
+          "type": "application/x-mpegURL",
+          "poster": "/uploads/barateiro-lackofspace.jpg"
+        }
       },
       "related": [
         41,
@@ -1190,7 +1198,14 @@
       "image": {
         "url": "/assets/images/doodles/_018-cross.png"
       },
-      "related": [
+      "files": {
+        "video": {
+          "src": "/uploads/haloba_loud_silence/playlist.m3u8",
+          "type": "application/x-mpegURL",
+          "poster": "/uploads/empire_sample.jpg"
+        }
+      },
+       "related": [
         16,
         17,
         18,
@@ -1495,7 +1510,7 @@
       "id": 78,
       "title": "Marathon Line/Federation Parade",
       "artist": "Shaun Gladwell",
-      "content": "<p>[flv:/wp-content/uploads/2007/08/marathon.flv /wp-content/uploads/2007/08/gladwell-federation.jpg 480 384]</p>",
+      "content-original": "<p>[flv:/wp-content/uploads/2007/08/marathon.flv /wp-content/uploads/2007/08/gladwell-federation.jpg 480 384]</p>",
       "contributor": "Courtesy the Artist and Sherman Galleries, Sydney",
       "year": "2001",
       "category": {
@@ -1506,6 +1521,13 @@
       "badge": {},
       "image": {
         "url": "/assets/images/doodles/_046-wheel.png"
+      },
+      "files": {
+        "video": {
+          "src": "/uploads/marathon1/playlist.m3u8",
+          "type": "application/x-mpegURL",
+          "poster": "/uploads/gladwell-federation.jpg"
+        }
       },
       "related": [
         94,
@@ -2860,7 +2882,7 @@
       "id": 118,
       "title": "Lamentations",
       "artist": "Anawana Haloba",
-      "content": "<p>[flv:/wp-content/uploads/2007/08/haloba_lament.flv /wp-content/uploads/2007/08/haloba-lament.jpg 480 360]</p>",
+      "content-original": "<p>[flv:/wp-content/uploads/2007/08/haloba_lament.flv /wp-content/uploads/2007/08/haloba-lament.jpg 480 360]</p>",
       "year": "2006-2007",
       "category": {
         "id": 4,
@@ -2870,6 +2892,13 @@
       "badge": {},
       "image": {
         "url": "/assets/images/doodles/_021-360.png"
+      },
+      "files": {
+        "video": {
+          "src": "/uploads/haloba_lament/playlist.m3u8",
+          "type": "application/x-mpegURL",
+          "poster": "/uploads/haloba-lament.jpg"
+        }
       },
       "related": [
         70,
@@ -2912,7 +2941,7 @@
       "id": 123,
       "title": "Tent, quartet, bows and elbows. In collaboration with T'ang Quartet",
       "artist": "Ana Prvacki",
-      "content": "<p>[flv:/wp-content/uploads/2007/09/tqbe-mpg-300k.flv /wp-content/uploads/2007/09/prvacki-ana-tqbe-still.jpg 480 360]</p>",
+      "content-original": "<p>[flv:/wp-content/uploads/2007/09/tqbe-mpg-300k.flv /wp-content/uploads/2007/09/prvacki-ana-tqbe-still.jpg 480 360]</p>",
       "year": "2007",
       "category": {
         "id": 4,
@@ -2922,6 +2951,13 @@
       "badge": {},
       "image": {
         "url": "/assets/images/doodles/_047-loop.png"
+      },
+      "files": {
+        "video": {
+          "src": "/uploads/tqbe.mpg-64kb-audio/playlist.m3u8",
+          "type": "application/x-mpegURL",
+          "poster": "/uploads/prvacki-ana-tqbe-still.jpg"
+        }
       },
       "related": [
         16,
@@ -3174,13 +3210,20 @@
       "id": 131,
       "title": "Normal",
       "artist": "Tamy Ben-Tor",
-      "content": "<p>[flv:/wp-content/uploads/2007/09/ben-tor-tamy-300.flv /wp-content/uploads/2007/09/ben-tor-normal-still.jpg 480 360]</p>",
+      "content-original": "<p>[flv:/wp-content/uploads/2007/09/ben-tor-tamy-300.flv /wp-content/uploads/2007/09/ben-tor-normal-still.jpg 480 360]</p>",
       "contributor": "Courtesy of Zach Feuer Gallery, New York",
       "year": "2006",
       "category": {
         "id": 4,
         "nicename": "video",
         "text": "New Video"
+      },
+      "files": {
+        "video": {
+          "src": "/uploads/ben-tor-tamy-300/playlist.m3u8",
+          "type": "application/x-mpegURL",
+          "poster": "/uploads/ben-tor-normal-still.jpg"
+        }
       },
       "badge": {},
       "image": {
@@ -3223,7 +3266,7 @@
       "id": 147,
       "title": "William Street",
       "artist": "Stuart Ringholt",
-      "content": "<p>[flv:/wp-content/uploads/2007/10/ringholt_wiliam_street-low.flv /wp-content/uploads/2007/10/ringholt-videostill.jpg 480 384]</p>",
+      "content-original": "<p>[flv:/wp-content/uploads/2007/10/ringholt_wiliam_street-low.flv /wp-content/uploads/2007/10/ringholt-videostill.jpg 480 384]</p>",
       "year": "2005",
       "category": {
         "id": 4,
@@ -3234,7 +3277,14 @@
       "image": {
         "url": "/assets/images/doodles/_027-spiral.png"
       },
-      "related": [
+      "files": {
+        "video": {
+          "src": "/uploads/ringholt_wiliam_street-low/playlist.m3u8",
+          "type": "application/x-mpegURL",
+          "poster": "/uploads/ringholt-videostill.jpg"
+        }
+      },
+       "related": [
         78,
         94,
         106,
@@ -3276,13 +3326,20 @@
       "id": 151,
       "title": "In A Station Of The Metro (online version)",
       "artist": "Shaun Gladwell",
-      "content": "<p>[flv:/wp-content/uploads/2007/10/gladwell_s_metro2.flv /wp-content/uploads/2007/10/gladwell-s-metro-still.jpg 480 384]</p>",
+      "content-original": "<p>[flv:/wp-content/uploads/2007/10/gladwell_s_metro2.flv /wp-content/uploads/2007/10/gladwell-s-metro-still.jpg 480 384]</p>",
       "contributor": "Courtesy the Artist & Sherman Galleries, Sydney",
       "year": "2006-07",
       "category": {
         "id": 4,
         "nicename": "video",
         "text": "New Video"
+      },
+      "files": {
+        "video": {
+          "src": "/uploads/gladwell-in-a-station-of-metro/playlist.m3u8",
+          "type": "application/x-mpegURL",
+          "poster": "/uploads/gladwell-s-metro-still.jpg"
+        }
       },
       "badge": {},
       "image": {
@@ -4179,7 +4236,7 @@
       "id": 187,
       "title": "About 20 minutes (intermission)",
       "artist": "Steve Van den Bosch",
-      "content": "<p>[flv:/wp-content/uploads/2007/10/vandenbosch-low.flv /wp-content/uploads/2007/10/van-den-bosch-still.png 480 360]</p>",
+      "content-original": "<p>[flv:/wp-content/uploads/2007/10/vandenbosch-low.flv /wp-content/uploads/2007/10/van-den-bosch-still.png 480 360]</p>",
       "year": "2004",
       "category": {
         "id": 4,
@@ -4189,6 +4246,13 @@
       "badge": {},
       "image": {
         "url": "/assets/images/doodles/_041-cylinder.png"
+      },
+      "files": {
+        "video": {
+          "src": "/uploads/vandenbosch-low/playlist.m3u8",
+          "type": "application/x-mpegURL",
+          "poster": "/uploads/van-den-bosch-still.jpg"
+        }
       },
       "related": [],
       "tags": []

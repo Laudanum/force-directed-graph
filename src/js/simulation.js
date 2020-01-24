@@ -16,7 +16,8 @@ const d3 = require('./d3-custom');
  * - [ ] Fix settings for each force
  * - [ ] Enable collision detection
  * - [v] Integrate static pages
- * - [ ] Repair video player
+ * - [v] Repair video player
+ * - [ ] Process videos https://onlinevenue.holly.media/wp-admin/edit.php?cat=4
  * - [v] Add menu
  * - [v] Fix label sizes so they don't grab focus
  * - [-] Fix label hovers

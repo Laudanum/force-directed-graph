@@ -29,8 +29,15 @@ body.record {
     }
 
     iframe {
-      width: 100%;
-      height: 100%;
+      &#ytplayer {
+        width: 100%;
+        min-height: 640px / 4 * 3;
+      }
+
+      &:not(#ytplayer) {
+        width: 100%;
+        height: 100%;
+      }
       border: none;
     }
 

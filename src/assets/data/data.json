@@ -3752,8 +3752,8 @@
     {
       "id": 173,
       "title": "Saburo\tMurakami",
-      "artist": "SaburoMurakami",
-      "content": "",
+      "artist": "Saburo Murakami",
+      "content": "<iframe id='ytplayer' type='text/html' src='https://www.youtube.com/embed/EWctXXGeJMA?autoplay=1' frameborder='0'></iframe>",
       "category": {
         "id": 6,
         "nicename": "link",
@@ -3810,14 +3810,12 @@
         "Space"
       ],
       "link": {
-        "url": "http://www.youtube.com/watch?v=EWctXXGeJMA",
-        "target": "_top"
       }
     },
     {
       "id": 174,
       "title": "Saburo Murakami",
-      "content": "",
+      "content": "<iframe id='ytplayer' type='text/html' src='https://www.youtube.com/embed/SNqexv5mRvQ?autoplay=1' frameborder='0'></iframe>",
       "category": {
         "id": 6,
         "nicename": "link",
@@ -3866,11 +3864,7 @@
       "tags": [
         "Revolutionary",
         "Space"
-      ],
-      "link": {
-        "url": "http://www.youtube.com/watch?v=SNqexv5mRvQ",
-        "target": "_top"
-      }
+      ]
     },
     {
       "id": 175,

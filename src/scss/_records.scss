@@ -10,12 +10,13 @@ body.record {
   &.video {
     text-align: center;
 
+    #container {
+      margin-top: $sidebar-margin-top;
+      height: 100%;
+    }
+
     video {
-      margin-top: 120px;
       background-color: black;
-      width: 720px;
-      height: 720px / 16 * 9;
-      color: white;
     }
   }
 
@@ -67,7 +68,6 @@ iframe {
   .reader & {
     margin-top: 0;
   }
-
   float: left;
   font-family: Garamond, 'Times New Roman', Serif;
   color: #7f7f7f;

@@ -1,12 +1,14 @@
 <!-- partials/main-video -->
-@TODO Video (category 4)
 
 <div class="content">
   <div class="post post{{record.category.nicename}}" id="post-{{record.id}}">
     <div class="storycontent">
-      <video>
-        <source />
-        <poster />
+      <video class="video-js" controls preload="auto" poster="{{record.files.video.poster}}" data-setup="{}">
+        <source src="{{record.files.video.src}}" type="video/mp4" />
+        <p class="vjs-no-js">
+          To view this video please enable JavaScript, and consider upgrading to a web browser that
+          <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+        </p>
       </video>
     </div>
   </div>

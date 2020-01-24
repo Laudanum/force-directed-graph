@@ -1,6 +1,8 @@
 // base.js
 'use strict';
 
+const videojs = require('videojs');
+
 export default class App {
 
   constructor() {

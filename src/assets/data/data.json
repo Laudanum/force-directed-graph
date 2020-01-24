@@ -1042,6 +1042,12 @@
       "image": {
         "url": "/assets/images/doodles/_009-spiral.png"
       },
+      "files": {
+        "video": {
+          "src": "//vjs.zencdn.net/v/oceans.mp4",
+          "poster": "//vjs.zencdn.net/v/oceans.png"
+        }
+      },
       "related": [
         41,
         67,

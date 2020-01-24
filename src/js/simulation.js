@@ -35,6 +35,8 @@ const d3 = require('./d3-custom');
  * - [ ] Progress or loading indicator at start
  * - [ ] Progress or loading indicator on depart
  * - [ ] Double density images.
+ * - [ ] Sitemap.
+ * - [ ] Index page?
  */
 
 

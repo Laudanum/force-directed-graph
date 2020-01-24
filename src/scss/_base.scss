@@ -15,6 +15,7 @@ body.record, body.top {
   margin: 0;
   padding: 0;
 
+  &.record.video,
   &.night-mode {
     background: black url("/assets/images/backgrounds/inverted/background_004.png");
     background-size: cover;

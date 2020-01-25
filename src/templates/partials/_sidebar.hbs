@@ -3,7 +3,7 @@
 <div class="sidebar">
   <a title='Related to "{{record.title}}"' href='/#{{record.id}}'>
     <h3>{{record.artist}}</h3>
-    <h2>{{record.title}}, {{record.year}}</h2>
+    <h2>{{record.title}}{{#if record.year}}, {{record.year}}{{/if}}</h2>
   </a>
 
   {{#if record.contributor}}

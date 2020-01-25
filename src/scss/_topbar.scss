@@ -91,27 +91,49 @@
     float: right;
     width: 10%;
     margin: 0 2.5%;
+
+    img {
+      $w: 70px / 2;
+      $h: 50px / 2;
+      width: $w;
+      height: $h;
+      background-image: url(/assets/images/related.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: $w $h;
+    }
   }
 
   img.exit-link {
     width: 16px;
     height: 16px;
+    margin-top: -4px;
   }
 }
 
 img {
   &.topbar_on,
   &.topbar_off {
-    background-image: url(/assets/images/nav.gif);
+    $w: 76px / 2;
+    $h: 40px / 2;
+    width: $w;
+    height: $h;
+    background-image: url(/assets/images/nav.png);
     background-repeat: no-repeat;
     background-position: center center;
     margin-top: 2px;
+    background-size: $w $h;
   }
 
   &#onlinevenue {
-    background-image: url(/assets/images/onlinevenue.gif);
+    $w: 162px;
+    $h: 16px;
+    width: $w;
+    height: $h;
+    background-image: url(/assets/images/onlinevenue.png);
     background-repeat: no-repeat;
     background-position: top center;
+    background-size: $w $h;
   }
 
   @media (max-width: 576px) {

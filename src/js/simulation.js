@@ -507,7 +507,12 @@ export default class App {
    * Opens the URL.
    */
   labelEventHandler(d) {
+    if ( d.link && d.link.url && d.link.target == '_blank' ) {
+      window.location = d.link.url;
+      return;
+    }
     window.location = `/record/${d.category.nicename}/${d.id}`;
+    return;
   }
 
 

@@ -38,6 +38,7 @@ body.record {
         width: 100%;
         height: 100%;
       }
+
       border: none;
     }
 
@@ -58,7 +59,14 @@ body.record {
     @media screen and (min-width: 1024px) {
       min-width: 760px;
     }
+
     text-align: center;
+  }
+
+  &.reader {
+    #container {
+      height: 100%;
+    }
   }
 }
 
@@ -73,6 +81,7 @@ iframe {
   .night-mode &, .record.video & {
     color: invert(#4472ae);
   }
+
   text-align: left;
   padding: 20px 10px 10px 20px;
   width: 100vw;
@@ -86,6 +95,7 @@ iframe {
   .reader & {
     margin-top: 0;
   }
+
   float: left;
   font-family: Garamond, 'Times New Roman', Serif;
   color: #7f7f7f;
@@ -103,6 +113,7 @@ iframe {
     .night-mode &, .record.video & {
       color: invert(#2252ae);
     }
+
     line-height: auto;
     padding: 0;
     margin: 0;
@@ -159,6 +170,7 @@ a:hover {
   .night-mode &, .record.video & {
     color: invert($brand-colour);
   }
+
   text-decoration: none;
 }
 
@@ -272,6 +284,7 @@ ul.post-meta span.post-meta-key {
     margin-left: 20%;
     width: 50vw;
   }
+
   text-align: left;
   padding-top: 5px;
   padding-left: 10px;

@@ -1,5 +1,6 @@
 // Variables
 $node-size-pinned: $node-width * 1.1;
+$node-opacity-default: 0.7;
 
 @mixin debug($colour) {
   outline: 1px dashed $colour;
@@ -18,6 +19,16 @@ $node-size-pinned: $node-width * 1.1;
   foreignObject body.label {
     display: block;
     opacity: 0.9;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: $node-opacity-default;
   }
 }
 
@@ -59,6 +70,7 @@ svg {
   }
 
   .edges line {
+    animation: fadein 2s;
     stroke: rgba($line-colour, $line-opacity);
   }
 
@@ -102,13 +114,14 @@ svg {
     height: $node-height;
 
     image {
+      animation: fadein 2s;
       transition: all .25s ease;
       transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
       width: $node-width;
       height: $node-height;
       x: -$node-width / 2;
       y: -$node-height / 2;
-      opacity: 0.6;
+      opacity: $node-opacity-default;
       position: absolute;
     }
 

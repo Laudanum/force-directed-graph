@@ -1,6 +1,7 @@
 // Variables
 $node-size-pinned: $node-width * 1.1;
 $node-opacity-default: 0.7;
+$transition-default: 1s;
 
 @mixin debug($colour) {
   outline: 1px dashed $colour;
@@ -93,7 +94,7 @@ svg {
       background-color: $label-background-colour;
       border: $label-border-weight solid $label-border-colour;
       padding: 5px;
-      transition: opacity 0.25s ease;
+      transition: opacity $transition-default ease;
       white-space: pre-line;
       min-width: $label-min-width;
 
@@ -115,7 +116,7 @@ svg {
 
     image {
       animation: fadein 2s;
-      transition: all .25s ease;
+      transition: all $transition-default ease;
       transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
       width: $node-width;
       height: $node-height;
@@ -145,7 +146,7 @@ svg {
         foreignObject body.label {
           strong, p {
             opacity: 0.6;
-            transition: opacity .25s ease;
+            transition: opacity $transition-default ease;
           }
 
           &:hover {

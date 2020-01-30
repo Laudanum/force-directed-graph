@@ -334,7 +334,7 @@
     {
       "id": 18,
       "title": "Human Rights and its Discontents",
-      "artist": "Slavoj Zizek",
+      "artist": "Slavoj Žižek",
       "content": "<p>It is a well known fact that the close-the-door button in most elevators is a totally dysfunctional placebo which is placed there just to give individuals the impression that they are somehow participating, contributing to the speed of the elevator journey.</p>",
       "year": "1999",
       "category": {
@@ -391,7 +391,8 @@
         "Revolutionary"
       ],
       "link": {
-        "url": "http://www.egs.edu/faculty/zizek/zizek-human-rights-and-its-discontents.html",
+        "url-original": "http://www.egs.edu/faculty/zizek/zizek-human-rights-and-its-discontents.html",
+        "url": "https://www.scribd.com/document/126263643/Zizek-Slavoj-Human-Rights-and-Its-Discontents",
         "target": "_blank"
       }
     },
@@ -2268,7 +2269,7 @@
         "Revolutionary"
       ],
       "link": {
-        "url": "http://www.kellerberrin.com",
+        "url": "https://www.kellerberrin.com",
         "target": "_top"
       }
     },

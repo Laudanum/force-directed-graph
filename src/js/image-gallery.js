@@ -1,8 +1,8 @@
 // image-gallery.js
 'use strict';
 
-// const PhotoSwipe = require('photoswipe');
-// const PhotoSwipeUI_Default = require('photoswipe-ui-default');
+import "photoswipe/src/css/main.scss";
+import "photoswipe/src/css/default-skin/default-skin.scss";
 
 
 export default class App {

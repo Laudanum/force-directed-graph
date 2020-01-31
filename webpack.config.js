@@ -2,6 +2,10 @@ const path = require('path')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const webpack = require('webpack')
 const env = process.env.WEBPACK_ENV
+const logger = require('webpack/lib/logging/runtime');
+
+const log = logger.getLogger('constellation-app');
+
 
 // Simply configure those 4 variables:
 const JS_SOURCE_FILES = ['babel-polyfill', './src/js/index.js', 'photoswipe', 'photoswipe/src/js/ui/photoswipe-ui-default.js']
@@ -63,7 +67,32 @@ module.exports = {
           ]
         },
       },
-    }]
+    },
+    {
+      test: /\.s[ac]ss$/i,
+      use: [
+        // Creates `style` nodes from JS strings
+        'style-loader',
+        // Translates CSS into CommonJS
+        'css-loader',
+        // Compiles Sass to CSS
+        'sass-loader',
+      ],
+    },
+    {
+      test: /\.(png|svg|jpe?g|gif|woff2?|ttf|eot)$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          outputPath: (url, resourcePath, context) => {
+            log.info(url)
+            return `../images/${url}`;
+          },
+          publicPath: '/assets/images',
+        }
+      }]
+    },
+    ]
   },
   resolve: {
     extensions: ['.js', '.css', '.scss']

@@ -3400,6 +3400,16 @@
       "image": {
         "url": "/assets/images/doodles/_009-spiral.png"
       },
+      "files": {
+        "slides": [
+          {
+            "url": "http://onlinevenue.holly.media/wp-content/uploads/2007/10/perjovschi-lia.jpg",
+            "dimensions": [2000, 1454],
+            "title": "[no title provided]",
+            "description": "A large, hand-drawn, mind-map."
+          }
+        ]
+      },
       "related": [
         70,
         87,
@@ -4309,28 +4319,28 @@
         "slides": [
           {
             "title": "Perfect Air Passenger",
-            "description": "\"Perfect Air Passenger\"",
+            "description": "Drawing of a naked man carrying a clear bag containing a bottle.",
             "url": "http://onlinevenue.holly.media/wp-content/uploads/2007/10/dp_passanger.jpg",
             "type": "image/jpg",
             "dimensions": [967, 650]
           },
           {
             "title": "Famous",
-            "description": "\"Famous\"",
+            "description": "Drawing of a stick figure with their hands in the air saying \"great you've been famous for 0.005 seconds\".",
             "url": "http://onlinevenue.holly.media/wp-content/uploads/2007/10/dp_famous.jpg",
             "type": "image/jpg",
             "dimensions": [967, 650]
           },
           {
             "title": "Immigrant",
-            "description": "\"Immigrant\"",
+            "description": "Drawing of two figures, one labelled \"Immigrant\", whose shadow is displaced.",
             "url": "http://onlinevenue.holly.media/wp-content/uploads/2007/10/dp_immigrant.jpg",
             "type": "image/jpg",
             "dimensions": [553, 650]
           },
           {
             "title": "Feng Shui",
-            "description": "\"Feng Shui\"",
+            "description": "A drawing of a church and a mosque. The church is asking \"Do you like Feng-Shui?\".",
             "url": "http://onlinevenue.holly.media/wp-content/uploads/2007/10/dp_fengshui.jpg",
             "type": "image/jpg",
             "dimensions": [926, 650]

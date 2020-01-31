@@ -8,30 +8,38 @@
 export default class App {
 
   constructor() {
-    const pswpElement = document.querySelectorAll('.pswp')[0];
+    const self = this;
 
     const data = document.querySelectorAll('.pswp-data .slide img');
+    if ( ! data.length ) return;
+
+    self.items = [];
 
     // build items array
-    const items = [];
-
-    data.forEach(item => {
+    data.forEach((item, index) => {
       const dimensions = item.getAttribute('data-dimensions').split(',');
-      items.push({src: item.src, w: dimensions[0], h: dimensions[1]})
+      self.items.push({src: item.src, w: dimensions[0], h: dimensions[1]});
+      item.addEventListener('click', e => {
+        self.openGallery(index);
+      });
     });
 
-    // define options (if needed)
+    self.openGallery(0);
+  }
+
+
+  openGallery(index) {
+    const self = this;
+
+    const pswpElement = document.querySelectorAll('.pswp')[0];
+
     const options = {
-        // optionName: 'option value'
-        // for example:
-        index: 0 // start at first slide
+      index: index,
     };
 
     // Initializes and opens PhotoSwipe
-    var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+    var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, self.items, options);
     gallery.init();
-
-    // @TODO Hide the data block.
   }
 }
 

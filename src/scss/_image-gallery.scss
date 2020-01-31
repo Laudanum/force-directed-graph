@@ -1,0 +1,17 @@
+.gallery {
+  .slide {
+    width: 45%;
+    margin: 2.5%;
+    float: left;
+
+    &:nth-child(odd) {
+      clear: both;
+    }
+
+    &:nth-child(even) {}
+
+    img {
+      width: 100%;
+    }
+  }
+}

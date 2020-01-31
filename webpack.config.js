@@ -4,7 +4,7 @@ const webpack = require('webpack')
 const env = process.env.WEBPACK_ENV
 
 // Simply configure those 4 variables:
-const JS_SOURCE_FILES = ['babel-polyfill', './src/js/index.js']
+const JS_SOURCE_FILES = ['babel-polyfill', './src/js/index.js', 'photoswipe', 'photoswipe/src/js/ui/photoswipe-ui-default.js']
 const OUTPUT_FILENAME = 'app'
 const DEST_FOLDER = 'dist/assets/js'
 const COPYRIGHT = `Add your copyright here. It is included at the beginning of your bundle.`
@@ -16,14 +16,22 @@ const { plugins, outputfile, mode } = env == 'build'
   ? {
     plugins: [
       new UglifyJSPlugin(),
-      new webpack.BannerPlugin(COPYRIGHT)
+      new webpack.BannerPlugin(COPYRIGHT),
+      new webpack.ProvidePlugin({
+        PhotoSwipe: 'photoswipe',
+        PhotoSwipeUI_Default: 'photoswipe/src/js/ui/photoswipe-ui-default.js'
+      })
     ],
     outputfile: OUTPUT_FILE_MIN,
     mode: 'production'
   }
   : {
     plugins: [
-      new webpack.BannerPlugin(COPYRIGHT)
+      new webpack.BannerPlugin(COPYRIGHT),
+      new webpack.ProvidePlugin({
+        PhotoSwipe: 'photoswipe',
+        PhotoSwipeUI_Default: 'photoswipe/src/js/ui/photoswipe-ui-default.js'
+      })
     ],
     outputfile: OUTPUT_FILE,
     mode: 'development'
@@ -56,6 +64,9 @@ module.exports = {
         },
       },
     }]
+  },
+  resolve: {
+    extensions: ['.js', '.css', '.scss']
   },
   devtool: 'source-map',
   plugins: plugins

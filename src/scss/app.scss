@@ -1,5 +1,10 @@
 @import "variables";
 
 @import "base";
+@import "image-gallery";
 @import "records";
 @import "simulation";
+
+// Photoswipe
+@import "node_modules/photoswipe/src/css/main";
+@import "node_modules/photoswipe/src/css/default-skin/default-skin";

@@ -4,10 +4,12 @@ $brand-colour: #4E607A;
 
 $topbar-height: 30px;
 $transition-duration: 2s;
+$transition-default: $transition-duration;
 
 $line-colour: $brand-colour;
 $line-weight: 1px;
 $line-opacity: 0.15;
+$line-opacity-night: $line-opacity * 2;
 
 $label-background-colour: #FFFFBF;
 $label-border-colour: #999999;
@@ -25,5 +27,7 @@ $font-link-colour: #000000;
 
 $node-width: 60px;
 $node-height: $node-width;
+$node-size-pinned: $node-width * 1.1;
+$node-opacity-default: 0.7;
 
 $sidebar-margin-top: 120px;

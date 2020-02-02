@@ -1,8 +1,3 @@
-// Variables
-$node-size-pinned: $node-width * 1.1;
-$node-opacity-default: 0.7;
-$transition-default: 1s;
-
 @mixin debug($colour) {
   outline: 1px dashed $colour;
 }
@@ -73,6 +68,11 @@ svg {
   .edges line {
     animation: fadein 5s;
     stroke: rgba($line-colour, $line-opacity);
+    transition: opacity $transition-default ease;
+
+    .night-mode & {
+      stroke: rgba($line-colour, $line-opacity-night);
+    }
   }
 
   foreignObject {

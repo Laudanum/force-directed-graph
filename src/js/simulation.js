@@ -577,6 +577,22 @@ export default class App {
             .classed("touch", self.touchEnabled)
             .classed("not-touch", !self.touchEnabled);
         }
+        // more strength (+)
+        else if ( d3.event.keyCode === 187 ) {
+          self.modifyStrength(true);
+        }
+        // less strength (-)
+        else if ( d3.event.keyCode === 189 ) {
+          self.modifyStrength(false);
+        }
+        // more distance (up)
+        else if ( d3.event.keyCode === 38 ) {
+          self.modifyDistance(true);
+        }
+        // less distance (down)
+        else if ( d3.event.keyCode === 40 ) {
+          self.modifyDistance(false);
+        }
         else if ( self.debug )
           console.log(d3.event.keyCode);
 
@@ -709,6 +725,63 @@ export default class App {
 
 
   /*
+   * Increase or decrease distance for forceLinks and restart.
+   */
+  modifyDistance(direction) {
+    const self = this;
+    const factor = 2;
+
+    if ( direction )
+      self.linkDistance *= factor;
+    else
+      self.linkDistance /= factor;
+
+    self.log(`linkDistance is ${self.linkDistance}`);
+
+    self.restartForce('link');
+  }
+
+
+  /*
+   * Increase or decrease strength for forceLinks and restart.
+   */
+  modifyStrength(direction) {
+    const self = this;
+    const factor = 8;
+
+    if ( direction )
+      self.linkStrength *= factor;
+    else
+      self.linkStrength /= factor;
+
+    self.log(`linkStrength is ${self.linkStrength}`);
+
+    self.restartForce('link');
+  }
+
+
+  /*
+   *
+   */
+  restartForce(name) {
+    const self = this;
+
+    if ( name === 'link' ) {
+      // Recreate the links force.
+      self.simulation
+        .force(name, d3.forceLink().distance(self.linkDistance).strength(self.linkStrength).links(self.edges))
+        ;
+    }
+
+    if ( self.simulation.alpha() > self.simulation.alphaTarget() ) {
+      self.simulation.alpha(self.alphaReheat);
+      self.simulation.restart();
+    }
+
+  }
+
+
+  /*
    * Called by the simulation on every frame.
    */
   tick() {
@@ -742,6 +815,15 @@ export default class App {
 
     self.setCentreNode();
     self.updateEdges();
+  }
+
+
+  /*
+   *
+   */
+  log(message) {
+    if ( this.debug )
+      console.log(message);
   }
 
 }

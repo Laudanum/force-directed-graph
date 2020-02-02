@@ -717,17 +717,21 @@ export default class App {
     const simulation = d3.select('svg')
       .selectAll('g.node')
       .attr('class', d => {
+        const classes = ['node'];
+        const m = d.id % 10;
+        classes.push(`node-variation-${m}`);
         // @FIX Why can't we do this once, elsewhere?
-        if ( d.id === self.pinned &&  d.id === self.centre ) {
-          return 'node node-pinned node-centre';
+        if ( d.id === self.pinned && d.id === self.centre ) {
+          classes.push('node-pinned');
+          classes.push('node-centre');
         }
         else if ( d.id === self.centre ) {
-          return 'node node-centre';
+          classes.push('node-centre');
         }
         else if ( d.id === self.pinned ) {
-          return 'node node-pinned';
+          classes.push('node-pinned');
         }
-        return 'node';
+        return classes.join(' ');
       })
       .attr('transform', d => {
         return `translate(${d.x}, ${d.y})`;

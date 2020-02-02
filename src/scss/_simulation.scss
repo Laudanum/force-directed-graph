@@ -126,6 +126,12 @@ svg {
       position: absolute;
     }
 
+    @for $i from 1 through 10 {
+      &.node-variation-#{$i} image {
+        animation: fadein #{$i}s;
+      }
+    }
+
     &.node-pinned {
       @extend %highlighted;
     }

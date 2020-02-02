@@ -9,15 +9,15 @@ const d3 = require('./d3-custom');
  * - [v] Resize with the window
  * - [ ] Use fx for pinning https://stackoverflow.com/questions/10392505/fix-node-position-in-d3-force-directed-layout/44644069
  * - [ ] Mobile version
- *      - [ ] Test touches
+ *      - [x] Test touches
  *      - [v] Remove hovers
  *      - [v] Show some labels
  *      - [v] Hide online venue
  * - [ ] Fix settings for each force
- * - [ ] Enable collision detection
+ * - [v] Enable collision detection
  * - [v] Integrate static pages
  * - [v] Repair video player
- * - [ ] Process videos https://onlinevenue.holly.media/wp-admin/edit.php?cat=4
+ * - [v] Process videos https://onlinevenue.holly.media/wp-admin/edit.php?cat=4
  * - [v] Add menu
  * - [v] Fix label sizes so they don't grab focus
  * - [-] Fix label hovers
@@ -27,16 +27,16 @@ const d3 = require('./d3-custom');
  * - [v] Add night-mode
  * - [v] Convert CSS to SASS
  * - [v] Roll up JS
- * - [ ] Add self.log() fn
+ * - [v] Add self.log() fn
  * - [ ] Support other browsers
  * - [ ] Autoplay (randomly pick a node every time and again).
- * - [ ] Load one node at a time.
+ * - [x] Load one node at a time. (randomly assign a class that changes fade in duration).
  * - [v] Add static pages.
- * - [ ] Youtube won't be framed http://localhost:3000/record/link/173/
+ * - [v] Youtube won't be framed http://localhost:3000/record/link/173/
  * - [ ] Progress or loading indicator at start
  * - [ ] Progress or loading indicator on depart
- * - [ ] Double density images.
- * - [ ] Sitemap.
+ * - [v] Double density images.
+ * - [v] Sitemap.
  * - [ ] Index page?
  */
 
@@ -48,16 +48,17 @@ export default class App {
 
   dataFile = '/assets/data/data.json';
   maxNodes = 18;
-  maxRelatedNodes = 6;
   maxEdgesPerNode = 3; // Note that source and target nodes each have nodes and will cull differently.
   maxEdges = Math.round(this.maxEdgesPerNode * this.maxNodes * 0.5);
-  relatedNodesRatio =  0.6;
+  relatedNodesRatio =  0.35; // Compared to maxNodes how many related nodes are we allowed?
   w = 500;
   h = 500;
   bodyCharge = -50;
   imageSize = 50;
-  linkStrength = .1;
+  linkStrength = .0125;
   linkDistance = 120;
+  collisionRadius = 25;
+  collisionStrength = 0.2;
   textOffset = {
     x: 20,
     y: 40,
@@ -70,7 +71,7 @@ export default class App {
   // alphaDecay = 0.0228; default
   alphaDecay = 0.00912;
   // velocityDecay = 0.4; default
-  velocityDecay = 0.3;
+  velocityDecay = 0.5;
   alphaReheat = 0.075;
 
 
@@ -435,11 +436,14 @@ export default class App {
     if ( self.debug )
       console.log(relatedNodes);
 
-    // Set each node to the centre of the simulation.
-    relatedNodes.forEach(node => {
+    // Set each node around a circle.
+    const x0 = self.w/2;
+    const y0 = self.h/2;
+    const r = self.w/2;
+    relatedNodes.forEach((node, i) => {
       if ( node.x === undefined ) {
-        node.x = self.w/2;
-        node.y = self.h/2;
+        node.x = x0 + r * Math.cos(2 * Math.PI * i / relatedNodes.length);
+        node.y = y0 + r * Math.sin(2 * Math.PI * i / relatedNodes.length);
       }
     })
 
@@ -477,7 +481,7 @@ export default class App {
     self.simulation
       .force('charge', d3.forceManyBody().strength(self.bodyCharge))
       .force('center', d3.forceCenter(this.w / 2, this.h / 2))
-      .force('collide', d3.forceCollide())
+      .force('collide', d3.forceCollide(this.collisionRadius).strength(this.collisionStrength))
       .force('link', d3.forceLink().distance(self.linkDistance).strength(self.linkStrength).links(self.edges))
       .alphaDecay(self.alphaDecay)
       .velocityDecay(self.velocityDecay)
@@ -492,14 +496,8 @@ export default class App {
     // If alpha was zero restart as well.
     if ( self.simulation.alpha() > self.simulation.alphaTarget() ) {
       self.simulation.alpha(self.alphaReheat);
-      // self.simulation.alphaTarget(0.01);
       self.simulation.restart();
     }
-    // Update alpha which will restart tick() https://github.com/d3/d3-force/issues/97
-    // self.simulation.alpha(self.simulation.alpha() * 1.5);
-    // self.simulation.alpha(1);
-    // else
-      // self.simulation.alphaTarget(0.2);
   }
 
 
@@ -528,7 +526,7 @@ export default class App {
     self.simulation = d3.forceSimulation(nodes)
       .force('charge', d3.forceManyBody().strength(self.bodyCharge))
       .force('center', d3.forceCenter(this.w / 2, this.h / 2))
-      .force('collide', d3.forceCollide())
+      .force('collide', d3.forceCollide(this.collisionRadius).strength(this.collisionStrength))
       .alphaDecay(self.alphaDecay)
       .velocityDecay(self.velocityDecay)
 
@@ -753,6 +751,8 @@ export default class App {
       self.linkStrength *= factor;
     else
       self.linkStrength /= factor;
+    if ( self.linkStrength > 1 )
+      self.linkStrength = 1;
 
     self.log(`linkStrength is ${self.linkStrength}`);
 

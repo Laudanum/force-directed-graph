@@ -39,7 +39,7 @@
         "Rotating"
       ],
       "link": {
-        "url": "http://academic.evergreen.edu/curricular/fopa/theatre/texts/stein.htm",
+        "url": "https://academic.evergreen.edu/curricular/fopa/theatre/texts/stein.htm",
         "target": "_top"
       }
     },
@@ -399,7 +399,7 @@
     {
       "id": 19,
       "title": "Too Much Democracy?",
-      "artist": "Slavoj Zizek",
+      "artist": "Slavoj Žižek",
       "content": "<p>\"Democracy\" is not merely the \"power of, by, and for the people,\" it is not enough just to claim that, in democracy, the will and the interests (the two in no way automatically coincide) of the large majority determine the state decisions...</p>",
       "year": "2003",
       "category": {
@@ -3453,7 +3453,7 @@
     {
       "id": 167,
       "title": "Repeating Lenin",
-      "artist": "Slavoj Zizek",
+      "artist": "Slavoj Žižek",
       "content": "<p>The first public reaction to the idea of re-actualizing Lenin is, of course, an outburst of sarcastic laughter: Marx is OK, even on Wall Street, there are people who love him today - Marx the poet of commodities, who provided perfect descriptions of the capitalist dynamics, Marx of the Cultural Studies, who portrayed the alienation and reification of our daily lives -, but Lenin, no, you can't be serious...</p>",
       "year": "2001",
       "category": {

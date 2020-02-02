@@ -447,14 +447,6 @@ export default class App {
       }
     })
 
-    // Cull down (randomly) to maxNodes.
-    if ( self.debug )
-      console.log(`${currentNodes.length} nodes before culling.`);
-    // @FIX Don't cull the one we clicked.
-    currentNodes = self.cull(currentNodes, self.maxNodes - relatedNodes.length, d);
-    if ( self.debug )
-      console.log(`${currentNodes.length} nodes after culling.`);
-
     // Merge related nodes with culled current nodes.
     currentNodes = currentNodes.concat(relatedNodes);
     if ( self.debug )
@@ -465,7 +457,7 @@ export default class App {
     if ( self.debug )
       console.log(`${self.currentNodes.length} unique nodes.`);
 
-    // Cull again
+    // Cull down (randomly) to maxNodes.
     if ( currentNodes.length > self.maxNodes )
       currentNodes = self.cull(currentNodes, self.maxNodes, d);
 

@@ -6,7 +6,7 @@
   "scripts": {
     "build-task:scss-compile": "mkdir -p dist/assets/images && mkdir -p dist/assets/css && node-sass --source-map true --output-style compressed --output dist/assets/css src/scss/",
     "build-task:copy": "mkdir -p dist/assets/images && cp -a src/assets/ dist/assets && cp node_modules/video.js/dist/video-js.min.css dist/assets/css",
-    "build-task:js-compile": "mkdir -p dist/assets/js && WEBPACK_ENV=dev webpack",
+    "build-task:js-compile": "mkdir -p dist/assets/js && WEBPACK_ENV=build webpack",
     "build-all": "mkdir -p dist/assets && npm-run-all --parallel build-task:*",
     "build-records": "mkdir -p dist/record && node utils/template-compile src/assets/data/data.json src/templates dist/record",
     "build-uploads": "cp -a uploads/ dist/uploads",

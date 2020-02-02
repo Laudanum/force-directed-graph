@@ -19,7 +19,7 @@ const OUTPUT_FILE_MIN = `${OUTPUT_FILENAME}.min.js`
 const { plugins, outputfile, mode } = env == 'build'
   ? {
     plugins: [
-      new UglifyJSPlugin(),
+      // new UglifyJSPlugin(),
       new webpack.BannerPlugin(COPYRIGHT),
       new webpack.ProvidePlugin({
         PhotoSwipe: 'photoswipe',

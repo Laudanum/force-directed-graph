@@ -10,8 +10,12 @@ const log = logger.getLogger('constellation-app');
 
 const JS_SOURCE_FILES = ['babel-polyfill', './src/js/index.js', 'photoswipe', 'photoswipe/src/js/ui/photoswipe-ui-default.js']
 const OUTPUT_FILENAME = 'app'
-const DEST_FOLDER = 'dist/assets/js'
+const DEST_FOLDER = 'dist'
 const COPYRIGHT = `Copyright ©2008-2020 Holly Sydney.`
+
+const DEFAULT_DATA = {
+  title: "Biennale Of Sydney 2008 Online Venue",
+};
 
 
 const OUTPUT_FILE = `${OUTPUT_FILENAME}.js`
@@ -23,7 +27,7 @@ const webpackConfig = {
   mode: 'production',
   entry: JS_SOURCE_FILES,
   output: {
-    path: path.join(__dirname, DEST_FOLDER),
+    path: path.join(__dirname, DEST_FOLDER, "assets", "js"),
     filename: outputfile,
     libraryTarget: 'umd',
     umdNamedDefine: true,
@@ -79,19 +83,20 @@ const webpackConfig = {
   devtool: 'source-map',
 
   plugins: [
-    // new HtmlWebpackPlugin({
-    //   title: "Generic Head Title",
-    //   // the template you want to use
-    //   template: path.join(__dirname, "src", "templates", "partials", "_head.hbs"),
-    //   // the output file name
-    //   filename: path.join(__dirname, "src", "templates", "partials", "generated", "_head.hbs"),
-    //   inject: "head"
-    // }),
+    new HtmlWebpackPlugin({
+      title: "Generic Head Title",
+      // the template you want to use
+      template: path.join(__dirname, "src", "templates", "partials", "_head.hbs"),
+      // the output file name
+      filename: path.join(__dirname, "src", "templates", "partials", "generated", "_head.hbs"),
+      inject: "head"
+    }),
+
     new HandlebarsWebpackPlugin({
-      // htmlWebpackPlugin: {
-      //   enabled: true, // register all partials from html-webpack-plugin, defaults to `false`
-      //   prefix: "generated" // where to look for htmlWebpackPlugin output. default is "html"
-      // },
+      htmlWebpackPlugin: {
+        enabled: true, // register all partials from html-webpack-plugin, defaults to `false`
+        prefix: "generated" // where to look for htmlWebpackPlugin output. default is "html"
+      },
 
       data: require(path.join(process.cwd(), "src", "assets", "data", "data.json")),
 
@@ -112,7 +117,8 @@ const webpackConfig = {
       /**
        * Modify the hbs partial-id created for a loaded partial
        * @param {String} filePath   - filePath to the loaded partial
-       * @return {String} hbs-partialId, per default folder/partialName is used
+       * @return {String} hbs-partialId, remove leading underscore and partial
+       * directory.
        */
       getPartialId: function (path) {
         let id = path.match(/\/([^/]+\/[^/]+)\.[^.]+$/).pop();
@@ -127,14 +133,16 @@ const webpackConfig = {
       onBeforeRender: function (Handlebars, data, filename, template, plugin) {
         const self = this;
 
+        data.default = DEFAULT_DATA;
+
         if ( filename.indexOf("record.hbs") < 0 ) return;
 
         log.info("Filename ", filename);
 
         // foreach data.record as record.
         data.record.forEach(record => {
-          const result = template({record: record});
-          const targetFilepath = path.join(record.category.nicename, record.id + "", "index.html");
+          const result = template({default: DEFAULT_DATA, record: record});
+          const targetFilepath = path.join("..", "..", "record", record.category.nicename, record.id + "", "index.html");
 
           // plugin.registerGeneratedFile(targetFilepath, result);
           plugin.assetsToEmit[targetFilepath] = {

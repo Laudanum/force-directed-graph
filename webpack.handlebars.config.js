@@ -93,6 +93,8 @@ const webpackConfig = {
       //   prefix: "generated" // where to look for htmlWebpackPlugin output. default is "html"
       // },
 
+      data: require(path.join(process.cwd(), "src", "assets", "data", "data.json")),
+
       entry: path.join(process.cwd(),  "src", "templates", "*.hbs"),
       output: path.join(process.cwd(), "dist", "[name].html"),
 
@@ -102,10 +104,7 @@ const webpackConfig = {
 
       // register custom helpers. May be either a function or a glob-pattern
       helpers: {
-        // nameOfHbsHelper: Function.prototype,
-        // projectHelpers: path.join(process.cwd(), "app", "helpers", "*.helper.js")
         eq: function(a, b) {
-          console.log(a, b);
           return a === b;
         }
       },
@@ -118,9 +117,36 @@ const webpackConfig = {
       getPartialId: function (path) {
         let id = path.match(/\/([^/]+\/[^/]+)\.[^.]+$/).pop();
         id = id.replace("partials/_", "").replace("/_", "/");
-        log.warn("Registering:", id, path);
+        log.info("Registering ", id);
         return id;
-      }
+      },
+
+      /* Patched module `.onBeforeRender`` to provide compiled template and the plugin itself.
+       *    const data = this.options.onBeforeRender(Handlebars, this.data, sourcePath, template, this) || this.data;
+       */
+      onBeforeRender: function (Handlebars, data, filename, template, plugin) {
+        const self = this;
+
+        if ( filename.indexOf("record.hbs") < 0 ) return;
+
+        log.info("Filename ", filename);
+
+        // foreach data.record as record.
+        data.record.forEach(record => {
+          const result = template({record: record});
+          const targetFilepath = path.join(record.category.nicename, record.id + "", "index.html");
+
+          // plugin.registerGeneratedFile(targetFilepath, result);
+          plugin.assetsToEmit[targetFilepath] = {
+            source: () => result,
+            size: () => result.length
+          };
+
+          log.info(`Created ${targetFilepath} from data.`);
+        });
+
+      },
+
     })
   ]
 };

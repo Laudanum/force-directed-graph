@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HandlebarsWebpackPlugin = require("handlebars-webpack-plugin");
+const SriPlugin = require('webpack-subresource-integrity');
 
 const env = process.env.WEBPACK_ENV
 const logger = require('webpack/lib/logging/runtime');
@@ -34,46 +35,48 @@ const webpackConfig = {
     crossOriginLoading: 'anonymous',
   },
   module: {
-    rules: [{
-      // Only run `.js` files through Babel
-      test: /\.m?js$/,
-      exclude: /(node_modules)/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env',
-            {
-              plugins: [
-                '@babel/plugin-proposal-class-properties'
-              ]
-            }
-          ]
+    rules: [
+      {
+        // Only run `.js` files through Babel
+        test: /\.m?js$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env',
+              {
+                plugins: [
+                  '@babel/plugin-proposal-class-properties'
+                ]
+              }
+            ],
+          },
         },
       },
-    },
-    {
-      test: /\.s[ac]ss$/i,
-      use: [
-        // Creates `style` nodes from JS strings
-        'style-loader',
-        // Translates CSS into CommonJS
-        'css-loader',
-        // Compiles Sass to CSS
-        'sass-loader',
-      ],
-    },
-    {
-      test: /\.(png|svg|jpe?g|gif|woff2?|ttf|eot)$/,
-      use: [{
-        loader: 'file-loader',
-        options: {
-          outputPath: (url, resourcePath, context) => {
-            log.info(url)
-            return `../images/${url}`;
-          },
-          publicPath: '/assets/images',
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader',
+          // Compiles Sass to CSS
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.(png|svg|jpe?g|gif|woff2?|ttf|eot)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            outputPath: (url, resourcePath, context) => {
+              log.info(url)
+              return `../images/${url}`;
+            },
+            publicPath: '/assets/images',
+          }
         }
-      }]
+      ]
     },
     ]
   },
@@ -83,6 +86,11 @@ const webpackConfig = {
   devtool: 'source-map',
 
   plugins: [
+    new SriPlugin({
+      hashFuncNames: ['sha256', 'sha384'],
+      enabled: process.env.NODE_ENV === 'production',
+    }),
+
     new HtmlWebpackPlugin({
       title: "Generic Head Title",
       // the template you want to use
@@ -123,7 +131,6 @@ const webpackConfig = {
       getPartialId: function (path) {
         let id = path.match(/\/([^/]+\/[^/]+)\.[^.]+$/).pop();
         id = id.replace("partials/_", "").replace("/_", "/");
-        log.info("Registering ", id);
         return id;
       },
 
@@ -149,8 +156,6 @@ const webpackConfig = {
             source: () => result,
             size: () => result.length
           };
-
-          log.info(`Created ${targetFilepath} from data.`);
         });
 
       },

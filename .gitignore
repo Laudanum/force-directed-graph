@@ -4,3 +4,4 @@ package-lock.json
 dist/
 onlinevenue-versions/
 uploads/
+src/templates/partials/generated/

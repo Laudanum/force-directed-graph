@@ -1,5 +1,9 @@
 == Build
 
+```
+$ npx webpack --config webpack.handlebars.config.js $
+```
+
 Webpack for es5
 https://gist.github.com/nicolasdao/2e6cdb8a92b5584d90019a0224b1fddc
 

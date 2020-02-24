@@ -5,13 +5,15 @@ const env = process.env.WEBPACK_ENV
 const logger = require('webpack/lib/logging/runtime');
 
 const log = logger.getLogger('constellation-app');
+// import SriPlugin from 'webpack-subresource-integrity';
+const SriPlugin = require('webpack-subresource-integrity');
 
 
 // Simply configure those 4 variables:
 const JS_SOURCE_FILES = ['babel-polyfill', './src/js/index.js', 'photoswipe', 'photoswipe/src/js/ui/photoswipe-ui-default.js']
 const OUTPUT_FILENAME = 'app'
 const DEST_FOLDER = 'dist/assets/js'
-const COPYRIGHT = `Add your copyright here. It is included at the beginning of your bundle.`
+const COPYRIGHT = `Copyright ©2008-2020 Holly Sydney.`
 
 const OUTPUT_FILE = `${OUTPUT_FILENAME}.js`
 const OUTPUT_FILE_MIN = `${OUTPUT_FILENAME}.min.js`
@@ -24,7 +26,11 @@ const { plugins, outputfile, mode } = env == 'build'
       new webpack.ProvidePlugin({
         PhotoSwipe: 'photoswipe',
         PhotoSwipeUI_Default: 'photoswipe/src/js/ui/photoswipe-ui-default.js'
-      })
+      }),
+      new SriPlugin({
+        hashFuncNames: ['sha256', 'sha384'],
+        enabled: process.env.NODE_ENV === 'production',
+      }),
     ],
     outputfile: OUTPUT_FILE_MIN,
     mode: 'production'
@@ -48,7 +54,8 @@ module.exports = {
     path: path.join(__dirname, DEST_FOLDER),
     filename: outputfile,
     libraryTarget: 'umd',
-    umdNamedDefine: true
+    umdNamedDefine: true,
+    crossOriginLoading: 'anonymous',
   },
   module: {
     rules: [{
